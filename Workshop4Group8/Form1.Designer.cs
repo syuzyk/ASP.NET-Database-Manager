@@ -31,6 +31,7 @@ namespace Workshop4Group8
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -48,15 +49,25 @@ namespace Workshop4Group8
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(405, 141);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tristen";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(407, 219);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "dhaval";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -71,6 +82,7 @@ namespace Workshop4Group8
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
