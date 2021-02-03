@@ -9,6 +9,15 @@
       <Column Name="PkgDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="PkgBasePrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Column Name="PkgAgencyCommission" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Package_Packages_Products_Supplier" Member="Packages_Products_Suppliers" ThisKey="PackageId" OtherKey="PackageId" Type="Packages_Products_Supplier" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Packages_Products_Suppliers" Member="Packages_Products_Suppliers">
+    <Type Name="Packages_Products_Supplier">
+      <Column Name="PackageId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SupplierId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Package_Packages_Products_Supplier" Member="Package" ThisKey="PackageId" OtherKey="PackageId" Type="Package" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -24,6 +24,10 @@ namespace Workshop4Group8
             packageDataGridView.DataSource = (from p in dbContext.Packages
                                                  orderby p.PackageId
                                                  select p).ToList();
+            packages_Products_SuppliersDataGridView.DataSource = (from pps in dbContext.Packages_Products_Suppliers
+                                                                  where pps.PackageId == Convert.ToInt32(packageDataGridView.Rows[0].Cells[0].Value)
+                                                                  orderby pps.ProductId
+                                                                  select pps).ToList();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -61,6 +65,16 @@ namespace Workshop4Group8
                     packageDataGridView.DataSource = dbContext.Packages; // refresh grid
                 }
             }
+        }
+
+        private void packageDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            DataClasses1DataContext dbContext = new DataClasses1DataContext();
+            
+            packages_Products_SuppliersDataGridView.DataSource = (from pps in dbContext.Packages_Products_Suppliers
+                                                                      where pps.PackageId == Convert.ToInt32(packageDataGridView.Rows[packageDataGridView.SelectedCells[0].RowIndex].Cells[0].Value)
+                                                                      orderby pps.ProductId
+                                                                      select pps).ToList();
         }
     }
 }

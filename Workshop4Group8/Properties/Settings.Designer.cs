@@ -33,5 +33,16 @@ namespace Workshop4Group8.Properties {
                 return ((string)(this["TravelExpertsConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\sqlexpress;Initial Catalog=TravelExperts;Integrated Securit" +
+            "y=True")]
+        public string TravelExpertsConnectionString1 {
+            get {
+                return ((string)(this["TravelExpertsConnectionString1"]));
+            }
+        }
     }
 }

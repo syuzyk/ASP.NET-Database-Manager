@@ -33,6 +33,9 @@ namespace Workshop4Group8
     partial void InsertPackage(Package instance);
     partial void UpdatePackage(Package instance);
     partial void DeletePackage(Package instance);
+    partial void InsertPackages_Products_Supplier(Packages_Products_Supplier instance);
+    partial void UpdatePackages_Products_Supplier(Packages_Products_Supplier instance);
+    partial void DeletePackages_Products_Supplier(Packages_Products_Supplier instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -72,6 +75,14 @@ namespace Workshop4Group8
 				return this.GetTable<Package>();
 			}
 		}
+		
+		public System.Data.Linq.Table<Packages_Products_Supplier> Packages_Products_Suppliers
+		{
+			get
+			{
+				return this.GetTable<Packages_Products_Supplier>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Packages")]
@@ -93,6 +104,8 @@ namespace Workshop4Group8
 		private decimal _PkgBasePrice;
 		
 		private System.Nullable<decimal> _PkgAgencyCommission;
+		
+		private EntitySet<Packages_Products_Supplier> _Packages_Products_Suppliers;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -116,6 +129,7 @@ namespace Workshop4Group8
 		
 		public Package()
 		{
+			this._Packages_Products_Suppliers = new EntitySet<Packages_Products_Supplier>(new Action<Packages_Products_Supplier>(this.attach_Packages_Products_Suppliers), new Action<Packages_Products_Supplier>(this.detach_Packages_Products_Suppliers));
 			OnCreated();
 		}
 		
@@ -255,6 +269,182 @@ namespace Workshop4Group8
 					this._PkgAgencyCommission = value;
 					this.SendPropertyChanged("PkgAgencyCommission");
 					this.OnPkgAgencyCommissionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Package_Packages_Products_Supplier", Storage="_Packages_Products_Suppliers", ThisKey="PackageId", OtherKey="PackageId")]
+		public EntitySet<Packages_Products_Supplier> Packages_Products_Suppliers
+		{
+			get
+			{
+				return this._Packages_Products_Suppliers;
+			}
+			set
+			{
+				this._Packages_Products_Suppliers.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Packages_Products_Suppliers(Packages_Products_Supplier entity)
+		{
+			this.SendPropertyChanging();
+			entity.Package = this;
+		}
+		
+		private void detach_Packages_Products_Suppliers(Packages_Products_Supplier entity)
+		{
+			this.SendPropertyChanging();
+			entity.Package = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Packages_Products_Suppliers")]
+	public partial class Packages_Products_Supplier : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _PackageId;
+		
+		private int _ProductId;
+		
+		private int _SupplierId;
+		
+		private EntityRef<Package> _Package;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnPackageIdChanging(int value);
+    partial void OnPackageIdChanged();
+    partial void OnProductIdChanging(int value);
+    partial void OnProductIdChanged();
+    partial void OnSupplierIdChanging(int value);
+    partial void OnSupplierIdChanged();
+    #endregion
+		
+		public Packages_Products_Supplier()
+		{
+			this._Package = default(EntityRef<Package>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PackageId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int PackageId
+		{
+			get
+			{
+				return this._PackageId;
+			}
+			set
+			{
+				if ((this._PackageId != value))
+				{
+					if (this._Package.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPackageIdChanging(value);
+					this.SendPropertyChanging();
+					this._PackageId = value;
+					this.SendPropertyChanged("PackageId");
+					this.OnPackageIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProductId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ProductId
+		{
+			get
+			{
+				return this._ProductId;
+			}
+			set
+			{
+				if ((this._ProductId != value))
+				{
+					this.OnProductIdChanging(value);
+					this.SendPropertyChanging();
+					this._ProductId = value;
+					this.SendPropertyChanged("ProductId");
+					this.OnProductIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SupplierId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int SupplierId
+		{
+			get
+			{
+				return this._SupplierId;
+			}
+			set
+			{
+				if ((this._SupplierId != value))
+				{
+					this.OnSupplierIdChanging(value);
+					this.SendPropertyChanging();
+					this._SupplierId = value;
+					this.SendPropertyChanged("SupplierId");
+					this.OnSupplierIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Package_Packages_Products_Supplier", Storage="_Package", ThisKey="PackageId", OtherKey="PackageId", IsForeignKey=true)]
+		public Package Package
+		{
+			get
+			{
+				return this._Package.Entity;
+			}
+			set
+			{
+				Package previousValue = this._Package.Entity;
+				if (((previousValue != value) 
+							|| (this._Package.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Package.Entity = null;
+						previousValue.Packages_Products_Suppliers.Remove(this);
+					}
+					this._Package.Entity = value;
+					if ((value != null))
+					{
+						value.Packages_Products_Suppliers.Add(this);
+						this._PackageId = value.PackageId;
+					}
+					else
+					{
+						this._PackageId = default(int);
+					}
+					this.SendPropertyChanged("Package");
 				}
 			}
 		}
