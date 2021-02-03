@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TravelExperts" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost\sqlexpress;Initial Catalog=TravelExperts;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="Workshop4Group8.Properties.Settings" SettingsPropertyName="TravelExpertsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Packages" Member="Packages">
+    <Type Name="Package">
+      <Column Name="PackageId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PkgName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PkgStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PkgEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PkgDesc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PkgBasePrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PkgAgencyCommission" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
