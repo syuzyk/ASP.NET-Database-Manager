@@ -143,7 +143,9 @@ namespace Workshop4Group8
         /// <param name="e"></param>
         private void packageDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
+            //If a row is selected, then refresh data.
+            if (packageDataGridView.SelectedCells.Count != 0)
+                dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
         }
 
         /// <summary>

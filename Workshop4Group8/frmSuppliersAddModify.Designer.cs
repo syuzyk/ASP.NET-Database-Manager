@@ -69,7 +69,7 @@ namespace Workshop4Group8
             this.supNameTextBox.Location = new System.Drawing.Point(136, 64);
             this.supNameTextBox.Name = "supNameTextBox";
             this.supNameTextBox.Size = new System.Drawing.Size(169, 26);
-            this.supNameTextBox.TabIndex = 2;
+            this.supNameTextBox.TabIndex = 1;
             // 
             // supplierBindingSource
             // 
@@ -82,7 +82,7 @@ namespace Workshop4Group8
             this.supplierIdTextBox.Location = new System.Drawing.Point(136, 24);
             this.supplierIdTextBox.Name = "supplierIdTextBox";
             this.supplierIdTextBox.Size = new System.Drawing.Size(169, 26);
-            this.supplierIdTextBox.TabIndex = 4;
+            this.supplierIdTextBox.TabIndex = 0;
             // 
             // btnSaveSuppliers
             // 
@@ -90,7 +90,7 @@ namespace Workshop4Group8
             this.btnSaveSuppliers.Location = new System.Drawing.Point(16, 124);
             this.btnSaveSuppliers.Name = "btnSaveSuppliers";
             this.btnSaveSuppliers.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveSuppliers.TabIndex = 5;
+            this.btnSaveSuppliers.TabIndex = 2;
             this.btnSaveSuppliers.Text = "Save";
             this.btnSaveSuppliers.UseVisualStyleBackColor = true;
             this.btnSaveSuppliers.Click += new System.EventHandler(this.btnSaveSuppliers_Click);
@@ -101,7 +101,7 @@ namespace Workshop4Group8
             this.btnCancelSuppliers.Location = new System.Drawing.Point(126, 124);
             this.btnCancelSuppliers.Name = "btnCancelSuppliers";
             this.btnCancelSuppliers.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelSuppliers.TabIndex = 6;
+            this.btnCancelSuppliers.TabIndex = 3;
             this.btnCancelSuppliers.Text = "Cancel";
             this.btnCancelSuppliers.UseVisualStyleBackColor = true;
             this.btnCancelSuppliers.Click += new System.EventHandler(this.btnCancelSuppliers_Click);

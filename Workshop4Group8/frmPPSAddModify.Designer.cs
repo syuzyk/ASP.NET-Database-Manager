@@ -45,7 +45,7 @@ namespace Workshop4Group8
             this.btnSubmit.Location = new System.Drawing.Point(16, 216);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 0;
+            this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -55,7 +55,7 @@ namespace Workshop4Group8
             this.btnCancel.Location = new System.Drawing.Point(181, 216);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 0;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -75,7 +75,7 @@ namespace Workshop4Group8
             this.cmbProduct.Location = new System.Drawing.Point(16, 74);
             this.cmbProduct.Name = "cmbProduct";
             this.cmbProduct.Size = new System.Drawing.Size(121, 21);
-            this.cmbProduct.TabIndex = 3;
+            this.cmbProduct.TabIndex = 0;
             this.cmbProduct.SelectedIndexChanged += new System.EventHandler(this.cmbProduct_SelectedIndexChanged);
             // 
             // cmbSupplier
@@ -84,7 +84,7 @@ namespace Workshop4Group8
             this.cmbSupplier.Location = new System.Drawing.Point(16, 151);
             this.cmbSupplier.Name = "cmbSupplier";
             this.cmbSupplier.Size = new System.Drawing.Size(121, 21);
-            this.cmbSupplier.TabIndex = 4;
+            this.cmbSupplier.TabIndex = 1;
             this.cmbSupplier.SelectedIndexChanged += new System.EventHandler(this.cmbSupplier_SelectedIndexChanged);
             // 
             // lblPackageName
