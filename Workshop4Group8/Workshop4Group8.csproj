@@ -101,6 +101,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Suppliers.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Validator.cs" />
     <None Include="Properties\DataSources\Supplier.datasource" />
     <None Include="Suppliers.dbml.layout">
       <DependentUpon>Suppliers.dbml</DependentUpon>
