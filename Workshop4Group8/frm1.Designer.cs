@@ -1,7 +1,7 @@
 ﻿
 namespace Workshop4Group8
 {
-    partial class Form1
+    partial class frm1
     {
         /// <summary>
         /// Required designer variable.

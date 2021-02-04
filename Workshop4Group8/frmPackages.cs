@@ -8,11 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TravelExpertsData;
 
 namespace Workshop4Group8
 {
     public partial class frmPackages : Form
     {
+        public int currentlySelectedPackageId;
+        public string currentlySelectedPackageName;
+        public string currentlySelectedProductName;
+        public string currentlySelectedSupplierName;
+
+
         public frmPackages()
         {
             InitializeComponent();
@@ -24,10 +31,7 @@ namespace Workshop4Group8
             packageDataGridView.DataSource = (from p in dbContext.Packages
                                                  orderby p.PackageId
                                                  select p).ToList();
-            packages_Products_SuppliersDataGridView.DataSource = (from pps in dbContext.Packages_Products_Suppliers
-                                                                  where pps.PackageId == Convert.ToInt32(packageDataGridView.Rows[0].Cells[0].Value)
-                                                                  orderby pps.ProductId
-                                                                  select pps).ToList();
+            dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0,0].Value));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -67,14 +71,67 @@ namespace Workshop4Group8
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0 &&
+                e.ColumnIndex == 0)
+            {
+                dgvPPS.Rows[e.RowIndex].Selected = true;
+                DialogResult dialogresult = MessageBox.Show("Are you sure you wish to delete \n\n" + dgvPPS.SelectedCells[2].Value.ToString() + " provided by " + dgvPPS.SelectedCells[3].Value.ToString() + "\n\nfrom the package " + packageDataGridView.SelectedCells[1].Value.ToString() + "?", "Confirm delete", MessageBoxButtons.YesNo);
+                if (dialogresult == DialogResult.Yes)
+                {
+                    if (PPSDB.DeletePPSThenConfirm(Convert.ToInt32(packageDataGridView.SelectedCells[0].Value), dgvPPS.SelectedCells[2].Value.ToString(), dgvPPS.SelectedCells[3].Value.ToString()) != true)
+                    {
+                        MessageBox.Show("Someone has deleted or changed that record in the database. Click OK to refresh the data displayed here.", "Concurrency error");
+                        dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
+                    }
+                    else
+                    {
+                        MessageBox.Show("You have deleted \n\n" + dgvPPS.SelectedCells[2].Value.ToString() + " provided by " + dgvPPS.SelectedCells[3].Value.ToString() + "\n\nfrom the package " + packageDataGridView.SelectedCells[1].Value.ToString() + ".", "Success!");
+                        dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
+                    }
+                }
+            }
+            else if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0 &&
+                e.ColumnIndex == 1)
+            {
+                dgvPPS.Rows[e.RowIndex].Selected = true;
+                currentlySelectedPackageId = Convert.ToInt32(packageDataGridView.SelectedCells[0].Value);
+                currentlySelectedPackageName = packageDataGridView.SelectedCells[1].Value.ToString();
+                currentlySelectedProductName = dgvPPS.SelectedCells[2].Value.ToString();
+                currentlySelectedSupplierName = dgvPPS.SelectedCells[3].Value.ToString();
+                frmPPSAddModify secondForm = new frmPPSAddModify();
+                secondForm.mainPackageForm = this;
+                DialogResult result = secondForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
+                }
+            }
+        }
+
         private void packageDataGridView_SelectionChanged(object sender, EventArgs e)
         {
-            DataClasses1DataContext dbContext = new DataClasses1DataContext();
-            
-            packages_Products_SuppliersDataGridView.DataSource = (from pps in dbContext.Packages_Products_Suppliers
-                                                                      where pps.PackageId == Convert.ToInt32(packageDataGridView.Rows[packageDataGridView.SelectedCells[0].RowIndex].Cells[0].Value)
-                                                                      orderby pps.ProductId
-                                                                      select pps).ToList();
+            dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
+        }
+
+        private void btnAddPPS_Click(object sender, EventArgs e)
+        {
+            currentlySelectedPackageId = Convert.ToInt32(packageDataGridView.SelectedCells[0].Value); 
+            currentlySelectedPackageName = packageDataGridView.SelectedCells[1].Value.ToString();
+            currentlySelectedProductName = "";
+            currentlySelectedSupplierName = "";
+            frmPPSAddModify secondForm = new frmPPSAddModify();
+            secondForm.mainPackageForm = this;
+            DialogResult result = secondForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
+            }
         }
     }
 }
