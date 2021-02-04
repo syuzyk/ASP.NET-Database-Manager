@@ -35,15 +35,16 @@ namespace Workshop4Group8
                 packageIdTextBox.Text = currentPackage.PackageId.ToString();
                 pkgDescRichTextBox.Text = currentPackage.PkgDesc.ToString();
                 pkgBasePriceTextBox.Text = currentPackage.PkgBasePrice.ToString("c");
-                if (currentPackage.PkgAgencyCommission != null) 
+                if (currentPackage.PkgAgencyCommission != null)
                 {
-                    pkgAgencyCommissionTextBox.Text = currentPackage.PkgAgencyCommission.ToString("c");
+                    decimal x = (decimal)currentPackage.PkgAgencyCommission;
+                    pkgAgencyCommissionTextBox.Text = x.ToString("c");
                 }
-                else 
+                else
                 {
                     pkgAgencyCommissionTextBox.Text = "";
                 }
-                //pkgAgencyCommissionTextBox.Text = currentPackage.PkgAgencyCommission.ToString();
+
                 if (currentPackage.PkgStartDate != null)
                 {
                     // display current date in the date time picker
