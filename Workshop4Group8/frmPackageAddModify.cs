@@ -37,7 +37,8 @@ namespace Workshop4Group8
                 pkgBasePriceTextBox.Text = currentPackage.PkgBasePrice.ToString("c");
                 if (currentPackage.PkgAgencyCommission != null) 
                 {
-                    pkgAgencyCommissionTextBox.Text = currentPackage.PkgAgencyCommission.ToString("c");
+                    decimal x = (decimal)currentPackage.PkgAgencyCommission;
+                    pkgAgencyCommissionTextBox.Text = x.ToString("c");
                 }
                 else 
                 {
