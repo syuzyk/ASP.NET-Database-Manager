@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProduct.Designer.cs">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPPSAddModify.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     </Compile>
     <Compile Include="frmPackageAddModify.Designer.cs">
       <DependentUpon>frmPackageAddModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductAddModfy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductAddModfy.Designer.cs">
+      <DependentUpon>frmProductAddModfy.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSuppliers.cs">
       <SubType>Form</SubType>
@@ -91,6 +103,11 @@
     <Compile Include="frmPackages.Designer.cs">
       <DependentUpon>frmPackages.cs</DependentUpon>
     </Compile>
+    <Compile Include="products.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>products.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Suppliers.designer.cs">
@@ -98,7 +115,33 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Suppliers.dbml</DependentUpon>
     </Compile>
+    <None Include="products.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>products.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\DataClasses1DataContext.datasource" />
+    <None Include="Properties\DataSources\frm1.datasource" />
+    <None Include="Properties\DataSources\frmPackageAddModify.datasource" />
+    <None Include="Properties\DataSources\frmPackages.datasource" />
+    <None Include="Properties\DataSources\frmPPSAddModify.datasource" />
+    <None Include="Properties\DataSources\frmSuppliers.datasource" />
+    <None Include="Properties\DataSources\frmSuppliersAddModify.datasource" />
+    <None Include="Properties\DataSources\Packages_Products_Supplier.datasource" />
+    <None Include="Properties\DataSources\Product.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\DataSources\Supplier.datasource" />
+    <None Include="Properties\DataSources\SuppliersDataContext.datasource" />
+    <None Include="Properties\DataSources\TravelExpertsData.PPS.datasource" />
+    <None Include="Properties\DataSources\TravelExpertsData.PPSDB.datasource" />
+    <None Include="Properties\DataSources\TravelExpertsData.Product.datasource" />
+    <None Include="Properties\DataSources\TravelExpertsData.ProductDB.datasource" />
+    <None Include="Properties\DataSources\TravelExpertsData.PSDB.datasource" />
+    <None Include="Properties\DataSources\TravelExpertsData.Supplier.datasource" />
+    <None Include="Properties\DataSources\TravelExpertsData.SupplierDB.datasource" />
+    <None Include="Properties\DataSources\TravelExpertsData.TravelExpertsDB.datasource" />
+    <None Include="Properties\DataSources\Workshop4Group8.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Workshop4Group8.Properties.Settings.datasource" />
     <None Include="Suppliers.dbml.layout">
       <DependentUpon>Suppliers.dbml</DependentUpon>
     </None>
@@ -117,12 +160,21 @@
     <EmbeddedResource Include="frmPPSAddModify.resx">
       <DependentUpon>frmPPSAddModify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProduct.resx">
+      <DependentUpon>frmProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductAddModfy.resx">
+      <DependentUpon>frmProductAddModfy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSuppliers.resx">
       <DependentUpon>frmSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSuppliersAddModify.resx">
       <DependentUpon>frmSuppliersAddModify.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="products.dbml.layout">
+      <DependentUpon>products.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
