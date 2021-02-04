@@ -16,8 +16,9 @@ namespace Workshop4Group8
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmPackages());
-            Application.Run(new frmSuppliers());
+            Application.Run(new frmPackages());
+            //Application.Run(new frmSuppliers());
+
         }
     }
 }

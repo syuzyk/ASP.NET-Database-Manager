@@ -114,16 +114,14 @@
     <EmbeddedResource Include="frmPackages.resx">
       <DependentUpon>frmPackages.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="frmPPSAddModify.resx">
       <DependentUpon>frmPPSAddModify.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSuppliers.resx">
       <DependentUpon>frmSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSuppliersAddModify.resx">
       <DependentUpon>frmSuppliersAddModify.cs</DependentUpon>
->>>>>>> e69313dda8d22d2df523f3924815e565119c5faa
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
