@@ -9,6 +9,17 @@ namespace TravelExpertsData
 {
     public class PSDB
     {
+        /// <summary>
+        /// Checks whether the provided combination of product and supplier already exists
+        /// in the Products_Suppliers table.  
+        /// Purposes:
+        /// - prevent duplicates in Products_Suppliers.
+        /// - can't add a package to Packages_Products_Suppliers until it exists in
+        ///   Products_Suppliers
+        /// </summary>
+        /// <param name="prodName">Product name to check</param>.
+        /// <param name="supName">Supplier name to check</param>.
+        /// <returns>True if exists, false if not.</returns>
         public static bool recordExistsInPS(string prodName, string supName)
         {
             int recordCount;
@@ -37,6 +48,12 @@ namespace TravelExpertsData
             return exists;
         }
 
+        /// <summary>
+        /// Adds a product to Products_Suppliers.
+        /// </summary>
+        /// <param name="prodName">Name of product to add.</param>
+        /// <param name="supName">That product's supplier.</param>
+        /// <returns>True if successfully added, false if not.</returns>
         public static bool addToPSThenConfirmSuccess(string prodName, string supName)
         {
             bool successfullyAdded;

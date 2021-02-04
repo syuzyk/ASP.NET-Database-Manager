@@ -10,6 +10,13 @@ namespace TravelExpertsData
 {
     public class SupplierDB
     {
+        /// <summary>
+        /// Generates custom list of Supplier Names.
+        /// Begins with names of suppliers that provide a given product.
+        /// Then proceeds with names of suppliers that do NOT provide that product.
+        /// </summary>
+        /// <param name="prodName"></param>
+        /// <returns>List of supplier names.</returns>
         public static List<string> GetSuppliers(string prodName)
         {
             List<string> supplierList = new List<string>();
@@ -49,6 +56,12 @@ namespace TravelExpertsData
             {
                 string query = "SELECT Suppliers.SupName " +
                                "FROM Suppliers " +
+                               "WHERE SupName NOT IN (" +
+                                    "SELECT Suppliers.SupName " +
+                                    "FROM Products_Suppliers " +
+                                        "JOIN Suppliers ON Products_Suppliers.SupplierId = Suppliers.SupplierId " +
+                                        "JOIN Products ON Products_Suppliers.ProductId = Products.ProductId " +
+                                        "WHERE ProdName = '" + prodName + "') " +
                                "ORDER BY Suppliers.SupName";
 
                 using (SqlCommand cmd = new SqlCommand(query, connection))

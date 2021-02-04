@@ -10,6 +10,10 @@ namespace TravelExpertsData
 {
     public class ProductDB
     {
+        /// <summary>
+        /// Generates a list of product names.
+        /// </summary>
+        /// <returns>List of product names.</returns>
         public static List<string> GetProducts()
         {
             List<string> productsList = new List<string>();

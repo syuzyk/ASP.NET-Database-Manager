@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace TravelExpertsData
 {
+    /// <summary>
+    /// Establishes Connection to SQL server.
+    /// </summary>
     public static class TravelExpertsDB
     {
         public static SqlConnection GetConnection()

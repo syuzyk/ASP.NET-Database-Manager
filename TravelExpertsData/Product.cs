@@ -8,6 +8,10 @@ namespace TravelExpertsData
 {
     public class Product
     {
+        /// <summary>
+        /// Constructor for Product object.
+        /// Currently not being used.
+        /// </summary>
         public Product() { }
 
         public int ProductId { get; set; }

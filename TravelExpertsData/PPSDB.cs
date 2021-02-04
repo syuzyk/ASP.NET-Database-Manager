@@ -10,6 +10,11 @@ namespace TravelExpertsData
 {
     public class PPSDB
     {
+        /// <summary>
+        /// Generates a package's product information.
+        /// </summary>
+        /// <param name="packageId">Package's package ID</param>
+        /// <returns>List of product names and supplier names.</returns>
         public static List<PPS> GetPPS(int packageId)
         {
             PPS pps;
@@ -46,6 +51,13 @@ namespace TravelExpertsData
             return ppsList;
         }
 
+        /// <summary>
+        /// Delete's a record in Packages_Products_Suppliers
+        /// </summary>
+        /// <param name="packageId">Package ID of target record</param>
+        /// <param name="prodName">Product name of target record</param>
+        /// <param name="supName">Supplier name of target record</param>
+        /// <returns>True if delete successful, false if not.</returns>
         public static bool DeletePPSThenConfirm(int packageId, string prodName, string supName)
         {
             bool successfullyDeleted;
@@ -70,6 +82,14 @@ namespace TravelExpertsData
             return successfullyDeleted;
         }
 
+        /// <summary>
+        /// Checks if a specific product-supplier combination already exists in a package.
+        /// Purpose is to prevent duplicates.
+        /// </summary>
+        /// <param name="packageId">Package ID of the package we are checking.</param>
+        /// <param name="prodName">Product name of the package we are checking.</param>
+        /// <param name="supName">Supplier name of the package we are checking.</param>
+        /// <returns>True if record exists, false if not.</returns>
         public static bool recordAlreadyExistsInPPS(int packageId, string prodName, string supName)
         {
             int recordCount;
@@ -99,6 +119,13 @@ namespace TravelExpertsData
             return alreadyExists;
         }
 
+        /// <summary>
+        /// Adds a record to Packages_Products_Suppliers
+        /// </summary>
+        /// <param name="packageId">PackageID of the record we are adding.</param>
+        /// <param name="prodName">Product Name of the record we are adding.</param>
+        /// <param name="supName">SupplierID of the record we are adding.</param>
+        /// <returns>True if successfully added, false if not.</returns>
         public static bool addToPPSThenConfirmSuccess(int packageId, string prodName, string supName)
         {
             bool successfullyAdded;
@@ -125,6 +152,15 @@ namespace TravelExpertsData
             return successfullyAdded;
         }
 
+        /// <summary>
+        /// Updates a record in Packages_Products_Suppliers.
+        /// </summary>
+        /// <param name="packageId">Package ID of the record we are updating.</param>
+        /// <param name="oldProdName">The original Product Name of the record we are updating.</param>
+        /// <param name="oldSupName">The original Supplier Name of the record we are updating.</param>
+        /// <param name="newProdName">The new Product Name  of the record we are updating.</param>
+        /// <param name="newSupName">The new Supplier Name of the record we are updating.</param>
+        /// <returns>True if successfully updated, false if not.</returns>
         public static bool UpdateOrderThenConfirmSuccess(int packageId, string oldProdName, string oldSupName, string newProdName, string newSupName)
         {
             bool successfullyUpdated;

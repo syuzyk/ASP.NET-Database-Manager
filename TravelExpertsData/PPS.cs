@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TravelExpertsData
 {
+    /// <summary>
+    /// Constructor for an object to be added to Products_Supplier
+    /// </summary>
     public class PPS
     {
         public PPS() { }
