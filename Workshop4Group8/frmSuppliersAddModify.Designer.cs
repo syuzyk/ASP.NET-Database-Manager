@@ -68,8 +68,9 @@ namespace Workshop4Group8
             this.supNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supNameTextBox.Location = new System.Drawing.Point(136, 64);
             this.supNameTextBox.Name = "supNameTextBox";
-            this.supNameTextBox.Size = new System.Drawing.Size(169, 26);
+            this.supNameTextBox.Size = new System.Drawing.Size(266, 26);
             this.supNameTextBox.TabIndex = 1;
+            this.supNameTextBox.Tag = "Supplier Name";
             // 
             // supplierBindingSource
             // 
@@ -81,15 +82,16 @@ namespace Workshop4Group8
             this.supplierIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supplierIdTextBox.Location = new System.Drawing.Point(136, 24);
             this.supplierIdTextBox.Name = "supplierIdTextBox";
-            this.supplierIdTextBox.Size = new System.Drawing.Size(169, 26);
+            this.supplierIdTextBox.Size = new System.Drawing.Size(266, 26);
             this.supplierIdTextBox.TabIndex = 0;
+            this.supplierIdTextBox.Tag = "Supplier Id";
             // 
             // btnSaveSuppliers
             // 
-            this.btnSaveSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveSuppliers.Location = new System.Drawing.Point(16, 124);
+            this.btnSaveSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveSuppliers.Location = new System.Drawing.Point(12, 124);
             this.btnSaveSuppliers.Name = "btnSaveSuppliers";
-            this.btnSaveSuppliers.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveSuppliers.Size = new System.Drawing.Size(85, 34);
             this.btnSaveSuppliers.TabIndex = 2;
             this.btnSaveSuppliers.Text = "Save";
             this.btnSaveSuppliers.UseVisualStyleBackColor = true;
@@ -97,10 +99,10 @@ namespace Workshop4Group8
             // 
             // btnCancelSuppliers
             // 
-            this.btnCancelSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelSuppliers.Location = new System.Drawing.Point(126, 124);
+            this.btnCancelSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelSuppliers.Location = new System.Drawing.Point(321, 124);
             this.btnCancelSuppliers.Name = "btnCancelSuppliers";
-            this.btnCancelSuppliers.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelSuppliers.Size = new System.Drawing.Size(81, 34);
             this.btnCancelSuppliers.TabIndex = 3;
             this.btnCancelSuppliers.Text = "Cancel";
             this.btnCancelSuppliers.UseVisualStyleBackColor = true;
@@ -111,7 +113,7 @@ namespace Workshop4Group8
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(345, 166);
+            this.ClientSize = new System.Drawing.Size(431, 177);
             this.Controls.Add(this.btnCancelSuppliers);
             this.Controls.Add(this.btnSaveSuppliers);
             this.Controls.Add(supNameLabel);

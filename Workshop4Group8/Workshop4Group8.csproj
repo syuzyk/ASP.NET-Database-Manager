@@ -113,6 +113,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validator.cs" />
     <Compile Include="Suppliers.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -28,18 +28,15 @@ namespace Workshop4Group8
         private void btnSaveSuppliers_Click(object sender, EventArgs e)
         {
             
-            if(!isModify)
+            if(!isModify) // If add supplier
             {
-                if (true) //Replace with validation
+                if (Validator.IsPresent(supplierIdTextBox) == true && Validator.IsPresent(supNameTextBox) == true)
                 {
                     Supplier newSupp = new Supplier
                     {
-                        SupplierId = Convert.ToInt32(supplierIdTextBox.Text),
+                        SupplierId = Convert.ToInt32(supplierIdTextBox.Text), //Replace with auto generated version and read only textbox
                         SupName = supNameTextBox.Text
                     };
-                    Console.WriteLine(newSupp);
-                    Console.WriteLine(newSupp.SupplierId);
-                    Console.WriteLine(newSupp.SupName);
                     using (SuppliersDataContext dbContext = new SuppliersDataContext())
                     {
                         supplierForm.db.Suppliers.InsertOnSubmit(newSupp);
@@ -48,7 +45,7 @@ namespace Workshop4Group8
                     DialogResult = DialogResult.OK;
                 }
             }
-            else
+            else // Is modify
             {
                 using(SuppliersDataContext dbContext = new SuppliersDataContext())
                 {
@@ -73,6 +70,8 @@ namespace Workshop4Group8
             }
             else
             {
+                //String query = "SELECT Top(1) SupplierId FROM Suppliers ORDER BY SupplierId DESC";
+                //supplierIdTextBox.Text = query;
                 supplierIdTextBox.Enabled = true;
                 supplierIdTextBox.Focus();
             }
