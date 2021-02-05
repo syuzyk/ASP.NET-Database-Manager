@@ -17,27 +17,16 @@ namespace Workshop4Group8
             InitializeComponent();
         }
 
-        private void product_Click(object sender, EventArgs e)
-        {
-            frmProduct newform = new frmProduct();
-            DialogResult result = newform.ShowDialog();
-        }
-
-        private void Supplier_Click(object sender, EventArgs e)
-        {
-            frmSuppliers newform = new frmSuppliers();
-            DialogResult result = newform.ShowDialog();
-        }
-
         private void Packages_Click(object sender, EventArgs e)
         {
             frmPackages newform = new frmPackages();
             DialogResult result = newform.ShowDialog();
         }
 
-        private void frm1_Load(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
+            frmPS newform = new frmPS();
+            DialogResult result = newform.ShowDialog();
         }
     }
 }

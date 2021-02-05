@@ -17,7 +17,7 @@ namespace TravelExpertsData
         /// </summary>
         /// <param name="prodName"></param>
         /// <returns>List of supplier names.</returns>
-        public static List<string> GetSuppliers(string prodName)
+        public static List<string> GetSuppliersForPPS(string prodName)
         {
             List<string> supplierList = new List<string>();
 
@@ -81,6 +81,41 @@ namespace TravelExpertsData
             }
 
             return supplierList;
+        }
+
+        /// <summary>
+        /// Generates a list of supplier names.
+        /// </summary>
+        /// <returns>List of supplier names.</returns>
+        public static List<string> GetAllSuppliers()
+        {
+            List<string> suppliersList = new List<string>();
+
+            suppliersList.Add("");
+
+            using (SqlConnection connection = TravelExpertsDB.GetConnection())
+            {
+                string query = "SELECT SupName " +
+                               "FROM Suppliers " +
+                               "ORDER BY SupName";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection))
+                    {
+                        while (dr.Read())
+                        {
+                            string supplierName = (string)dr["SupName"];
+
+                            suppliersList.Add(supplierName);
+                        }
+                    }
+                }
+            }
+
+            return suppliersList;
         }
     }
 }

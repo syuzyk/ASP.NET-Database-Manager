@@ -20,6 +20,7 @@ namespace Workshop4Group8
             //Application.Run(new frmSuppliers());
             //Application.Run(new frmProduct());
             Application.Run(new frm1());
+            //Application.Run(new frmPS());
         }
     }
 }

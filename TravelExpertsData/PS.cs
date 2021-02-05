@@ -9,9 +9,9 @@ namespace TravelExpertsData
     /// <summary>
     /// Constructor for an object to be added to Products_Supplier
     /// </summary>
-    public class PPS
+    public class PS
     {
-        public PPS() { }
+        public PS() { }
 
         public string ProdName { get; set; }
 

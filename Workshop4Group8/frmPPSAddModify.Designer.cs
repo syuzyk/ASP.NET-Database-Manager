@@ -74,7 +74,7 @@ namespace Workshop4Group8
             this.cmbProduct.FormattingEnabled = true;
             this.cmbProduct.Location = new System.Drawing.Point(16, 74);
             this.cmbProduct.Name = "cmbProduct";
-            this.cmbProduct.Size = new System.Drawing.Size(121, 21);
+            this.cmbProduct.Size = new System.Drawing.Size(187, 21);
             this.cmbProduct.TabIndex = 0;
             this.cmbProduct.SelectedIndexChanged += new System.EventHandler(this.cmbProduct_SelectedIndexChanged);
             // 
@@ -83,7 +83,7 @@ namespace Workshop4Group8
             this.cmbSupplier.FormattingEnabled = true;
             this.cmbSupplier.Location = new System.Drawing.Point(16, 151);
             this.cmbSupplier.Name = "cmbSupplier";
-            this.cmbSupplier.Size = new System.Drawing.Size(121, 21);
+            this.cmbSupplier.Size = new System.Drawing.Size(187, 21);
             this.cmbSupplier.TabIndex = 1;
             this.cmbSupplier.SelectedIndexChanged += new System.EventHandler(this.cmbSupplier_SelectedIndexChanged);
             // 
@@ -128,7 +128,7 @@ namespace Workshop4Group8
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
             this.Name = "frmPPSAddModify";
-            this.Text = "Form2";
+            this.Text = "Add/Update Product";
             this.Load += new System.EventHandler(this.frmPPSAddModify_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

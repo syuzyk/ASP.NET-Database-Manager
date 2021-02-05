@@ -49,7 +49,7 @@ namespace Workshop4Group8
         /// <param name="e"></param>
         private void frmPPSAddModify_Load(object sender, EventArgs e)
         {
-            foreach (string product in ProductDB.GetProducts())
+            foreach (string product in ProductDB.GetAllProducts())
             {
                 cmbProduct.Items.Add(product);
             }
@@ -95,7 +95,7 @@ namespace Workshop4Group8
                 cmbSupplier.Items.Add(mainPackageForm.currentlySelectedSupplierName);
                 cmbSupplier.Items.Add("");
 
-                foreach (string supplier in SupplierDB.GetSuppliers(mainPackageForm.currentlySelectedProductName))
+                foreach (string supplier in SupplierDB.GetSuppliersForPPS(mainPackageForm.currentlySelectedProductName))
                 {
                     cmbSupplier.Items.Add(supplier);
                 }
@@ -132,7 +132,7 @@ namespace Workshop4Group8
                 {
                     cmbSupplier.Enabled = true;
                     cmbSupplier.Items.Clear();
-                    foreach (string supplier in SupplierDB.GetSuppliers(cmbProduct.SelectedItem.ToString()))
+                    foreach (string supplier in SupplierDB.GetSuppliersForPPS(cmbProduct.SelectedItem.ToString()))
                     {
                         cmbSupplier.Items.Add(supplier);
                     }

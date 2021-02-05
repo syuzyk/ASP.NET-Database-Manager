@@ -74,6 +74,18 @@
     <Compile Include="frmProductAddModfy.Designer.cs">
       <DependentUpon>frmProductAddModfy.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPS.Designer.cs">
+      <DependentUpon>frmPS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPSAddModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPSAddModify.Designer.cs">
+      <DependentUpon>frmPSAddModify.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSuppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +181,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProductAddModfy.resx">
       <DependentUpon>frmProductAddModfy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPS.resx">
+      <DependentUpon>frmPS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPSAddModify.resx">
+      <DependentUpon>frmPSAddModify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSuppliers.resx">
       <DependentUpon>frmSuppliers.cs</DependentUpon>

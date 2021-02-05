@@ -15,11 +15,11 @@ namespace TravelExpertsData
         /// </summary>
         /// <param name="packageId">Package's package ID</param>
         /// <returns>List of product names and supplier names.</returns>
-        public static List<PPS> GetPPS(int packageId)
+        public static List<PS> GetPPS(int packageId)
         {
-            PPS pps;
+            PS ps;
 
-            List<PPS> ppsList = new List<PPS>();
+            List<PS> psList = new List<PS>();
 
             using (SqlConnection connection = TravelExpertsDB.GetConnection())
             {
@@ -37,18 +37,18 @@ namespace TravelExpertsData
                     {
                         while (dr.Read())
                         {
-                            pps = new PPS();
+                            ps = new PS();
                             
-                            pps.ProdName = (string)dr["ProdName"];
-                            pps.SupName = (string)dr["SupName"];
+                            ps.ProdName = (string)dr["ProdName"];
+                            ps.SupName = (string)dr["SupName"];
 
-                            ppsList.Add(pps);
+                            psList.Add(ps);
                         }
                     }
                 }
             }
 
-            return ppsList;
+            return psList;
         }
 
         /// <summary>
