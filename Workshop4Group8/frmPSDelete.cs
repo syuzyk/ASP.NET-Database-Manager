@@ -22,7 +22,7 @@ namespace Workshop4Group8
 
         private void frmPSDelete_Load(object sender, EventArgs e)
         {
-            lblWarning.Text = mainForm.currentlyDGVSelectedProductName + " provided by " + mainForm.currentlyDGVSelectedSupplierName + "\n\nis also listed in the following packages:";
+            lblWarning.Text = mainForm.currentlyDGVSelectedProductName + " provided by " + mainForm.currentlyDGVSelectedSupplierName + "\n\nmust also be removed from the following packages:";
             
             dgvPPS.DataSource = PPSDB.GetPPSWithPS(mainForm.currentlyDGVSelectedProductName, mainForm.currentlyDGVSelectedSupplierName);
         }

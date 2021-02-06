@@ -65,9 +65,9 @@ namespace Workshop4Group8
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(155, 299);
+            this.btnOK.Location = new System.Drawing.Point(123, 299);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(145, 23);
+            this.btnOK.Size = new System.Drawing.Size(177, 23);
             this.btnOK.TabIndex = 2;
             this.btnOK.Text = "Delete from all packages";
             this.btnOK.UseVisualStyleBackColor = true;
