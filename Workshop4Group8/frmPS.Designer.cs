@@ -101,7 +101,7 @@ namespace Workshop4Group8
             this.btnAddPS.Name = "btnAddPS";
             this.btnAddPS.Size = new System.Drawing.Size(175, 23);
             this.btnAddPS.TabIndex = 3;
-            this.btnAddPS.Text = "Link a product to a supplier";
+            this.btnAddPS.Text = "Connect a product to a supplier";
             this.btnAddPS.UseVisualStyleBackColor = true;
             this.btnAddPS.Click += new System.EventHandler(this.btnAddPS_Click);
             // 
