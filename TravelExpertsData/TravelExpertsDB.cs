@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace TravelExpertsData
 {
+    //All code here written by Ricky.
+    
     /// <summary>
     /// Establishes Connection to SQL server.
     /// </summary>

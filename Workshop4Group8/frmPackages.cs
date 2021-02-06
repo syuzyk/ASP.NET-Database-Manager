@@ -75,6 +75,8 @@ namespace Workshop4Group8
             }
         }
 
+        //After this point, all code written by Ricky.
+
         /// <summary>
         /// Some cells in the products DGV contain buttons.
         /// This method contains method for the different buttons. 
