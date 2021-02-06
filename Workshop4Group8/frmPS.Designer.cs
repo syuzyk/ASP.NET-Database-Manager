@@ -52,9 +52,10 @@ namespace Workshop4Group8
             this.dgvPS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delete,
             this.Update});
-            this.dgvPS.Location = new System.Drawing.Point(31, 137);
+            this.dgvPS.Location = new System.Drawing.Point(31, 107);
             this.dgvPS.Name = "dgvPS";
-            this.dgvPS.Size = new System.Drawing.Size(693, 150);
+            this.dgvPS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPS.Size = new System.Drawing.Size(654, 150);
             this.dgvPS.TabIndex = 0;
             this.dgvPS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPS_CellClick);
             // 
@@ -76,30 +77,30 @@ namespace Workshop4Group8
             // 
             // btnProducts
             // 
-            this.btnProducts.Location = new System.Drawing.Point(31, 365);
+            this.btnProducts.Location = new System.Drawing.Point(62, 357);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(170, 23);
-            this.btnProducts.TabIndex = 1;
+            this.btnProducts.TabIndex = 4;
             this.btnProducts.Text = "Manage Product List";
             this.btnProducts.UseVisualStyleBackColor = true;
             this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // btnSuppliers
             // 
-            this.btnSuppliers.Location = new System.Drawing.Point(344, 365);
+            this.btnSuppliers.Location = new System.Drawing.Point(450, 357);
             this.btnSuppliers.Name = "btnSuppliers";
             this.btnSuppliers.Size = new System.Drawing.Size(170, 23);
-            this.btnSuppliers.TabIndex = 1;
+            this.btnSuppliers.TabIndex = 5;
             this.btnSuppliers.Text = "Manage Suppliers List";
             this.btnSuppliers.UseVisualStyleBackColor = true;
             this.btnSuppliers.Click += new System.EventHandler(this.btnSuppliers_Click);
             // 
             // btnAddPS
             // 
-            this.btnAddPS.Location = new System.Drawing.Point(31, 310);
+            this.btnAddPS.Location = new System.Drawing.Point(31, 280);
             this.btnAddPS.Name = "btnAddPS";
             this.btnAddPS.Size = new System.Drawing.Size(175, 23);
-            this.btnAddPS.TabIndex = 2;
+            this.btnAddPS.TabIndex = 3;
             this.btnAddPS.Text = "Link a product to a supplier";
             this.btnAddPS.UseVisualStyleBackColor = true;
             this.btnAddPS.Click += new System.EventHandler(this.btnAddPS_Click);
@@ -111,7 +112,7 @@ namespace Workshop4Group8
             this.cmbProduct.Location = new System.Drawing.Point(31, 57);
             this.cmbProduct.Name = "cmbProduct";
             this.cmbProduct.Size = new System.Drawing.Size(187, 21);
-            this.cmbProduct.TabIndex = 3;
+            this.cmbProduct.TabIndex = 0;
             this.cmbProduct.SelectedIndexChanged += new System.EventHandler(this.cmbProduct_SelectedIndexChanged);
             // 
             // cmbSupplier
@@ -121,7 +122,7 @@ namespace Workshop4Group8
             this.cmbSupplier.Location = new System.Drawing.Point(356, 57);
             this.cmbSupplier.Name = "cmbSupplier";
             this.cmbSupplier.Size = new System.Drawing.Size(187, 21);
-            this.cmbSupplier.TabIndex = 3;
+            this.cmbSupplier.TabIndex = 1;
             this.cmbSupplier.SelectedIndexChanged += new System.EventHandler(this.cmbSupplier_SelectedIndexChanged);
             // 
             // label1
@@ -156,7 +157,7 @@ namespace Workshop4Group8
             this.btnClearFilter.Location = new System.Drawing.Point(610, 57);
             this.btnClearFilter.Name = "btnClearFilter";
             this.btnClearFilter.Size = new System.Drawing.Size(75, 23);
-            this.btnClearFilter.TabIndex = 5;
+            this.btnClearFilter.TabIndex = 2;
             this.btnClearFilter.Text = "Clear filter";
             this.btnClearFilter.UseVisualStyleBackColor = true;
             this.btnClearFilter.Click += new System.EventHandler(this.btnClearFilter_Click);
@@ -174,7 +175,7 @@ namespace Workshop4Group8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(719, 423);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnClearFilter);
             this.Controls.Add(this.label3);

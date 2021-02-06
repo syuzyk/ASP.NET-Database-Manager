@@ -15,7 +15,7 @@ namespace TravelExpertsData
         /// </summary>
         /// <param name="packageId">Package's package ID</param>
         /// <returns>List of product names and supplier names.</returns>
-        public static List<PS> GetPPS(int packageId)
+        public static List<PS> GetPPSWithPackageId(int packageId)
         {
             PS ps;
 
@@ -52,13 +52,58 @@ namespace TravelExpertsData
         }
 
         /// <summary>
+        /// Generates packages with a specific product and supplier.
+        /// </summary>
+        /// <param name="packageId">Package's package ID</param>
+        /// <returns>List of product names and supplier names.</returns>
+        public static List<PPS> GetPPSWithPS(string prodName, string supName)
+        {
+            PPS pps;
+
+            List<PPS> ppsList = new List<PPS>();
+
+            using (SqlConnection connection = TravelExpertsDB.GetConnection())
+            {
+                string query = "SELECT PkgName, ProdName, SupName " +
+                               "FROM Packages_Products_Suppliers " +
+                                    "JOIN Products ON Packages_Products_Suppliers.ProductId = Products.ProductId " +
+                                    "JOIN Suppliers ON Packages_Products_Suppliers.SupplierId = Suppliers.SupplierId " +
+                                    "JOIN Packages ON Packages_Products_Suppliers.PackageId = Packages.PackageId " +
+                               "WHERE Products.ProductId = (SELECT ProductId FROM Products WHERE ProdName = '" + prodName + "') " +
+                               "AND Suppliers.SupplierId = (SELECT SupplierId FROM Suppliers WHERE SupName = '" + supName + "') " +
+                               "ORDER BY Packages.PackageId";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection))
+                    {
+                        while (dr.Read())
+                        {
+                            pps = new PPS();
+
+                            pps.PkgName = (string)dr["PkgName"];
+                            pps.ProdName = (string)dr["ProdName"];
+                            pps.SupName = (string)dr["SupName"];
+
+                            ppsList.Add(pps);
+                        }
+                    }
+                }
+            }
+
+            return ppsList;
+        }
+
+        /// <summary>
         /// Delete's a record in Packages_Products_Suppliers
         /// </summary>
         /// <param name="packageId">Package ID of target record</param>
         /// <param name="prodName">Product name of target record</param>
         /// <param name="supName">Supplier name of target record</param>
         /// <returns>True if delete successful, false if not.</returns>
-        public static bool DeletePPSThenConfirm(int packageId, string prodName, string supName)
+        public static bool DeletePPSWithPackageIdThenConfirm(int packageId, string prodName, string supName)
         {
             bool successfullyDeleted;
 
@@ -73,6 +118,36 @@ namespace TravelExpertsData
                 {
                     connection.Open();
                     if (cmd.ExecuteNonQuery() == 1)
+                        successfullyDeleted = true;
+                    else
+                        successfullyDeleted = false;
+                }
+            }
+
+            return successfullyDeleted;
+        }
+
+        /// <summary>
+        /// Delete's a record in Packages_Products_Suppliers
+        /// </summary>
+        /// <param name="packageId">Package ID of target record</param>
+        /// <param name="prodName">Product name of target record</param>
+        /// <param name="supName">Supplier name of target record</param>
+        /// <returns>True if delete successful, false if not.</returns>
+        public static bool DeletePPSWithPSThenConfirm(string prodName, string supName)
+        {
+            bool successfullyDeleted;
+
+            using (SqlConnection connection = TravelExpertsDB.GetConnection())
+            {
+                string deleteStatement = "DELETE FROM Packages_Products_Suppliers " +
+                                         "WHERE ProductId = (SELECT ProductId FROM Products WHERE ProdName = '" + prodName + "') " +
+                                         "AND SupplierId = (SELECT SupplierId FROM Suppliers WHERE SupName = '" + supName + "')";
+
+                using (SqlCommand cmd = new SqlCommand(deleteStatement, connection))
+                {
+                    connection.Open();
+                    if (cmd.ExecuteNonQuery() > 0)
                         successfullyDeleted = true;
                     else
                         successfullyDeleted = false;
@@ -161,7 +236,7 @@ namespace TravelExpertsData
         /// <param name="newProdName">The new Product Name  of the record we are updating.</param>
         /// <param name="newSupName">The new Supplier Name of the record we are updating.</param>
         /// <returns>True if successfully updated, false if not.</returns>
-        public static bool UpdateOrderThenConfirmSuccess(int packageId, string oldProdName, string oldSupName, string newProdName, string newSupName)
+        public static bool UpdatePPSThenConfirmSuccess(int packageId, string oldProdName, string oldSupName, string newProdName, string newSupName)
         {
             bool successfullyUpdated;
 

@@ -53,7 +53,8 @@ namespace Workshop4Group8
             this.cmbProduct.Location = new System.Drawing.Point(16, 52);
             this.cmbProduct.Name = "cmbProduct";
             this.cmbProduct.Size = new System.Drawing.Size(184, 21);
-            this.cmbProduct.TabIndex = 1;
+            this.cmbProduct.TabIndex = 0;
+            this.cmbProduct.SelectedIndexChanged += new System.EventHandler(this.cmbProduct_SelectedIndexChanged);
             // 
             // cmbSupplier
             // 
@@ -62,6 +63,7 @@ namespace Workshop4Group8
             this.cmbSupplier.Name = "cmbSupplier";
             this.cmbSupplier.Size = new System.Drawing.Size(184, 21);
             this.cmbSupplier.TabIndex = 1;
+            this.cmbSupplier.SelectedIndexChanged += new System.EventHandler(this.cmbSupplier_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -77,9 +79,10 @@ namespace Workshop4Group8
             this.btnSubmit.Location = new System.Drawing.Point(16, 197);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 3;
+            this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "button1";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
             // 

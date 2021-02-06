@@ -35,7 +35,7 @@ namespace Workshop4Group8
             packageDataGridView.DataSource = (from p in dbContext.Packages
                                                  orderby p.PackageId
                                                  select p).ToList();
-            dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0,0].Value));
+            dgvPPS.DataSource = PPSDB.GetPPSWithPackageId(Convert.ToInt32(packageDataGridView[0,0].Value));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -98,15 +98,15 @@ namespace Workshop4Group8
                 //If user says yes, try to delete record.
                 if (dialogresult == DialogResult.Yes)
                 {
-                    if (PPSDB.DeletePPSThenConfirm(Convert.ToInt32(packageDataGridView.SelectedCells[0].Value), dgvPPS.SelectedCells[2].Value.ToString(), dgvPPS.SelectedCells[3].Value.ToString()) != true)
+                    if (PPSDB.DeletePPSWithPackageIdThenConfirm(Convert.ToInt32(packageDataGridView.SelectedCells[0].Value), dgvPPS.SelectedCells[2].Value.ToString(), dgvPPS.SelectedCells[3].Value.ToString()) != true)
                     {
                         MessageBox.Show("Someone has deleted or changed that record in the database. Click OK to refresh the data displayed here.", "Concurrency error");
-                        dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
+                        dgvPPS.DataSource = PPSDB.GetPPSWithPackageId(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
                     }
                     else
                     {
                         MessageBox.Show("You have deleted \n\n" + dgvPPS.SelectedCells[2].Value.ToString() + " provided by " + dgvPPS.SelectedCells[3].Value.ToString() + "\n\nfrom the package " + packageDataGridView.SelectedCells[1].Value.ToString() + ".", "Success!");
-                        dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
+                        dgvPPS.DataSource = PPSDB.GetPPSWithPackageId(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
                     }
                 }
             }
@@ -130,7 +130,7 @@ namespace Workshop4Group8
                 //If update was successful, update products DGV.
                 if (result == DialogResult.OK)
                 {
-                    dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
+                    dgvPPS.DataSource = PPSDB.GetPPSWithPackageId(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
                 }
             }
         }
@@ -145,7 +145,7 @@ namespace Workshop4Group8
         {
             //If a row is selected, then refresh data.
             if (packageDataGridView.SelectedCells.Count != 0)
-                dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
+                dgvPPS.DataSource = PPSDB.GetPPSWithPackageId(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace Workshop4Group8
             //If a product was succesfully added, update products DGV.
             if (result == DialogResult.OK)
             {
-                dgvPPS.DataSource = PPSDB.GetPPS(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
+                dgvPPS.DataSource = PPSDB.GetPPSWithPackageId(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
             }
         }
     }

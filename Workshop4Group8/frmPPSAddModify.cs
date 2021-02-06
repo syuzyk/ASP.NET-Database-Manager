@@ -11,6 +11,9 @@ using TravelExpertsData;
 
 namespace Workshop4Group8
 {
+    /// <summary>
+    /// Form for modifying Packages_Products_Packages table.
+    /// </summary>
     public partial class frmPPSAddModify : Form
     {
         public frmPPSAddModify()
@@ -25,10 +28,14 @@ namespace Workshop4Group8
         //This bool indicates which action user is taking.
         bool isAddAndNotModify;
 
-        //Events during Form_Load conflict with the event 
-        //"Product_SelectedInexChanged". This bool is used to override
+        //Some events conflict with the event 
+        //"Supplier_SelectedIndexChanged". This bool is used to override
         //that event and prevent the program from crashing.
-        bool overrideEventProduct_SelectedIndexChanged = true;
+        bool overrideEventSupplier_SelectedIndexChanged = true;
+
+        //When refreshing the combo box list, the most recently selected
+        //supplier gets deleted. This variable retains it.
+        string mostRecentlySelectedSupplier;
 
         /// <summary>
         /// Cancel button will close the form dialog.
@@ -75,7 +82,7 @@ namespace Workshop4Group8
                 cmbSupplier.Enabled = false;
             }
             
-            //If user is modifying, have the combo boxes seslect the product and supplier
+            //If user is modifying, have the combo boxes select the product and supplier
             //user had selected in the Packages form.
             else
             {
@@ -83,7 +90,7 @@ namespace Workshop4Group8
                 btnSubmit.Text = "Update";
                 
                 cmbProduct.SelectedItem = mainPackageForm.currentlySelectedProductName;
-                
+
                 //The currently selected Supplier will probably be in the middle of the combo
                 //box list. When user opens the list on the combo box, it will scroll down
                 //the list to where the currently selected Supplier is. I do not want it
@@ -91,16 +98,16 @@ namespace Workshop4Group8
                 //add the currently selected Supplier to the list before adding the complete
                 //list of suppliers. That way, it will be at the top of the combo box list,
                 //and the list will not have to scroll down to it.
-                cmbSupplier.Items.Add("");
+                cmbSupplier.Items.Clear();
                 cmbSupplier.Items.Add(mainPackageForm.currentlySelectedSupplierName);
-                cmbSupplier.Items.Add("");
 
                 foreach (string supplier in SupplierDB.GetSuppliersForPPS(mainPackageForm.currentlySelectedProductName))
                 {
                     cmbSupplier.Items.Add(supplier);
                 }
-                
-                cmbSupplier.SelectedItem = mainPackageForm.currentlySelectedSupplierName;
+
+                overrideEventSupplier_SelectedIndexChanged = true;
+                cmbSupplier.SelectedIndex = 0;
 
                 lblGandalf.Visible = false;
             }  
@@ -115,37 +122,24 @@ namespace Workshop4Group8
         /// <param name="e"></param>
         private void cmbProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //If this event is not being over-ridden, run it.
-            if (overrideEventProduct_SelectedIndexChanged == false)
+            if (cmbProduct.SelectedItem == null || cmbProduct.SelectedItem.ToString() == "")
             {
-                if (cmbProduct.SelectedItem == null)
-                {
-                    cmbSupplier.Enabled = false;
-                    isReadyForSubmission();
-                }
-                else if (cmbProduct.SelectedItem.ToString() == "")
-                {
-                    cmbSupplier.Enabled = false;
-                    isReadyForSubmission();
-                }
-                else
-                {
-                    cmbSupplier.Enabled = true;
-                    cmbSupplier.Items.Clear();
-                    foreach (string supplier in SupplierDB.GetSuppliersForPPS(cmbProduct.SelectedItem.ToString()))
-                    {
-                        cmbSupplier.Items.Add(supplier);
-                    }
-                    cmbSupplier.SelectedIndex = 0;
-                    btnSubmit.Enabled = false;
-                    lblGandalf.Visible = false;
-                }
+                cmbSupplier.Items.Clear(); 
+                cmbSupplier.Enabled = false;
+                isReadyForSubmission();
             }
-            
-            //After this event was over-ridden once during Form_Load, do
-            //not over-ride it again.
             else
-                overrideEventProduct_SelectedIndexChanged = false;
+            {
+                cmbSupplier.Enabled = true;
+                cmbSupplier.Items.Clear();
+                foreach (string supplier in SupplierDB.GetSuppliersForPPS(cmbProduct.SelectedItem.ToString()))
+                {
+                    cmbSupplier.Items.Add(supplier);
+                }
+                overrideEventSupplier_SelectedIndexChanged = true;
+                cmbSupplier.SelectedIndex = 0;
+                isReadyForSubmission();
+            }
         }
 
         /// <summary>
@@ -155,7 +149,36 @@ namespace Workshop4Group8
         /// <param name="e"></param>
         private void cmbSupplier_SelectedIndexChanged(object sender, EventArgs e)
         {
-            isReadyForSubmission();
+            //If we should not over-ride this event, run this code.
+            if (overrideEventSupplier_SelectedIndexChanged == false)
+            {
+                if (cmbSupplier.SelectedItem != null && cmbSupplier.SelectedItem.ToString() != "")
+                {
+                    mostRecentlySelectedSupplier = cmbSupplier.SelectedItem.ToString();
+                    cmbSupplier.Items.Clear();
+                    cmbSupplier.Items.Add(mostRecentlySelectedSupplier); 
+                }
+
+                else
+                {
+                    mostRecentlySelectedSupplier = "";
+                    cmbSupplier.Items.Clear();
+                }
+
+                foreach (string supplier in SupplierDB.GetSuppliersForPPS(cmbProduct.SelectedItem.ToString()))
+                {
+                    cmbSupplier.Items.Add(supplier);
+                }
+
+                overrideEventSupplier_SelectedIndexChanged = true;
+                cmbSupplier.SelectedIndex = 0;
+
+                isReadyForSubmission();
+            }
+
+            //If this event was over-ridden, don't over-ride it next time.
+            else
+                overrideEventSupplier_SelectedIndexChanged = false;
         }
 
         /// <summary>
@@ -238,7 +261,7 @@ namespace Workshop4Group8
             //Otherwise, user is modifying a record, so customize message box text accordingly.
             else
             {
-                if (PPSDB.UpdateOrderThenConfirmSuccess(mainPackageForm.currentlySelectedPackageId, mainPackageForm.currentlySelectedProductName, 
+                if (PPSDB.UpdatePPSThenConfirmSuccess(mainPackageForm.currentlySelectedPackageId, mainPackageForm.currentlySelectedProductName, 
                     mainPackageForm.currentlySelectedSupplierName, cmbProduct.SelectedItem.ToString(), cmbSupplier.SelectedItem.ToString()) == true)
                     MessageBox.Show(mainPackageForm.currentlySelectedProductName + " provided by " + mainPackageForm.currentlySelectedSupplierName + 
                         "\n\nin the package " + mainPackageForm.currentlySelectedPackageName + " has been successfully updated to \n\n" + 

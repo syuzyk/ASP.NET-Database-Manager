@@ -86,6 +86,12 @@
     <Compile Include="frmPSAddModify.Designer.cs">
       <DependentUpon>frmPSAddModify.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPSDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPSDelete.Designer.cs">
+      <DependentUpon>frmPSDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSuppliers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPSAddModify.resx">
       <DependentUpon>frmPSAddModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPSDelete.resx">
+      <DependentUpon>frmPSDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSuppliers.resx">
       <DependentUpon>frmSuppliers.cs</DependentUpon>

@@ -18,12 +18,20 @@ namespace Workshop4Group8
             InitializeComponent();
         }
 
-        string currentlyDGVSelectedProductName;
-        string currentlyDGVSelectedSupplierName;
+        //On this form, users select rows in the DGV. When user goes 
+        //to the Add/Modify form to edit products/suppliers, that form 
+        //needs to know the information the user selected. That form can 
+        //refer to this information through the following public global variables:
+        public string currentlyDGVSelectedProductName;
+        public string currentlyDGVSelectedSupplierName;
+        public string productFilterCondition = "";
+        public string supplierFilterCondition = "";
 
-        string productFilterCondition = "";
-        string supplierFilterCondition = "";
-
+        /// <summary>
+        /// When form loads, fill combo boxes and DGV with data from database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmPS_Load(object sender, EventArgs e)
         {
             dgvPS.DataSource = PSDB.GetPS("", "");
@@ -41,18 +49,34 @@ namespace Workshop4Group8
             }
         }
 
+        /// <summary>
+        /// Suppliers button allows user to access Suppliers GUI.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSuppliers_Click(object sender, EventArgs e)
         {
             frmSuppliers newform = new frmSuppliers();
             DialogResult result = newform.ShowDialog();
         }
 
+        /// <summary>
+        /// Products button allows user to access Products GUI.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnProducts_Click(object sender, EventArgs e)
         {
             frmProduct newform = new frmProduct();
             DialogResult result = newform.ShowDialog();
         }
 
+        /// <summary>
+        /// Some cells in the products DGV contain buttons.
+        /// This method contains method for the different buttons. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvPS_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
@@ -65,23 +89,65 @@ namespace Workshop4Group8
             {
                 //Select record and confirm with user to delete it.
                 dgvPS.Rows[e.RowIndex].Selected = true;
-                DialogResult dialogresult = MessageBox.Show("Are you sure you wish to delete \n\n" + dgvPS.SelectedCells[2].Value.ToString() + " provided by " + dgvPS.SelectedCells[3].Value.ToString() + "?", "Confirm delete", MessageBoxButtons.YesNo);
+                currentlyDGVSelectedProductName = dgvPS.SelectedCells[2].Value.ToString();
+                currentlyDGVSelectedSupplierName = dgvPS.SelectedCells[3].Value.ToString();
 
-                //If user says yes, try to delete record.
-                if (dialogresult == DialogResult.Yes)
+                //Check how many records in Packages_Products_Suppliers also contain this combination
+                //of product and supplier.
+                //If none, simply ask if user wishes to delete.
+                if (PPSDB.GetPPSWithPS(dgvPS.SelectedCells[2].Value.ToString(), dgvPS.SelectedCells[3].Value.ToString()).Count == 0)
                 {
-                    if (PSDB.DeletePSThenConfirm(dgvPS.SelectedCells[2].Value.ToString(), dgvPS.SelectedCells[3].Value.ToString()) != true)
+                    DialogResult dialogresult = MessageBox.Show("Are you sure you wish to delete \n\n" + dgvPS.SelectedCells[2].Value.ToString() + " provided by " + dgvPS.SelectedCells[3].Value.ToString() + "?", "Confirm delete", MessageBoxButtons.YesNo);
+
+                    //If user says yes, try to delete record.
+                    if (dialogresult == DialogResult.Yes)
                     {
-                        MessageBox.Show("Someone has deleted or changed that record in the database. Click OK to refresh the data displayed here.", "Concurrency error");
-                        dgvPS.DataSource = PSDB.GetPS(productFilterCondition, supplierFilterCondition);
-                    }
-                    else
-                    {
-                        MessageBox.Show("You have deleted \n\n" + dgvPS.SelectedCells[2].Value.ToString() + " provided by " + dgvPS.SelectedCells[3].Value.ToString() + ".", "Success!");
-                        if (PSDB.GetPS(productFilterCondition, supplierFilterCondition).Count > 0)
+                        if (PSDB.DeletePSThenConfirm(dgvPS.SelectedCells[2].Value.ToString(), dgvPS.SelectedCells[3].Value.ToString()) != true)
+                        {
+                            MessageBox.Show("Someone has deleted or changed that record in the database. Click OK to refresh the data displayed here.", "Concurrency error");
                             dgvPS.DataSource = PSDB.GetPS(productFilterCondition, supplierFilterCondition);
+                        }
                         else
-                            dgvPS.DataSource = PSDB.GetPS("", "");
+                        {
+                            MessageBox.Show("You have deleted \n\n" + dgvPS.SelectedCells[2].Value.ToString() + " provided by " + dgvPS.SelectedCells[3].Value.ToString() + ".", "Success!");
+                            if (PSDB.GetPS(productFilterCondition, supplierFilterCondition).Count > 0)
+                                dgvPS.DataSource = PSDB.GetPS(productFilterCondition, supplierFilterCondition);
+                            else
+                                dgvPS.DataSource = PSDB.GetPS("", "");
+                        }
+                    }
+                }
+
+                //If some packages already contain this product and supplier,
+                //inform user that deleting this product and supplier will also 
+                //delete it from those packages. Confirm if user wishes to proceed.
+                else
+                {
+                    frmPSDelete secondForm = new frmPSDelete();
+                    secondForm.mainForm = this;
+                    DialogResult result = secondForm.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        if (PPSDB.DeletePPSWithPSThenConfirm(dgvPS.SelectedCells[2].Value.ToString(), dgvPS.SelectedCells[3].Value.ToString()) != true)
+                            MessageBox.Show("Someone has deleted or changed that product(s) in the package(s).", "Concurrency error");
+                        
+                        if (PSDB.DeletePSThenConfirm(dgvPS.SelectedCells[2].Value.ToString(), dgvPS.SelectedCells[3].Value.ToString()) != true)
+                        {
+                            MessageBox.Show("Someone has deleted or changed that record in the database. Click OK to refresh the data displayed here.", "Concurrency error");
+                            dgvPS.DataSource = PSDB.GetPS(productFilterCondition, supplierFilterCondition);
+                        }
+                        else
+                        {
+                            MessageBox.Show("You have deleted \n\n" + dgvPS.SelectedCells[2].Value.ToString() + " provided by " + dgvPS.SelectedCells[3].Value.ToString() + ".", "Success!");
+                            if (PSDB.GetPS(productFilterCondition, supplierFilterCondition).Count > 0)
+                                dgvPS.DataSource = PSDB.GetPS(productFilterCondition, supplierFilterCondition);
+                            else
+                                dgvPS.DataSource = PSDB.GetPS("", "");
+                        }
+                            
+
+
                     }
                 }
             }
@@ -131,7 +197,13 @@ namespace Workshop4Group8
             }
         }
 
+        /// <summary>
+        /// Whenever user selects a product, filter DGV contents.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbProduct_SelectedIndexChanged(object sender, EventArgs e)
+
         {
             if (cmbProduct.SelectedItem == null || cmbProduct.SelectedItem.ToString() == "")
             {
@@ -160,12 +232,11 @@ namespace Workshop4Group8
             }
         }
 
-        private void btnClearFilter_Click(object sender, EventArgs e)
-        {
-            cmbProduct.SelectedIndex = 0;
-            cmbSupplier.SelectedIndex = 0;
-        }
-
+        /// <summary>
+        /// Whenever user selects a supplier, filter DGV contents.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbSupplier_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbSupplier.SelectedItem == null || cmbSupplier.SelectedItem.ToString() == "")
@@ -193,6 +264,17 @@ namespace Workshop4Group8
                     dgvPS.DataSource = PSDB.GetPS(productFilterCondition, supplierFilterCondition);
                 }
             }
+        }
+
+        /// <summary>
+        /// Clear filter and show all data.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnClearFilter_Click(object sender, EventArgs e)
+        {
+            cmbProduct.SelectedIndex = 0;
+            cmbSupplier.SelectedIndex = 0;
         }
     }
 }

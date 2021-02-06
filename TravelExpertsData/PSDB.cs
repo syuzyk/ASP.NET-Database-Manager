@@ -97,7 +97,8 @@ namespace TravelExpertsData
                                "FROM Products_Suppliers " +
                                    "JOIN Products ON Products_Suppliers.ProductId = Products.ProductId " +
                                    "JOIN Suppliers ON Products_Suppliers.SupplierId = Suppliers.SupplierId " +
-                               "WHERE Products.ProductId > 0" + prodNameCondition + supNameCondition;
+                               "WHERE Products.ProductId > 0" + prodNameCondition + supNameCondition + 
+                               "ORDER BY Products.ProdName, Suppliers.SupName";
 
                 using (SqlCommand cmd = new SqlCommand(query, connection))
                 {
@@ -148,6 +149,78 @@ namespace TravelExpertsData
             }
 
             return successfullyDeleted;
+        }
+
+        /// <summary>
+        /// Checks if a specific product-supplier combination already exists.
+        /// Purpose is to prevent duplicates.
+        /// </summary>
+        /// <param name="packageId">Package ID of the package we are checking.</param>
+        /// <param name="prodName">Product name of the package we are checking.</param>
+        /// <param name="supName">Supplier name of the package we are checking.</param>
+        /// <returns>True if record exists, false if not.</returns>
+        public static bool recordAlreadyExistsInPS(string prodName, string supName)
+        {
+            int recordCount;
+            bool alreadyExists;
+
+            using (SqlConnection connection = TravelExpertsDB.GetConnection())
+            {
+                string query = "SELECT COUNT (*) FROM Products_Suppliers " +
+                               "WHERE ProductId = (SELECT ProductId FROM Products WHERE ProdName = '" + prodName + "') " +
+                                     "AND SupplierId = (SELECT SupplierId FROM Suppliers WHERE SupName = '" + supName + "')";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+
+                    cmd.CommandText = query;
+                    recordCount = (int)cmd.ExecuteScalar();
+
+                    if (recordCount == 0)
+                        alreadyExists = false;
+                    else
+                        alreadyExists = true;
+                }
+            }
+
+            return alreadyExists;
+        }
+
+        /// <summary>
+        /// Updates a record in Products_Suppliers.
+        /// </summary>
+        /// <param name="packageId">Package ID of the record we are updating.</param>
+        /// <param name="oldProdName">The original Product Name of the record we are updating.</param>
+        /// <param name="oldSupName">The original Supplier Name of the record we are updating.</param>
+        /// <param name="newProdName">The new Product Name  of the record we are updating.</param>
+        /// <param name="newSupName">The new Supplier Name of the record we are updating.</param>
+        /// <returns>True if successfully updated, false if not.</returns>
+        public static bool UpdatePSThenConfirmSuccess(string oldProdName, string oldSupName, string newProdName, string newSupName)
+        {
+            bool successfullyUpdated;
+
+            using (SqlConnection connection = TravelExpertsDB.GetConnection())
+            {
+                string updateStatement = "UPDATE Products_Suppliers " +
+                                         "SET " +
+                                             "ProductId = (SELECT ProductId FROM Products WHERE ProdName = '" + newProdName + "'), " +
+                                             "SupplierId = (SELECT SupplierId FROM Suppliers WHERE SupName = '" + newSupName + "') " +
+                                         "WHERE ProductId = (SELECT ProductId FROM Products WHERE ProdName = '" + oldProdName + "') " +
+                                               "AND SupplierId = (SELECT SupplierId FROM Suppliers WHERE SupName = '" + oldSupName + "')";
+
+                using (SqlCommand cmd = new SqlCommand(updateStatement, connection))
+                {
+                    connection.Open();
+
+                    if (cmd.ExecuteNonQuery() == 1)
+                        successfullyUpdated = true;
+                    else
+                        successfullyUpdated = false;
+                }
+            }
+
+            return successfullyUpdated;
         }
     }
 }

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PPS.cs" />
     <Compile Include="PS.cs" />
     <Compile Include="PSDB.cs" />
     <Compile Include="SupplierDB.cs" />
