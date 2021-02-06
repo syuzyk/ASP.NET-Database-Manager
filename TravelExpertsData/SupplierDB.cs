@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace TravelExpertsData
 {
+    //All code here written by Ricky.
+    
     public class SupplierDB
     {
         /// <summary>
