@@ -58,5 +58,10 @@ namespace Workshop4Group8
                 supplierDataGridView.DataSource = db.Suppliers;
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
     }
 }

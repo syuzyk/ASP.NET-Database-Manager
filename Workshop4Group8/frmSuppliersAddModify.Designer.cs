@@ -89,7 +89,7 @@ namespace Workshop4Group8
             // btnSaveSuppliers
             // 
             this.btnSaveSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveSuppliers.Location = new System.Drawing.Point(12, 124);
+            this.btnSaveSuppliers.Location = new System.Drawing.Point(12, 115);
             this.btnSaveSuppliers.Name = "btnSaveSuppliers";
             this.btnSaveSuppliers.Size = new System.Drawing.Size(85, 34);
             this.btnSaveSuppliers.TabIndex = 2;
@@ -100,7 +100,7 @@ namespace Workshop4Group8
             // btnCancelSuppliers
             // 
             this.btnCancelSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelSuppliers.Location = new System.Drawing.Point(321, 124);
+            this.btnCancelSuppliers.Location = new System.Drawing.Point(321, 115);
             this.btnCancelSuppliers.Name = "btnCancelSuppliers";
             this.btnCancelSuppliers.Size = new System.Drawing.Size(81, 34);
             this.btnCancelSuppliers.TabIndex = 3;
@@ -112,8 +112,8 @@ namespace Workshop4Group8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(431, 177);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(431, 160);
             this.Controls.Add(this.btnCancelSuppliers);
             this.Controls.Add(this.btnSaveSuppliers);
             this.Controls.Add(supNameLabel);
@@ -122,7 +122,7 @@ namespace Workshop4Group8
             this.Controls.Add(this.supplierIdTextBox);
             this.Name = "frmSuppliersAddModify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmSuppliersAddModify";
+            this.Text = "Add/Modify Suppliers";
             this.Load += new System.EventHandler(this.frmSuppliersAddModify_Load);
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.ResumeLayout(false);
