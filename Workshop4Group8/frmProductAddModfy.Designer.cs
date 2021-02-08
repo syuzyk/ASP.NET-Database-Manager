@@ -112,7 +112,7 @@ namespace Workshop4Group8
             this.Controls.Add(prodNameLabel);
             this.Controls.Add(this.prodNameTextBox);
             this.Name = "frmProductAddModfy";
-            this.Text = "frmProductAddModfy";
+            this.Text = "Add/Modify Product";
             this.Load += new System.EventHandler(this.frmProductAddModfy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);

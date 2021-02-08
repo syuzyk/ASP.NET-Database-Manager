@@ -42,9 +42,10 @@ namespace Workshop4Group8
             // btnSubmit
             // 
             this.btnSubmit.Enabled = false;
-            this.btnSubmit.Location = new System.Drawing.Point(16, 216);
+            this.btnSubmit.Location = new System.Drawing.Point(21, 266);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(100, 28);
             this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -52,9 +53,10 @@ namespace Workshop4Group8
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(181, 216);
+            this.btnCancel.Location = new System.Drawing.Point(241, 266);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(100, 28);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -63,62 +65,68 @@ namespace Workshop4Group8
             // lblGandalf
             // 
             this.lblGandalf.AutoSize = true;
-            this.lblGandalf.Location = new System.Drawing.Point(13, 196);
+            this.lblGandalf.Location = new System.Drawing.Point(17, 241);
+            this.lblGandalf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGandalf.Name = "lblGandalf";
-            this.lblGandalf.Size = new System.Drawing.Size(229, 13);
+            this.lblGandalf.Size = new System.Drawing.Size(308, 17);
             this.lblGandalf.TabIndex = 1;
             this.lblGandalf.Text = "The database already contains this information.";
             // 
             // cmbProduct
             // 
             this.cmbProduct.FormattingEnabled = true;
-            this.cmbProduct.Location = new System.Drawing.Point(16, 74);
+            this.cmbProduct.Location = new System.Drawing.Point(21, 91);
+            this.cmbProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbProduct.Name = "cmbProduct";
-            this.cmbProduct.Size = new System.Drawing.Size(187, 21);
+            this.cmbProduct.Size = new System.Drawing.Size(248, 24);
             this.cmbProduct.TabIndex = 0;
             this.cmbProduct.SelectedIndexChanged += new System.EventHandler(this.cmbProduct_SelectedIndexChanged);
             // 
             // cmbSupplier
             // 
             this.cmbSupplier.FormattingEnabled = true;
-            this.cmbSupplier.Location = new System.Drawing.Point(16, 151);
+            this.cmbSupplier.Location = new System.Drawing.Point(21, 186);
+            this.cmbSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbSupplier.Name = "cmbSupplier";
-            this.cmbSupplier.Size = new System.Drawing.Size(187, 21);
+            this.cmbSupplier.Size = new System.Drawing.Size(248, 24);
             this.cmbSupplier.TabIndex = 1;
             this.cmbSupplier.SelectedIndexChanged += new System.EventHandler(this.cmbSupplier_SelectedIndexChanged);
             // 
             // lblPackageName
             // 
             this.lblPackageName.AutoSize = true;
-            this.lblPackageName.Location = new System.Drawing.Point(16, 18);
+            this.lblPackageName.Location = new System.Drawing.Point(21, 22);
+            this.lblPackageName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPackageName.Name = "lblPackageName";
-            this.lblPackageName.Size = new System.Drawing.Size(128, 13);
+            this.lblPackageName.Size = new System.Drawing.Size(165, 17);
             this.lblPackageName.TabIndex = 5;
             this.lblPackageName.Text = "Package: Package name";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 118);
+            this.label1.Location = new System.Drawing.Point(21, 145);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "provided by:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 46);
+            this.label2.Location = new System.Drawing.Point(21, 57);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(187, 13);
+            this.label2.Size = new System.Drawing.Size(248, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "Select a Product, and then a Supplier.";
             // 
             // frmPPSAddModify
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(296, 263);
+            this.ClientSize = new System.Drawing.Size(395, 324);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPackageName);
@@ -127,8 +135,9 @@ namespace Workshop4Group8
             this.Controls.Add(this.lblGandalf);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmPPSAddModify";
-            this.Text = "Add/Update Product";
+            this.Text = "Add/Modify Product-Supplier-Package";
             this.Load += new System.EventHandler(this.frmPPSAddModify_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -255,7 +255,7 @@ namespace Workshop4Group8
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPackageAddModify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form2";
+            this.Text = "Add/Modify Package";
             this.Load += new System.EventHandler(this.frmPackageAddModify_Load);
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).EndInit();

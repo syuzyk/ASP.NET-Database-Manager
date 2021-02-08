@@ -42,6 +42,7 @@ namespace Workshop4Group8
             this.label3 = new System.Windows.Forms.Label();
             this.btnClearFilter = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPS)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,34 +53,39 @@ namespace Workshop4Group8
             this.dgvPS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delete,
             this.Update});
-            this.dgvPS.Location = new System.Drawing.Point(31, 107);
+            this.dgvPS.Location = new System.Drawing.Point(41, 132);
+            this.dgvPS.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPS.Name = "dgvPS";
+            this.dgvPS.RowHeadersWidth = 51;
             this.dgvPS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPS.Size = new System.Drawing.Size(654, 150);
+            this.dgvPS.Size = new System.Drawing.Size(872, 185);
             this.dgvPS.TabIndex = 0;
             this.dgvPS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPS_CellClick);
             // 
             // Delete
             // 
             this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 44;
+            this.Delete.Width = 55;
             // 
             // Update
             // 
             this.Update.HeaderText = "Update";
+            this.Update.MinimumWidth = 6;
             this.Update.Name = "Update";
             this.Update.Text = "Update";
             this.Update.UseColumnTextForButtonValue = true;
-            this.Update.Width = 48;
+            this.Update.Width = 60;
             // 
             // btnProducts
             // 
-            this.btnProducts.Location = new System.Drawing.Point(62, 357);
+            this.btnProducts.Location = new System.Drawing.Point(83, 439);
+            this.btnProducts.Margin = new System.Windows.Forms.Padding(4);
             this.btnProducts.Name = "btnProducts";
-            this.btnProducts.Size = new System.Drawing.Size(170, 23);
+            this.btnProducts.Size = new System.Drawing.Size(227, 28);
             this.btnProducts.TabIndex = 4;
             this.btnProducts.Text = "Manage Product List";
             this.btnProducts.UseVisualStyleBackColor = true;
@@ -87,9 +93,10 @@ namespace Workshop4Group8
             // 
             // btnSuppliers
             // 
-            this.btnSuppliers.Location = new System.Drawing.Point(450, 357);
+            this.btnSuppliers.Location = new System.Drawing.Point(600, 439);
+            this.btnSuppliers.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuppliers.Name = "btnSuppliers";
-            this.btnSuppliers.Size = new System.Drawing.Size(170, 23);
+            this.btnSuppliers.Size = new System.Drawing.Size(227, 28);
             this.btnSuppliers.TabIndex = 5;
             this.btnSuppliers.Text = "Manage Suppliers List";
             this.btnSuppliers.UseVisualStyleBackColor = true;
@@ -97,9 +104,10 @@ namespace Workshop4Group8
             // 
             // btnAddPS
             // 
-            this.btnAddPS.Location = new System.Drawing.Point(31, 280);
+            this.btnAddPS.Location = new System.Drawing.Point(41, 345);
+            this.btnAddPS.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddPS.Name = "btnAddPS";
-            this.btnAddPS.Size = new System.Drawing.Size(175, 23);
+            this.btnAddPS.Size = new System.Drawing.Size(233, 28);
             this.btnAddPS.TabIndex = 3;
             this.btnAddPS.Text = "Connect a product to a supplier";
             this.btnAddPS.UseVisualStyleBackColor = true;
@@ -109,9 +117,10 @@ namespace Workshop4Group8
             // 
             this.cmbProduct.DropDownWidth = 187;
             this.cmbProduct.FormattingEnabled = true;
-            this.cmbProduct.Location = new System.Drawing.Point(31, 57);
+            this.cmbProduct.Location = new System.Drawing.Point(41, 70);
+            this.cmbProduct.Margin = new System.Windows.Forms.Padding(4);
             this.cmbProduct.Name = "cmbProduct";
-            this.cmbProduct.Size = new System.Drawing.Size(187, 21);
+            this.cmbProduct.Size = new System.Drawing.Size(248, 24);
             this.cmbProduct.TabIndex = 0;
             this.cmbProduct.SelectedIndexChanged += new System.EventHandler(this.cmbProduct_SelectedIndexChanged);
             // 
@@ -119,44 +128,49 @@ namespace Workshop4Group8
             // 
             this.cmbSupplier.DropDownWidth = 187;
             this.cmbSupplier.FormattingEnabled = true;
-            this.cmbSupplier.Location = new System.Drawing.Point(356, 57);
+            this.cmbSupplier.Location = new System.Drawing.Point(475, 70);
+            this.cmbSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSupplier.Name = "cmbSupplier";
-            this.cmbSupplier.Size = new System.Drawing.Size(187, 21);
+            this.cmbSupplier.Size = new System.Drawing.Size(248, 24);
             this.cmbSupplier.TabIndex = 1;
             this.cmbSupplier.SelectedIndexChanged += new System.EventHandler(this.cmbSupplier_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 29);
+            this.label1.Location = new System.Drawing.Point(37, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.Size = new System.Drawing.Size(146, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Filter by Product type:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(353, 29);
+            this.label2.Location = new System.Drawing.Point(471, 36);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.Size = new System.Drawing.Size(84, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Filter by Pro";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(353, 29);
+            this.label3.Location = new System.Drawing.Point(471, 36);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 13);
+            this.label3.Size = new System.Drawing.Size(118, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Filter by Supplier:";
             // 
             // btnClearFilter
             // 
-            this.btnClearFilter.Location = new System.Drawing.Point(610, 57);
+            this.btnClearFilter.Location = new System.Drawing.Point(813, 70);
+            this.btnClearFilter.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearFilter.Name = "btnClearFilter";
-            this.btnClearFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnClearFilter.Size = new System.Drawing.Size(100, 28);
             this.btnClearFilter.TabIndex = 2;
             this.btnClearFilter.Text = "Clear filter";
             this.btnClearFilter.UseVisualStyleBackColor = true;
@@ -165,17 +179,30 @@ namespace Workshop4Group8
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(269, 29);
+            this.label4.Location = new System.Drawing.Point(359, 36);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 13);
+            this.label4.Size = new System.Drawing.Size(29, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "OR";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(813, 25);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(100, 28);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // frmPS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 423);
+            this.ClientSize = new System.Drawing.Size(959, 521);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnClearFilter);
             this.Controls.Add(this.label3);
@@ -187,8 +214,9 @@ namespace Workshop4Group8
             this.Controls.Add(this.btnSuppliers);
             this.Controls.Add(this.btnProducts);
             this.Controls.Add(this.dgvPS);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPS";
-            this.Text = "Products and Suppliers";
+            this.Text = "Manage Products and Suppliers";
             this.Load += new System.EventHandler(this.frmPS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPS)).EndInit();
             this.ResumeLayout(false);
@@ -211,5 +239,6 @@ namespace Workshop4Group8
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnClearFilter;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

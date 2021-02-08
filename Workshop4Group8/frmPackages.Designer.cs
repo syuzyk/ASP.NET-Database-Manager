@@ -51,6 +51,7 @@ namespace Workshop4Group8
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAddPPS = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.packageDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packages_Products_SuppliersBindingSource)).BeginInit();
@@ -70,10 +71,10 @@ namespace Workshop4Group8
             // 
             // btnModify
             // 
-            this.btnModify.Location = new System.Drawing.Point(177, 349);
+            this.btnModify.Location = new System.Drawing.Point(166, 349);
             this.btnModify.Margin = new System.Windows.Forms.Padding(4);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(134, 45);
+            this.btnModify.Size = new System.Drawing.Size(145, 45);
             this.btnModify.TabIndex = 16;
             this.btnModify.Text = "Modify Package";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -130,6 +131,7 @@ namespace Workshop4Group8
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -141,6 +143,7 @@ namespace Workshop4Group8
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -161,6 +164,7 @@ namespace Workshop4Group8
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 125;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -172,6 +176,7 @@ namespace Workshop4Group8
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 125;
             // 
             // packageBindingSource
             // 
@@ -183,7 +188,7 @@ namespace Workshop4Group8
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(393, 20);
+            this.label1.Size = new System.Drawing.Size(483, 25);
             this.label1.TabIndex = 19;
             this.label1.Text = "Select a package to modify, or click Add to create new.";
             // 
@@ -201,6 +206,7 @@ namespace Workshop4Group8
             this.Update});
             this.dgvPPS.Location = new System.Drawing.Point(16, 419);
             this.dgvPPS.Name = "dgvPPS";
+            this.dgvPPS.RowHeadersWidth = 51;
             this.dgvPPS.Size = new System.Drawing.Size(604, 150);
             this.dgvPPS.TabIndex = 21;
             this.dgvPPS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -208,18 +214,20 @@ namespace Workshop4Group8
             // Delete
             // 
             this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 55;
+            this.Delete.Width = 64;
             // 
             // Update
             // 
             this.Update.HeaderText = "Update";
+            this.Update.MinimumWidth = 6;
             this.Update.Name = "Update";
             this.Update.Text = "Update";
             this.Update.UseColumnTextForButtonValue = true;
-            this.Update.Width = 60;
+            this.Update.Width = 68;
             // 
             // btnAddPPS
             // 
@@ -231,11 +239,23 @@ namespace Workshop4Group8
             this.btnAddPPS.UseVisualStyleBackColor = true;
             this.btnAddPPS.Click += new System.EventHandler(this.btnAddPPS_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(760, 349);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(145, 45);
+            this.btnCancel.TabIndex = 23;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // frmPackages
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1110, 613);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAddPPS);
             this.Controls.Add(this.dgvPPS);
             this.Controls.Add(this.label1);
@@ -246,7 +266,7 @@ namespace Workshop4Group8
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPackages";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Text = "Manage Packages";
             this.Load += new System.EventHandler(this.frmPackages_Load);
             ((System.ComponentModel.ISupportInitialize)(this.packageDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).EndInit();
@@ -276,5 +296,6 @@ namespace Workshop4Group8
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewButtonColumn Update;
         private System.Windows.Forms.Button btnAddPPS;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

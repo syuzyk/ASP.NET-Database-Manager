@@ -173,5 +173,10 @@ namespace Workshop4Group8
                 dgvPPS.DataSource = PPSDB.GetPPSWithPackageId(Convert.ToInt32(packageDataGridView[0, packageDataGridView.SelectedCells[0].RowIndex].Value));
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

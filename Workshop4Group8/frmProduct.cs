@@ -58,5 +58,10 @@ namespace Workshop4Group8
                 RefreshProducts();
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
