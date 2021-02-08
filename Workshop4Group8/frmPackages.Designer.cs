@@ -30,20 +30,13 @@ namespace Workshop4Group8
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.packageDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.packages_Products_SuppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,6 +45,13 @@ namespace Workshop4Group8
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAddPPS = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.packageDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packages_Products_SuppliersBindingSource)).BeginInit();
@@ -60,6 +60,7 @@ namespace Workshop4Group8
             // 
             // btnAdd
             // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(17, 349);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
@@ -71,7 +72,8 @@ namespace Workshop4Group8
             // 
             // btnModify
             // 
-            this.btnModify.Location = new System.Drawing.Point(166, 349);
+            this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModify.Location = new System.Drawing.Point(210, 349);
             this.btnModify.Margin = new System.Windows.Forms.Padding(4);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(145, 45);
@@ -99,84 +101,9 @@ namespace Workshop4Group8
             this.packageDataGridView.RowHeadersWidth = 51;
             this.packageDataGridView.RowTemplate.Height = 24;
             this.packageDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.packageDataGridView.Size = new System.Drawing.Size(893, 295);
+            this.packageDataGridView.Size = new System.Drawing.Size(979, 295);
             this.packageDataGridView.TabIndex = 18;
             this.packageDataGridView.SelectionChanged += new System.EventHandler(this.packageDataGridView_SelectionChanged);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "PackageId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 40;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "PkgName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "PkgStartDate";
-            dataGridViewCellStyle9.Format = "d";
-            dataGridViewCellStyle9.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Start Date";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "PkgEndDate";
-            dataGridViewCellStyle10.Format = "d";
-            dataGridViewCellStyle10.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewTextBoxColumn4.HeaderText = "End Date";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "PkgDesc";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "PkgBasePrice";
-            dataGridViewCellStyle11.Format = "C2";
-            dataGridViewCellStyle11.NullValue = null;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Base Price";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "PkgAgencyCommission";
-            dataGridViewCellStyle12.Format = "C2";
-            dataGridViewCellStyle12.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Agency Commission";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 125;
             // 
             // packageBindingSource
             // 
@@ -207,7 +134,7 @@ namespace Workshop4Group8
             this.dgvPPS.Location = new System.Drawing.Point(16, 419);
             this.dgvPPS.Name = "dgvPPS";
             this.dgvPPS.RowHeadersWidth = 51;
-            this.dgvPPS.Size = new System.Drawing.Size(604, 150);
+            this.dgvPPS.Size = new System.Drawing.Size(526, 150);
             this.dgvPPS.TabIndex = 21;
             this.dgvPPS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -231,9 +158,10 @@ namespace Workshop4Group8
             // 
             // btnAddPPS
             // 
-            this.btnAddPPS.Location = new System.Drawing.Point(16, 578);
+            this.btnAddPPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPPS.Location = new System.Drawing.Point(17, 581);
             this.btnAddPPS.Name = "btnAddPPS";
-            this.btnAddPPS.Size = new System.Drawing.Size(195, 34);
+            this.btnAddPPS.Size = new System.Drawing.Size(195, 45);
             this.btnAddPPS.TabIndex = 22;
             this.btnAddPPS.Text = "Add product to package";
             this.btnAddPPS.UseVisualStyleBackColor = true;
@@ -241,20 +169,96 @@ namespace Workshop4Group8
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(760, 349);
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(439, 349);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(145, 45);
+            this.btnCancel.Size = new System.Drawing.Size(103, 45);
             this.btnCancel.TabIndex = 23;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "PackageId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "PkgName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "PkgStartDate";
+            dataGridViewCellStyle25.Format = "d";
+            dataGridViewCellStyle25.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle25;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Start Date";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "PkgEndDate";
+            dataGridViewCellStyle26.Format = "d";
+            dataGridViewCellStyle26.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle26;
+            this.dataGridViewTextBoxColumn4.HeaderText = "End Date";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "PkgDesc";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "PkgBasePrice";
+            dataGridViewCellStyle27.Format = "C2";
+            dataGridViewCellStyle27.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle27;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Base Price";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "PkgAgencyCommission";
+            dataGridViewCellStyle28.Format = "C2";
+            dataGridViewCellStyle28.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle28;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Agency Commission";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 110;
+            // 
             // frmPackages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1110, 613);
+            this.ClientSize = new System.Drawing.Size(1004, 638);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAddPPS);
             this.Controls.Add(this.dgvPPS);
@@ -265,7 +269,7 @@ namespace Workshop4Group8
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPackages";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manage Packages";
             this.Load += new System.EventHandler(this.frmPackages_Load);
             ((System.ComponentModel.ISupportInitialize)(this.packageDataGridView)).EndInit();
@@ -284,6 +288,12 @@ namespace Workshop4Group8
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.DataGridView packageDataGridView;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource packages_Products_SuppliersBindingSource;
+        private System.Windows.Forms.DataGridView dgvPPS;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.DataGridViewButtonColumn Update;
+        private System.Windows.Forms.Button btnAddPPS;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -291,11 +301,5 @@ namespace Workshop4Group8
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.BindingSource packages_Products_SuppliersBindingSource;
-        private System.Windows.Forms.DataGridView dgvPPS;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.DataGridViewButtonColumn Update;
-        private System.Windows.Forms.Button btnAddPPS;
-        private System.Windows.Forms.Button btnCancel;
     }
 }

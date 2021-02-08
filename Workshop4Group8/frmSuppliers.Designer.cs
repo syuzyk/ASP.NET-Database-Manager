@@ -48,15 +48,18 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.supplierDataGridView.DataSource = this.supplierBindingSource;
-            this.supplierDataGridView.Location = new System.Drawing.Point(24, 23);
+            this.supplierDataGridView.Location = new System.Drawing.Point(32, 28);
+            this.supplierDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.supplierDataGridView.Name = "supplierDataGridView";
-            this.supplierDataGridView.Size = new System.Drawing.Size(383, 280);
+            this.supplierDataGridView.RowHeadersWidth = 51;
+            this.supplierDataGridView.Size = new System.Drawing.Size(511, 345);
             this.supplierDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "SupplierId";
             this.dataGridViewTextBoxColumn1.HeaderText = "Supplier Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 80;
             // 
@@ -64,6 +67,7 @@
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "SupName";
             this.dataGridViewTextBoxColumn2.HeaderText = "Supplier Name";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 225;
             // 
@@ -74,9 +78,10 @@
             // btnAddSuppliers
             // 
             this.btnAddSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddSuppliers.Location = new System.Drawing.Point(24, 319);
+            this.btnAddSuppliers.Location = new System.Drawing.Point(32, 393);
+            this.btnAddSuppliers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddSuppliers.Name = "btnAddSuppliers";
-            this.btnAddSuppliers.Size = new System.Drawing.Size(117, 36);
+            this.btnAddSuppliers.Size = new System.Drawing.Size(156, 44);
             this.btnAddSuppliers.TabIndex = 2;
             this.btnAddSuppliers.Text = "Add Suppliers";
             this.btnAddSuppliers.UseVisualStyleBackColor = true;
@@ -85,9 +90,10 @@
             // btnModifySuppliers
             // 
             this.btnModifySuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifySuppliers.Location = new System.Drawing.Point(158, 319);
+            this.btnModifySuppliers.Location = new System.Drawing.Point(211, 393);
+            this.btnModifySuppliers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModifySuppliers.Name = "btnModifySuppliers";
-            this.btnModifySuppliers.Size = new System.Drawing.Size(117, 36);
+            this.btnModifySuppliers.Size = new System.Drawing.Size(156, 44);
             this.btnModifySuppliers.TabIndex = 3;
             this.btnModifySuppliers.Text = "Modify Suppliers";
             this.btnModifySuppliers.UseVisualStyleBackColor = true;
@@ -96,9 +102,10 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(290, 319);
+            this.btnCancel.Location = new System.Drawing.Point(387, 393);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(117, 36);
+            this.btnCancel.Size = new System.Drawing.Size(156, 44);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -106,16 +113,17 @@
             // 
             // frmSuppliers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(431, 381);
+            this.ClientSize = new System.Drawing.Size(575, 469);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnModifySuppliers);
             this.Controls.Add(this.btnAddSuppliers);
             this.Controls.Add(this.supplierDataGridView);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmSuppliers";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manage Suppliers";
             this.Load += new System.EventHandler(this.frmSuppliers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.supplierDataGridView)).EndInit();

@@ -82,10 +82,11 @@ namespace Workshop4Group8
             // 
             // btnProducts
             // 
-            this.btnProducts.Location = new System.Drawing.Point(83, 439);
+            this.btnProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProducts.Location = new System.Drawing.Point(83, 430);
             this.btnProducts.Margin = new System.Windows.Forms.Padding(4);
             this.btnProducts.Name = "btnProducts";
-            this.btnProducts.Size = new System.Drawing.Size(227, 28);
+            this.btnProducts.Size = new System.Drawing.Size(227, 37);
             this.btnProducts.TabIndex = 4;
             this.btnProducts.Text = "Manage Product List";
             this.btnProducts.UseVisualStyleBackColor = true;
@@ -93,10 +94,11 @@ namespace Workshop4Group8
             // 
             // btnSuppliers
             // 
-            this.btnSuppliers.Location = new System.Drawing.Point(600, 439);
+            this.btnSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuppliers.Location = new System.Drawing.Point(600, 430);
             this.btnSuppliers.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuppliers.Name = "btnSuppliers";
-            this.btnSuppliers.Size = new System.Drawing.Size(227, 28);
+            this.btnSuppliers.Size = new System.Drawing.Size(227, 37);
             this.btnSuppliers.TabIndex = 5;
             this.btnSuppliers.Text = "Manage Suppliers List";
             this.btnSuppliers.UseVisualStyleBackColor = true;
@@ -104,10 +106,11 @@ namespace Workshop4Group8
             // 
             // btnAddPS
             // 
-            this.btnAddPS.Location = new System.Drawing.Point(41, 345);
+            this.btnAddPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPS.Location = new System.Drawing.Point(41, 337);
             this.btnAddPS.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddPS.Name = "btnAddPS";
-            this.btnAddPS.Size = new System.Drawing.Size(233, 28);
+            this.btnAddPS.Size = new System.Drawing.Size(269, 37);
             this.btnAddPS.TabIndex = 3;
             this.btnAddPS.Text = "Connect a product to a supplier";
             this.btnAddPS.UseVisualStyleBackColor = true;
@@ -116,32 +119,35 @@ namespace Workshop4Group8
             // cmbProduct
             // 
             this.cmbProduct.DropDownWidth = 187;
+            this.cmbProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProduct.FormattingEnabled = true;
             this.cmbProduct.Location = new System.Drawing.Point(41, 70);
             this.cmbProduct.Margin = new System.Windows.Forms.Padding(4);
             this.cmbProduct.Name = "cmbProduct";
-            this.cmbProduct.Size = new System.Drawing.Size(248, 24);
+            this.cmbProduct.Size = new System.Drawing.Size(248, 28);
             this.cmbProduct.TabIndex = 0;
             this.cmbProduct.SelectedIndexChanged += new System.EventHandler(this.cmbProduct_SelectedIndexChanged);
             // 
             // cmbSupplier
             // 
             this.cmbSupplier.DropDownWidth = 187;
+            this.cmbSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSupplier.FormattingEnabled = true;
             this.cmbSupplier.Location = new System.Drawing.Point(475, 70);
             this.cmbSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSupplier.Name = "cmbSupplier";
-            this.cmbSupplier.Size = new System.Drawing.Size(248, 24);
+            this.cmbSupplier.Size = new System.Drawing.Size(248, 28);
             this.cmbSupplier.TabIndex = 1;
             this.cmbSupplier.SelectedIndexChanged += new System.EventHandler(this.cmbSupplier_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(37, 36);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 17);
+            this.label1.Size = new System.Drawing.Size(173, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Filter by Product type:";
             // 
@@ -158,15 +164,17 @@ namespace Workshop4Group8
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(471, 36);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 17);
+            this.label3.Size = new System.Drawing.Size(140, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Filter by Supplier:";
             // 
             // btnClearFilter
             // 
+            this.btnClearFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearFilter.Location = new System.Drawing.Point(813, 70);
             this.btnClearFilter.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearFilter.Name = "btnClearFilter";
@@ -179,15 +187,17 @@ namespace Workshop4Group8
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(359, 36);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 17);
+            this.label4.Size = new System.Drawing.Size(34, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "OR";
             // 
             // btnCancel
             // 
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(813, 25);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
@@ -216,6 +226,7 @@ namespace Workshop4Group8
             this.Controls.Add(this.dgvPS);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manage Products and Suppliers";
             this.Load += new System.EventHandler(this.frmPS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPS)).EndInit();

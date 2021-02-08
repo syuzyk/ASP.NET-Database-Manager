@@ -44,7 +44,7 @@ namespace Workshop4Group8
             // prodNameLabel
             // 
             prodNameLabel.AutoSize = true;
-            prodNameLabel.Location = new System.Drawing.Point(83, 60);
+            prodNameLabel.Location = new System.Drawing.Point(22, 47);
             prodNameLabel.Name = "prodNameLabel";
             prodNameLabel.Size = new System.Drawing.Size(83, 17);
             prodNameLabel.TabIndex = 1;
@@ -53,7 +53,7 @@ namespace Workshop4Group8
             // prodNameTextBox
             // 
             this.prodNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProdName", true));
-            this.prodNameTextBox.Location = new System.Drawing.Point(183, 57);
+            this.prodNameTextBox.Location = new System.Drawing.Point(122, 44);
             this.prodNameTextBox.Name = "prodNameTextBox";
             this.prodNameTextBox.Size = new System.Drawing.Size(100, 22);
             this.prodNameTextBox.TabIndex = 2;
@@ -64,19 +64,21 @@ namespace Workshop4Group8
             // 
             // exit
             // 
-            this.exit.Location = new System.Drawing.Point(208, 115);
+            this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exit.Location = new System.Drawing.Point(147, 112);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(75, 23);
+            this.exit.Size = new System.Drawing.Size(75, 36);
             this.exit.TabIndex = 8;
-            this.exit.Text = "Exit";
+            this.exit.Text = "Cancel";
             this.exit.UseVisualStyleBackColor = true;
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(95, 115);
+            this.save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save.Location = new System.Drawing.Point(34, 112);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(75, 23);
+            this.save.Size = new System.Drawing.Size(74, 36);
             this.save.TabIndex = 7;
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = true;
@@ -85,7 +87,7 @@ namespace Workshop4Group8
             // productIdTextBox
             // 
             this.productIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductId", true));
-            this.productIdTextBox.Location = new System.Drawing.Point(183, 29);
+            this.productIdTextBox.Location = new System.Drawing.Point(122, 16);
             this.productIdTextBox.Name = "productIdTextBox";
             this.productIdTextBox.ReadOnly = true;
             this.productIdTextBox.Size = new System.Drawing.Size(100, 22);
@@ -94,7 +96,7 @@ namespace Workshop4Group8
             // productID
             // 
             this.productID.AutoSize = true;
-            this.productID.Location = new System.Drawing.Point(88, 32);
+            this.productID.Location = new System.Drawing.Point(27, 19);
             this.productID.Name = "productID";
             this.productID.Size = new System.Drawing.Size(78, 17);
             this.productID.TabIndex = 10;
@@ -104,7 +106,7 @@ namespace Workshop4Group8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 174);
+            this.ClientSize = new System.Drawing.Size(248, 174);
             this.Controls.Add(this.productID);
             this.Controls.Add(this.productIdTextBox);
             this.Controls.Add(this.exit);
@@ -112,6 +114,7 @@ namespace Workshop4Group8
             this.Controls.Add(prodNameLabel);
             this.Controls.Add(this.prodNameTextBox);
             this.Name = "frmProductAddModfy";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add/Modify Product";
             this.Load += new System.EventHandler(this.frmProductAddModfy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();

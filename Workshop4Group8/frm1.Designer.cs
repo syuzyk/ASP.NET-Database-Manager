@@ -68,8 +68,9 @@ namespace Workshop4Group8
             this.Controls.Add(this.product);
             this.Controls.Add(this.Packages);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Package and Product Manager - Home";
             this.AutoSizeChanged += new System.EventHandler(this.frm1_Resize);
             this.Load += new System.EventHandler(this.frm1_Load);
