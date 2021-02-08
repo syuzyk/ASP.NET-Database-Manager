@@ -58,7 +58,7 @@ namespace Workshop4Group8
             this.dgvPS.Name = "dgvPS";
             this.dgvPS.RowHeadersWidth = 51;
             this.dgvPS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPS.Size = new System.Drawing.Size(872, 185);
+            this.dgvPS.Size = new System.Drawing.Size(738, 185);
             this.dgvPS.TabIndex = 0;
             this.dgvPS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPS_CellClick);
             // 
@@ -95,7 +95,7 @@ namespace Workshop4Group8
             // btnSuppliers
             // 
             this.btnSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuppliers.Location = new System.Drawing.Point(600, 430);
+            this.btnSuppliers.Location = new System.Drawing.Point(457, 430);
             this.btnSuppliers.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuppliers.Name = "btnSuppliers";
             this.btnSuppliers.Size = new System.Drawing.Size(227, 37);
@@ -133,7 +133,7 @@ namespace Workshop4Group8
             this.cmbSupplier.DropDownWidth = 187;
             this.cmbSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSupplier.FormattingEnabled = true;
-            this.cmbSupplier.Location = new System.Drawing.Point(475, 70);
+            this.cmbSupplier.Location = new System.Drawing.Point(397, 70);
             this.cmbSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSupplier.Name = "cmbSupplier";
             this.cmbSupplier.Size = new System.Drawing.Size(248, 28);
@@ -154,7 +154,7 @@ namespace Workshop4Group8
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(471, 36);
+            this.label2.Location = new System.Drawing.Point(393, 36);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 17);
@@ -165,7 +165,7 @@ namespace Workshop4Group8
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(471, 36);
+            this.label3.Location = new System.Drawing.Point(393, 36);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 20);
@@ -175,7 +175,7 @@ namespace Workshop4Group8
             // btnClearFilter
             // 
             this.btnClearFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearFilter.Location = new System.Drawing.Point(813, 70);
+            this.btnClearFilter.Location = new System.Drawing.Point(679, 74);
             this.btnClearFilter.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearFilter.Name = "btnClearFilter";
             this.btnClearFilter.Size = new System.Drawing.Size(100, 28);
@@ -188,7 +188,7 @@ namespace Workshop4Group8
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(359, 36);
+            this.label4.Location = new System.Drawing.Point(301, 33);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 20);
@@ -198,7 +198,7 @@ namespace Workshop4Group8
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(813, 25);
+            this.btnCancel.Location = new System.Drawing.Point(679, 29);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 28);
@@ -211,7 +211,8 @@ namespace Workshop4Group8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 521);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.ClientSize = new System.Drawing.Size(800, 521);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnClearFilter);

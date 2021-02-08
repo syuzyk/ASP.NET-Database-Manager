@@ -41,7 +41,7 @@ namespace Workshop4Group8
             // 
             this.dgvPPS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPPS.Location = new System.Drawing.Point(35, 98);
-            this.dgvPPS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPPS.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPPS.Name = "dgvPPS";
             this.dgvPPS.RowHeadersWidth = 51;
             this.dgvPPS.Size = new System.Drawing.Size(559, 185);
@@ -73,7 +73,7 @@ namespace Workshop4Group8
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOK.Location = new System.Drawing.Point(164, 368);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(236, 36);
             this.btnOK.TabIndex = 2;
@@ -85,7 +85,7 @@ namespace Workshop4Group8
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(493, 368);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 36);
             this.btnCancel.TabIndex = 3;
@@ -97,13 +97,14 @@ namespace Workshop4Group8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.ClientSize = new System.Drawing.Size(636, 430);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.dgvPPS);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPSDelete";
             this.Text = "Warning";
             this.Load += new System.EventHandler(this.frmPSDelete_Load);

@@ -233,6 +233,7 @@ namespace Workshop4Group8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.ClientSize = new System.Drawing.Size(394, 392);
             this.Controls.Add(this.btnAddCancel);
             this.Controls.Add(this.btnAddOk);
