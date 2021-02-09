@@ -234,8 +234,12 @@ namespace Workshop4Group8
         /// <param name="e"></param>
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //If user's selection does not exist in Products_Suppliers, inform user of this
-            //and confirm whether they still wish to proceed.
+            //bool value determines whether to proceed with add/modify, depending on some
+            //if conditions.
+            bool proceed = true;
+
+            //Check if user's selection exists in Products_Suppliers, and check ifthey still wish to proceed.
+            //The only time where we do NOT proceed is if user clicks 'No' in dialog.
             if (PSDB.recordExistsInPS(cmbProduct.SelectedItem.ToString(), cmbSupplier.SelectedItem.ToString()) == false)
             {
                 DialogResult dialogresult = MessageBox.Show("Are you sure that " + cmbProduct.SelectedItem.ToString() + " is being provided by " + 
@@ -245,34 +249,44 @@ namespace Workshop4Group8
                     if (PSDB.addToPSThenConfirmSuccess(cmbProduct.SelectedItem.ToString(), cmbSupplier.SelectedItem.ToString()) != true)
                         MessageBox.Show("Database error, please contact your administrator");
                 }
-            }
-
-            //If user is adding a record, customize message box text accordingly.
-            if (isAddAndNotModify == true)
-            {
-                if (PPSDB.addToPPSThenConfirmSuccess(mainPackageForm.currentlySelectedPackageId, cmbProduct.SelectedItem.ToString(), 
-                    cmbSupplier.SelectedItem.ToString()) == true)
-                    MessageBox.Show("You have added \n\n" + cmbProduct.SelectedItem.ToString() + " provided by " + cmbSupplier.SelectedItem.ToString() + 
-                        "\n\nto the package " + mainPackageForm.currentlySelectedPackageName + ".", "Success!");
                 else
-                    MessageBox.Show("Database error, please contact your administrator");
-
-                DialogResult = DialogResult.OK;
+                {
+                    proceed = false;
+                }
             }
 
-            //Otherwise, user is modifying a record, so customize message box text accordingly.
-            else
+            //If we are clear to proceed with add/modify, proceed.
+            if (proceed == true)
             {
-                if (PPSDB.UpdatePPSThenConfirmSuccess(mainPackageForm.currentlySelectedPackageId, mainPackageForm.currentlySelectedProductName, 
-                    mainPackageForm.currentlySelectedSupplierName, cmbProduct.SelectedItem.ToString(), cmbSupplier.SelectedItem.ToString()) == true)
-                    MessageBox.Show(mainPackageForm.currentlySelectedProductName + " provided by " + mainPackageForm.currentlySelectedSupplierName + 
-                        "\n\nin the package " + mainPackageForm.currentlySelectedPackageName + " has been successfully updated to \n\n" + 
-                        cmbProduct.SelectedItem.ToString() + " provided by " + cmbSupplier.SelectedItem.ToString() + ".", "Success!");
-                else
-                    MessageBox.Show("Database error, please contact your administrator");
+                //If user is adding a record, customize message box text accordingly.
+                if (isAddAndNotModify == true)
+                {
+                    if (PPSDB.addToPPSThenConfirmSuccess(mainPackageForm.currentlySelectedPackageId, cmbProduct.SelectedItem.ToString(), 
+                        cmbSupplier.SelectedItem.ToString()) == true)
+                        MessageBox.Show("You have added \n\n" + cmbProduct.SelectedItem.ToString() + " provided by " + cmbSupplier.SelectedItem.ToString() + 
+                            "\n\nto the package " + mainPackageForm.currentlySelectedPackageName + ".", "Success!");
+                    else
+                        MessageBox.Show("Database error, please contact your administrator");
 
-                DialogResult = DialogResult.OK;
+                    DialogResult = DialogResult.OK;
+                }
+
+                //Otherwise, user is modifying a record, so customize message box text accordingly.
+                else
+                {
+                    if (PPSDB.UpdatePPSThenConfirmSuccess(mainPackageForm.currentlySelectedPackageId, mainPackageForm.currentlySelectedProductName, 
+                        mainPackageForm.currentlySelectedSupplierName, cmbProduct.SelectedItem.ToString(), cmbSupplier.SelectedItem.ToString()) == true)
+                        MessageBox.Show(mainPackageForm.currentlySelectedProductName + " provided by " + mainPackageForm.currentlySelectedSupplierName + 
+                            "\n\nin the package " + mainPackageForm.currentlySelectedPackageName + " has been successfully updated to \n\n" + 
+                            cmbProduct.SelectedItem.ToString() + " provided by " + cmbSupplier.SelectedItem.ToString() + ".", "Success!");
+                    else
+                        MessageBox.Show("Database error, please contact your administrator");
+
+                    DialogResult = DialogResult.OK;
+                }
             }
+
+            
         }
     }
 }
