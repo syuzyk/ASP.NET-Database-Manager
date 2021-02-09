@@ -239,7 +239,7 @@ namespace Workshop4Group8
             bool proceed = true;
 
             //Check if user's selection exists in Products_Suppliers, and check ifthey still wish to proceed.
-            //The only time where we do NOT proceed is if user clicks 'No' in dialog.
+            //The only time where we do NOT proceed is if user clicks 'No' in dialog or if there is database error.
             if (PSDB.recordExistsInPS(cmbProduct.SelectedItem.ToString(), cmbSupplier.SelectedItem.ToString()) == false)
             {
                 DialogResult dialogresult = MessageBox.Show("Are you sure that " + cmbProduct.SelectedItem.ToString() + " is being provided by " + 
@@ -247,7 +247,11 @@ namespace Workshop4Group8
                 if (dialogresult == DialogResult.Yes)
                 {
                     if (PSDB.addToPSThenConfirmSuccess(cmbProduct.SelectedItem.ToString(), cmbSupplier.SelectedItem.ToString()) != true)
-                        MessageBox.Show("Database error, please contact your administrator");
+                    {
+                        MessageBox.Show("Database error, please contact your administrator"); 
+                        proceed = false;
+                    }
+                        
                 }
                 else
                 {
