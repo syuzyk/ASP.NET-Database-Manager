@@ -190,7 +190,7 @@ namespace Workshop4Group8
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(483, 25);
+            this.label1.Size = new System.Drawing.Size(393, 20);
             this.label1.TabIndex = 19;
             this.label1.Text = "Select a package to modify, or click Add to create new.";
             // 
@@ -220,7 +220,7 @@ namespace Workshop4Group8
             this.Delete.Name = "Delete";
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 64;
+            this.Delete.Width = 55;
             // 
             // Update
             // 
@@ -229,16 +229,16 @@ namespace Workshop4Group8
             this.Update.Name = "Update";
             this.Update.Text = "Update";
             this.Update.UseColumnTextForButtonValue = true;
-            this.Update.Width = 68;
+            this.Update.Width = 60;
             // 
             // btnAddPPS
             // 
             this.btnAddPPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPPS.Location = new System.Drawing.Point(17, 581);
             this.btnAddPPS.Name = "btnAddPPS";
-            this.btnAddPPS.Size = new System.Drawing.Size(195, 45);
+            this.btnAddPPS.Size = new System.Drawing.Size(200, 45);
             this.btnAddPPS.TabIndex = 22;
-            this.btnAddPPS.Text = "Add product to package";
+            this.btnAddPPS.Text = "Add product to this package";
             this.btnAddPPS.UseVisualStyleBackColor = true;
             this.btnAddPPS.Click += new System.EventHandler(this.btnAddPPS_Click);
             // 
@@ -256,7 +256,7 @@ namespace Workshop4Group8
             // 
             // frmPackages
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.ClientSize = new System.Drawing.Size(1004, 638);
