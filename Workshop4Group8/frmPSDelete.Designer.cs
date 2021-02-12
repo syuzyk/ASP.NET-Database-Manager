@@ -41,11 +41,11 @@ namespace Workshop4Group8
             // 
             this.dgvPPS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPPS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPPS.Location = new System.Drawing.Point(33, 73);
+            this.dgvPPS.Location = new System.Drawing.Point(32, 107);
             this.dgvPPS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvPPS.Name = "dgvPPS";
             this.dgvPPS.RowHeadersWidth = 51;
-            this.dgvPPS.Size = new System.Drawing.Size(482, 231);
+            this.dgvPPS.Size = new System.Drawing.Size(482, 173);
             this.dgvPPS.TabIndex = 0;
             // 
             // lblWarning
@@ -62,10 +62,10 @@ namespace Workshop4Group8
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 333);
+            this.label1.Location = new System.Drawing.Point(28, 294);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(486, 72);
+            this.label1.Size = new System.Drawing.Size(440, 72);
             this.label1.TabIndex = 1;
             this.label1.Text = "Click \"Delete from this table AND all packages\" to do so; otherwise click \"Cancel" +
     "\".";
@@ -73,10 +73,10 @@ namespace Workshop4Group8
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(33, 398);
+            this.btnOK.Location = new System.Drawing.Point(32, 353);
             this.btnOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(346, 45);
+            this.btnOK.Size = new System.Drawing.Size(322, 45);
             this.btnOK.TabIndex = 2;
             this.btnOK.Text = "Delete from this table AND all packages";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@ namespace Workshop4Group8
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(415, 397);
+            this.btnCancel.Location = new System.Drawing.Point(414, 352);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 47);
@@ -99,7 +99,7 @@ namespace Workshop4Group8
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(182)))), ((int)(((byte)(177)))));
-            this.ClientSize = new System.Drawing.Size(551, 471);
+            this.ClientSize = new System.Drawing.Size(551, 419);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label1);
