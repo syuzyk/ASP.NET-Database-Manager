@@ -223,7 +223,7 @@ namespace Workshop4Group8
             // 
             this.btnAddCancel.Location = new System.Drawing.Point(254, 334);
             this.btnAddCancel.Name = "btnAddCancel";
-            this.btnAddCancel.Size = new System.Drawing.Size(126, 45);
+            this.btnAddCancel.Size = new System.Drawing.Size(87, 45);
             this.btnAddCancel.TabIndex = 34;
             this.btnAddCancel.Text = "Cancel";
             this.btnAddCancel.UseVisualStyleBackColor = true;
@@ -233,7 +233,7 @@ namespace Workshop4Group8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(182)))), ((int)(((byte)(177)))));
             this.ClientSize = new System.Drawing.Size(394, 392);
             this.Controls.Add(this.btnAddCancel);
             this.Controls.Add(this.btnAddOk);

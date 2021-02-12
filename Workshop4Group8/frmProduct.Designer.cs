@@ -79,11 +79,11 @@ namespace Workshop4Group8
             // update
             // 
             this.update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update.Location = new System.Drawing.Point(221, 270);
+            this.update.Location = new System.Drawing.Point(170, 270);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(84, 34);
+            this.update.Size = new System.Drawing.Size(146, 34);
             this.update.TabIndex = 6;
-            this.update.Text = "Update";
+            this.update.Text = "Modify Product";
             this.update.UseVisualStyleBackColor = true;
             this.update.Click += new System.EventHandler(this.update_Click);
             // 
@@ -92,9 +92,9 @@ namespace Workshop4Group8
             this.newproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newproduct.Location = new System.Drawing.Point(21, 270);
             this.newproduct.Name = "newproduct";
-            this.newproduct.Size = new System.Drawing.Size(150, 34);
+            this.newproduct.Size = new System.Drawing.Size(124, 34);
             this.newproduct.TabIndex = 5;
-            this.newproduct.Text = "Add New Product";
+            this.newproduct.Text = "Add Product";
             this.newproduct.UseVisualStyleBackColor = true;
             this.newproduct.Click += new System.EventHandler(this.newproduct_Click);
             // 

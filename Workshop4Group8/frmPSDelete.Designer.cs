@@ -40,19 +40,21 @@ namespace Workshop4Group8
             // dgvPPS
             // 
             this.dgvPPS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPPS.Location = new System.Drawing.Point(26, 80);
+            this.dgvPPS.Location = new System.Drawing.Point(35, 98);
+            this.dgvPPS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPPS.Name = "dgvPPS";
             this.dgvPPS.RowHeadersWidth = 51;
-            this.dgvPPS.Size = new System.Drawing.Size(419, 150);
+            this.dgvPPS.Size = new System.Drawing.Size(559, 185);
             this.dgvPPS.TabIndex = 0;
             // 
             // lblWarning
             // 
             this.lblWarning.AutoSize = true;
             this.lblWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWarning.Location = new System.Drawing.Point(26, 24);
+            this.lblWarning.Location = new System.Drawing.Point(35, 30);
+            this.lblWarning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(45, 16);
+            this.lblWarning.Size = new System.Drawing.Size(53, 20);
             this.lblWarning.TabIndex = 1;
             this.lblWarning.Text = "label1";
             // 
@@ -60,18 +62,20 @@ namespace Workshop4Group8
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 263);
+            this.label1.Location = new System.Drawing.Point(35, 324);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(402, 16);
+            this.label1.Size = new System.Drawing.Size(508, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Click \"Delete from all packages\" to do so; otherwise click \"Cancel\".";
             // 
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(123, 299);
+            this.btnOK.Location = new System.Drawing.Point(164, 368);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(177, 29);
+            this.btnOK.Size = new System.Drawing.Size(236, 36);
             this.btnOK.TabIndex = 2;
             this.btnOK.Text = "Delete from all packages";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@ namespace Workshop4Group8
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(370, 299);
+            this.btnCancel.Location = new System.Drawing.Point(493, 368);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 29);
+            this.btnCancel.Size = new System.Drawing.Size(100, 36);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -90,15 +95,16 @@ namespace Workshop4Group8
             // 
             // frmPSDelete
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
-            this.ClientSize = new System.Drawing.Size(477, 349);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(182)))), ((int)(((byte)(177)))));
+            this.ClientSize = new System.Drawing.Size(636, 430);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.dgvPPS);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmPSDelete";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Warning";
