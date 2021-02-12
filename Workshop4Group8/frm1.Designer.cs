@@ -36,11 +36,11 @@ namespace Workshop4Group8
             // 
             // Packages
             // 
-            this.Packages.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Packages.Location = new System.Drawing.Point(75, 479);
+            this.Packages.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Packages.Location = new System.Drawing.Point(25, 386);
             this.Packages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Packages.Name = "Packages";
-            this.Packages.Size = new System.Drawing.Size(364, 107);
+            this.Packages.Size = new System.Drawing.Size(303, 134);
             this.Packages.TabIndex = 1;
             this.Packages.Text = "Manage Packages";
             this.Packages.UseVisualStyleBackColor = true;
@@ -48,27 +48,28 @@ namespace Workshop4Group8
             // 
             // product
             // 
-            this.product.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.product.Location = new System.Drawing.Point(641, 479);
+            this.product.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product.Location = new System.Drawing.Point(362, 386);
             this.product.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.product.Name = "product";
-            this.product.Size = new System.Drawing.Size(364, 107);
+            this.product.Size = new System.Drawing.Size(302, 134);
             this.product.TabIndex = 2;
-            this.product.Text = "Manage Products";
+            this.product.Text = "Manage Products and Suppliers";
             this.product.UseVisualStyleBackColor = true;
             this.product.Click += new System.EventHandler(this.button3_Click);
             // 
             // frm1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1085, 644);
+            this.ClientSize = new System.Drawing.Size(696, 551);
             this.Controls.Add(this.product);
             this.Controls.Add(this.Packages);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Package and Product Manager - Home";

@@ -93,10 +93,10 @@ namespace Workshop4Group8
             // btnSaveSuppliers
             // 
             this.btnSaveSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveSuppliers.Location = new System.Drawing.Point(16, 142);
+            this.btnSaveSuppliers.Location = new System.Drawing.Point(252, 139);
             this.btnSaveSuppliers.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveSuppliers.Name = "btnSaveSuppliers";
-            this.btnSaveSuppliers.Size = new System.Drawing.Size(113, 42);
+            this.btnSaveSuppliers.Size = new System.Drawing.Size(113, 45);
             this.btnSaveSuppliers.TabIndex = 2;
             this.btnSaveSuppliers.Text = "Save";
             this.btnSaveSuppliers.UseVisualStyleBackColor = true;
@@ -105,10 +105,10 @@ namespace Workshop4Group8
             // btnCancelSuppliers
             // 
             this.btnCancelSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelSuppliers.Location = new System.Drawing.Point(402, 142);
+            this.btnCancelSuppliers.Location = new System.Drawing.Point(402, 139);
             this.btnCancelSuppliers.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelSuppliers.Name = "btnCancelSuppliers";
-            this.btnCancelSuppliers.Size = new System.Drawing.Size(108, 42);
+            this.btnCancelSuppliers.Size = new System.Drawing.Size(108, 45);
             this.btnCancelSuppliers.TabIndex = 3;
             this.btnCancelSuppliers.Text = "Cancel";
             this.btnCancelSuppliers.UseVisualStyleBackColor = true;

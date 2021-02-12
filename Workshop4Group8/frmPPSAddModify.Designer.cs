@@ -43,8 +43,8 @@ namespace Workshop4Group8
             // 
             this.btnSubmit.Enabled = false;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(21, 230);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmit.Location = new System.Drawing.Point(29, 311);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(100, 45);
             this.btnSubmit.TabIndex = 2;
@@ -55,10 +55,10 @@ namespace Workshop4Group8
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(224, 230);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Location = new System.Drawing.Point(194, 311);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(87, 45);
+            this.btnCancel.Size = new System.Drawing.Size(100, 45);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -67,10 +67,10 @@ namespace Workshop4Group8
             // lblGandalf
             // 
             this.lblGandalf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGandalf.Location = new System.Drawing.Point(17, 295);
+            this.lblGandalf.Location = new System.Drawing.Point(21, 230);
             this.lblGandalf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGandalf.Name = "lblGandalf";
-            this.lblGandalf.Size = new System.Drawing.Size(335, 71);
+            this.lblGandalf.Size = new System.Drawing.Size(288, 71);
             this.lblGandalf.TabIndex = 1;
             this.lblGandalf.Text = "The database already contains this information.\r\nPlease change your selections.";
             // 
@@ -78,10 +78,10 @@ namespace Workshop4Group8
             // 
             this.cmbProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProduct.FormattingEnabled = true;
-            this.cmbProduct.Location = new System.Drawing.Point(21, 91);
-            this.cmbProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbProduct.Location = new System.Drawing.Point(21, 102);
+            this.cmbProduct.Margin = new System.Windows.Forms.Padding(4);
             this.cmbProduct.Name = "cmbProduct";
-            this.cmbProduct.Size = new System.Drawing.Size(248, 28);
+            this.cmbProduct.Size = new System.Drawing.Size(290, 28);
             this.cmbProduct.TabIndex = 0;
             this.cmbProduct.SelectedIndexChanged += new System.EventHandler(this.cmbProduct_SelectedIndexChanged);
             // 
@@ -90,20 +90,20 @@ namespace Workshop4Group8
             this.cmbSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSupplier.FormattingEnabled = true;
             this.cmbSupplier.Location = new System.Drawing.Point(21, 186);
-            this.cmbSupplier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSupplier.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSupplier.Name = "cmbSupplier";
-            this.cmbSupplier.Size = new System.Drawing.Size(248, 28);
+            this.cmbSupplier.Size = new System.Drawing.Size(290, 28);
             this.cmbSupplier.TabIndex = 1;
             this.cmbSupplier.SelectedIndexChanged += new System.EventHandler(this.cmbSupplier_SelectedIndexChanged);
             // 
             // lblPackageName
             // 
             this.lblPackageName.AutoSize = true;
-            this.lblPackageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPackageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPackageName.Location = new System.Drawing.Point(21, 22);
             this.lblPackageName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPackageName.Name = "lblPackageName";
-            this.lblPackageName.Size = new System.Drawing.Size(193, 20);
+            this.lblPackageName.Size = new System.Drawing.Size(214, 20);
             this.lblPackageName.TabIndex = 5;
             this.lblPackageName.Text = "Package: Package name";
             // 
@@ -122,7 +122,7 @@ namespace Workshop4Group8
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 57);
+            this.label2.Location = new System.Drawing.Point(15, 68);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(290, 20);
@@ -134,7 +134,7 @@ namespace Workshop4Group8
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(182)))), ((int)(((byte)(177)))));
-            this.ClientSize = new System.Drawing.Size(368, 389);
+            this.ClientSize = new System.Drawing.Size(328, 389);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPackageName);
@@ -143,7 +143,7 @@ namespace Workshop4Group8
             this.Controls.Add(this.lblGandalf);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSubmit);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPPSAddModify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add/Modify Product-Supplier-Package";

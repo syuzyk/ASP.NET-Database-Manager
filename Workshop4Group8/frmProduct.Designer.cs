@@ -48,16 +48,18 @@ namespace Workshop4Group8
             // productDataGridView
             // 
             this.productDataGridView.AutoGenerateColumns = false;
+            this.productDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
             this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.productDataGridView.DataSource = this.productBindingSource;
-            this.productDataGridView.Location = new System.Drawing.Point(21, 22);
+            this.productDataGridView.Location = new System.Drawing.Point(56, 25);
+            this.productDataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.productDataGridView.Name = "productDataGridView";
             this.productDataGridView.RowHeadersWidth = 51;
             this.productDataGridView.RowTemplate.Height = 24;
-            this.productDataGridView.Size = new System.Drawing.Size(425, 220);
+            this.productDataGridView.Size = new System.Drawing.Size(331, 275);
             this.productDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -79,9 +81,10 @@ namespace Workshop4Group8
             // update
             // 
             this.update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update.Location = new System.Drawing.Point(170, 270);
+            this.update.Location = new System.Drawing.Point(162, 321);
+            this.update.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(146, 34);
+            this.update.Size = new System.Drawing.Size(141, 45);
             this.update.TabIndex = 6;
             this.update.Text = "Modify Product";
             this.update.UseVisualStyleBackColor = true;
@@ -90,9 +93,10 @@ namespace Workshop4Group8
             // newproduct
             // 
             this.newproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newproduct.Location = new System.Drawing.Point(21, 270);
+            this.newproduct.Location = new System.Drawing.Point(24, 321);
+            this.newproduct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.newproduct.Name = "newproduct";
-            this.newproduct.Size = new System.Drawing.Size(124, 34);
+            this.newproduct.Size = new System.Drawing.Size(118, 45);
             this.newproduct.TabIndex = 5;
             this.newproduct.Text = "Add Product";
             this.newproduct.UseVisualStyleBackColor = true;
@@ -101,9 +105,10 @@ namespace Workshop4Group8
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(362, 270);
+            this.btnCancel.Location = new System.Drawing.Point(323, 321);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(84, 34);
+            this.btnCancel.Size = new System.Drawing.Size(100, 45);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -111,14 +116,16 @@ namespace Workshop4Group8
             // 
             // frmProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
-            this.ClientSize = new System.Drawing.Size(465, 319);
+            this.ClientSize = new System.Drawing.Size(446, 385);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.update);
             this.Controls.Add(this.newproduct);
             this.Controls.Add(this.productDataGridView);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manage Products";

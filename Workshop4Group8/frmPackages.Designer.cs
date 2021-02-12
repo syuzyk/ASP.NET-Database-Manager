@@ -30,10 +30,10 @@ namespace Workshop4Group8
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.packageDataGridView = new System.Windows.Forms.DataGridView();
@@ -46,7 +46,6 @@ namespace Workshop4Group8
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.packages_Products_SuppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvPPS = new System.Windows.Forms.DataGridView();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Update = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -54,19 +53,24 @@ namespace Workshop4Group8
             this.btnCancel = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.packages_Products_SuppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.packageDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packages_Products_SuppliersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPPS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packages_Products_SuppliersBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(17, 349);
+            this.btnAdd.Location = new System.Drawing.Point(658, 339);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(115, 45);
+            this.btnAdd.Size = new System.Drawing.Size(141, 73);
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Add Package";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -75,10 +79,10 @@ namespace Workshop4Group8
             // btnModify
             // 
             this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModify.Location = new System.Drawing.Point(210, 349);
+            this.btnModify.Location = new System.Drawing.Point(835, 339);
             this.btnModify.Margin = new System.Windows.Forms.Padding(4);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(145, 45);
+            this.btnModify.Size = new System.Drawing.Size(141, 73);
             this.btnModify.TabIndex = 16;
             this.btnModify.Text = "Modify Package";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -98,13 +102,13 @@ namespace Workshop4Group8
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.packageDataGridView.DataSource = this.packageBindingSource;
-            this.packageDataGridView.Location = new System.Drawing.Point(12, 37);
+            this.packageDataGridView.Location = new System.Drawing.Point(10, 60);
             this.packageDataGridView.Name = "packageDataGridView";
             this.packageDataGridView.ReadOnly = true;
             this.packageDataGridView.RowHeadersWidth = 51;
             this.packageDataGridView.RowTemplate.Height = 24;
             this.packageDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.packageDataGridView.Size = new System.Drawing.Size(979, 295);
+            this.packageDataGridView.Size = new System.Drawing.Size(979, 220);
             this.packageDataGridView.TabIndex = 18;
             this.packageDataGridView.SelectionChanged += new System.EventHandler(this.packageDataGridView_SelectionChanged);
             // 
@@ -129,9 +133,9 @@ namespace Workshop4Group8
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "PkgStartDate";
-            dataGridViewCellStyle13.Format = "d";
-            dataGridViewCellStyle13.NullValue = null;
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn3.HeaderText = "Start Date";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -141,9 +145,9 @@ namespace Workshop4Group8
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "PkgEndDate";
-            dataGridViewCellStyle14.Format = "d";
-            dataGridViewCellStyle14.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Format = "d";
+            dataGridViewCellStyle6.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn4.HeaderText = "End Date";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -162,9 +166,9 @@ namespace Workshop4Group8
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "PkgBasePrice";
-            dataGridViewCellStyle15.Format = "C2";
-            dataGridViewCellStyle15.NullValue = null;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn6.HeaderText = "Base Price";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
@@ -174,9 +178,9 @@ namespace Workshop4Group8
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "PkgAgencyCommission";
-            dataGridViewCellStyle16.Format = "C2";
-            dataGridViewCellStyle16.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn7.HeaderText = "Agency Commission";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
@@ -190,17 +194,12 @@ namespace Workshop4Group8
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(483, 25);
+            this.label1.Size = new System.Drawing.Size(486, 20);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Select a package to modify, or click Add to create new.";
-            // 
-            // packages_Products_SuppliersBindingSource
-            // 
-            this.packages_Products_SuppliersBindingSource.DataMember = "Packages_Products_Suppliers";
-            this.packages_Products_SuppliersBindingSource.DataSource = this.packageBindingSource;
+            this.label1.Text = "Select a package to modify, or click Add Package to create new.";
             // 
             // dgvPPS
             // 
@@ -210,10 +209,10 @@ namespace Workshop4Group8
             this.dgvPPS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delete,
             this.Update});
-            this.dgvPPS.Location = new System.Drawing.Point(16, 419);
+            this.dgvPPS.Location = new System.Drawing.Point(10, 25);
             this.dgvPPS.Name = "dgvPPS";
             this.dgvPPS.RowHeadersWidth = 51;
-            this.dgvPPS.Size = new System.Drawing.Size(526, 150);
+            this.dgvPPS.Size = new System.Drawing.Size(588, 159);
             this.dgvPPS.TabIndex = 21;
             this.dgvPPS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -238,37 +237,62 @@ namespace Workshop4Group8
             // btnAddPPS
             // 
             this.btnAddPPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPPS.Location = new System.Drawing.Point(17, 581);
+            this.btnAddPPS.Location = new System.Drawing.Point(658, 430);
             this.btnAddPPS.Name = "btnAddPPS";
-            this.btnAddPPS.Size = new System.Drawing.Size(203, 55);
+            this.btnAddPPS.Size = new System.Drawing.Size(141, 73);
             this.btnAddPPS.TabIndex = 22;
-            this.btnAddPPS.Text = "Add product to this package";
+            this.btnAddPPS.Text = "Add Product to Selected Package";
             this.btnAddPPS.UseVisualStyleBackColor = true;
             this.btnAddPPS.Click += new System.EventHandler(this.btnAddPPS_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(439, 349);
+            this.btnCancel.Location = new System.Drawing.Point(835, 430);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(87, 45);
+            this.btnCancel.Size = new System.Drawing.Size(141, 73);
             this.btnCancel.TabIndex = 23;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // packages_Products_SuppliersBindingSource
+            // 
+            this.packages_Products_SuppliersBindingSource.DataMember = "Packages_Products_Suppliers";
+            this.packages_Products_SuppliersBindingSource.DataSource = this.packageBindingSource;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.packageDataGridView);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(3, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(989, 285);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Package Information";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgvPPS);
+            this.groupBox2.Location = new System.Drawing.Point(3, 319);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(598, 189);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Products in Package";
             // 
             // frmPackages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
-            this.ClientSize = new System.Drawing.Size(1004, 638);
+            this.ClientSize = new System.Drawing.Size(1004, 518);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAddPPS);
-            this.Controls.Add(this.dgvPPS);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.packageDataGridView);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnAdd);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -279,10 +303,12 @@ namespace Workshop4Group8
             this.Load += new System.EventHandler(this.frmPackages_Load);
             ((System.ComponentModel.ISupportInitialize)(this.packageDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packages_Products_SuppliersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPPS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packages_Products_SuppliersBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -299,6 +325,9 @@ namespace Workshop4Group8
         private System.Windows.Forms.DataGridViewButtonColumn Update;
         private System.Windows.Forms.Button btnAddPPS;
         private System.Windows.Forms.Button btnCancel;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -306,7 +335,6 @@ namespace Workshop4Group8
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
