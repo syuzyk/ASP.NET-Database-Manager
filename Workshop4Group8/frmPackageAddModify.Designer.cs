@@ -221,9 +221,9 @@ namespace Workshop4Group8
             // 
             // btnAddCancel
             // 
-            this.btnAddCancel.Location = new System.Drawing.Point(254, 334);
+            this.btnAddCancel.Location = new System.Drawing.Point(234, 335);
             this.btnAddCancel.Name = "btnAddCancel";
-            this.btnAddCancel.Size = new System.Drawing.Size(87, 45);
+            this.btnAddCancel.Size = new System.Drawing.Size(126, 45);
             this.btnAddCancel.TabIndex = 34;
             this.btnAddCancel.Text = "Cancel";
             this.btnAddCancel.UseVisualStyleBackColor = true;
