@@ -39,6 +39,7 @@ namespace Workshop4Group8
             // 
             // dgvPPS
             // 
+            this.dgvPPS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPPS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPPS.Location = new System.Drawing.Point(26, 80);
             this.dgvPPS.Name = "dgvPPS";
