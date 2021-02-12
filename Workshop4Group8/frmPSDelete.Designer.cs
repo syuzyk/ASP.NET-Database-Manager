@@ -58,22 +58,22 @@ namespace Workshop4Group8
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 263);
+            this.label1.Location = new System.Drawing.Point(26, 244);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(402, 16);
+            this.label1.Size = new System.Drawing.Size(419, 38);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Click \"Delete from all packages\" to do so; otherwise click \"Cancel\".";
+            this.label1.Text = "Click \"Delete from this table AND all packages\" to do so; otherwise click \"Cancel" +
+    "\".";
             // 
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(123, 299);
+            this.btnOK.Location = new System.Drawing.Point(26, 299);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(177, 29);
+            this.btnOK.Size = new System.Drawing.Size(271, 29);
             this.btnOK.TabIndex = 2;
-            this.btnOK.Text = "Delete from all packages";
+            this.btnOK.Text = "Delete from this table AND all packages";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
