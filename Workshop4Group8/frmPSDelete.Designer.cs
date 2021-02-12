@@ -59,9 +59,9 @@ namespace Workshop4Group8
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 244);
+            this.label1.Location = new System.Drawing.Point(26, 249);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(419, 38);
+            this.label1.Size = new System.Drawing.Size(419, 47);
             this.label1.TabIndex = 1;
             this.label1.Text = "Click \"Delete from this table AND all packages\" to do so; otherwise click \"Cancel" +
     "\".";
@@ -69,7 +69,7 @@ namespace Workshop4Group8
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(26, 299);
+            this.btnOK.Location = new System.Drawing.Point(29, 299);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(271, 29);
             this.btnOK.TabIndex = 2;
@@ -92,7 +92,7 @@ namespace Workshop4Group8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(182)))), ((int)(((byte)(177)))));
             this.ClientSize = new System.Drawing.Size(477, 349);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);

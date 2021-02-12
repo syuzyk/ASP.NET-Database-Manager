@@ -178,7 +178,7 @@ namespace Workshop4Group8
             this.btnClearFilter.Location = new System.Drawing.Point(679, 74);
             this.btnClearFilter.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearFilter.Name = "btnClearFilter";
-            this.btnClearFilter.Size = new System.Drawing.Size(100, 28);
+            this.btnClearFilter.Size = new System.Drawing.Size(100, 45);
             this.btnClearFilter.TabIndex = 2;
             this.btnClearFilter.Text = "Clear filter";
             this.btnClearFilter.UseVisualStyleBackColor = true;
@@ -198,10 +198,10 @@ namespace Workshop4Group8
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(679, 29);
+            this.btnCancel.Location = new System.Drawing.Point(692, 13);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 28);
+            this.btnCancel.Size = new System.Drawing.Size(87, 44);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;

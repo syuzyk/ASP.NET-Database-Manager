@@ -65,9 +65,9 @@ namespace Workshop4Group8
             // exit
             // 
             this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exit.Location = new System.Drawing.Point(147, 112);
+            this.exit.Location = new System.Drawing.Point(133, 112);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(75, 36);
+            this.exit.Size = new System.Drawing.Size(89, 36);
             this.exit.TabIndex = 8;
             this.exit.Text = "Cancel";
             this.exit.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@ namespace Workshop4Group8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(182)))), ((int)(((byte)(177)))));
             this.ClientSize = new System.Drawing.Size(248, 174);
             this.Controls.Add(this.productID);
             this.Controls.Add(this.productIdTextBox);
