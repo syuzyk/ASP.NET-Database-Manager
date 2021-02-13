@@ -46,10 +46,9 @@ namespace Workshop4Group8
             // 
             supNameLabel.AutoSize = true;
             supNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            supNameLabel.Location = new System.Drawing.Point(16, 82);
-            supNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            supNameLabel.Location = new System.Drawing.Point(12, 67);
             supNameLabel.Name = "supNameLabel";
-            supNameLabel.Size = new System.Drawing.Size(124, 20);
+            supNameLabel.Size = new System.Drawing.Size(101, 16);
             supNameLabel.TabIndex = 1;
             supNameLabel.Text = "Supplier Name:";
             // 
@@ -57,21 +56,20 @@ namespace Workshop4Group8
             // 
             supplierIdLabel.AutoSize = true;
             supplierIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            supplierIdLabel.Location = new System.Drawing.Point(16, 33);
-            supplierIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            supplierIdLabel.Location = new System.Drawing.Point(12, 27);
             supplierIdLabel.Name = "supplierIdLabel";
-            supplierIdLabel.Size = new System.Drawing.Size(93, 20);
+            supplierIdLabel.Size = new System.Drawing.Size(75, 16);
             supplierIdLabel.TabIndex = 3;
             supplierIdLabel.Text = "Supplier Id:";
             // 
             // supNameTextBox
             // 
+            this.supNameTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.supNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "SupName", true));
             this.supNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supNameTextBox.Location = new System.Drawing.Point(157, 79);
-            this.supNameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.supNameTextBox.Location = new System.Drawing.Point(118, 64);
             this.supNameTextBox.Name = "supNameTextBox";
-            this.supNameTextBox.Size = new System.Drawing.Size(353, 26);
+            this.supNameTextBox.Size = new System.Drawing.Size(266, 22);
             this.supNameTextBox.TabIndex = 1;
             this.supNameTextBox.Tag = "Supplier Name";
             // 
@@ -83,20 +81,18 @@ namespace Workshop4Group8
             // 
             this.supplierIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "SupplierId", true));
             this.supplierIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplierIdTextBox.Location = new System.Drawing.Point(157, 30);
-            this.supplierIdTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.supplierIdTextBox.Location = new System.Drawing.Point(118, 24);
             this.supplierIdTextBox.Name = "supplierIdTextBox";
-            this.supplierIdTextBox.Size = new System.Drawing.Size(353, 26);
+            this.supplierIdTextBox.Size = new System.Drawing.Size(266, 22);
             this.supplierIdTextBox.TabIndex = 0;
             this.supplierIdTextBox.Tag = "Supplier Id";
             // 
             // btnSaveSuppliers
             // 
             this.btnSaveSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveSuppliers.Location = new System.Drawing.Point(252, 139);
-            this.btnSaveSuppliers.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSaveSuppliers.Location = new System.Drawing.Point(189, 113);
             this.btnSaveSuppliers.Name = "btnSaveSuppliers";
-            this.btnSaveSuppliers.Size = new System.Drawing.Size(113, 45);
+            this.btnSaveSuppliers.Size = new System.Drawing.Size(85, 37);
             this.btnSaveSuppliers.TabIndex = 2;
             this.btnSaveSuppliers.Text = "Save";
             this.btnSaveSuppliers.UseVisualStyleBackColor = true;
@@ -105,10 +101,9 @@ namespace Workshop4Group8
             // btnCancelSuppliers
             // 
             this.btnCancelSuppliers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelSuppliers.Location = new System.Drawing.Point(402, 139);
-            this.btnCancelSuppliers.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelSuppliers.Location = new System.Drawing.Point(302, 113);
             this.btnCancelSuppliers.Name = "btnCancelSuppliers";
-            this.btnCancelSuppliers.Size = new System.Drawing.Size(108, 45);
+            this.btnCancelSuppliers.Size = new System.Drawing.Size(81, 37);
             this.btnCancelSuppliers.TabIndex = 3;
             this.btnCancelSuppliers.Text = "Cancel";
             this.btnCancelSuppliers.UseVisualStyleBackColor = true;
@@ -116,17 +111,16 @@ namespace Workshop4Group8
             // 
             // frmSuppliersAddModify
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(182)))), ((int)(((byte)(177)))));
-            this.ClientSize = new System.Drawing.Size(537, 197);
+            this.ClientSize = new System.Drawing.Size(403, 160);
             this.Controls.Add(this.btnCancelSuppliers);
             this.Controls.Add(this.btnSaveSuppliers);
             this.Controls.Add(supNameLabel);
             this.Controls.Add(this.supNameTextBox);
             this.Controls.Add(supplierIdLabel);
             this.Controls.Add(this.supplierIdTextBox);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSuppliersAddModify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add/Modify Suppliers";

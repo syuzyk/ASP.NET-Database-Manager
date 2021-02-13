@@ -35,9 +35,15 @@ namespace Workshop4Group8
         /// <param name="e"></param>
         private void frmPS_Load(object sender, EventArgs e)
         {
-            dgvPS.DataSource = PSDB.GetPS("", "");
             cmbProduct.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSupplier.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            ReloadPPSData();
+        }
+
+        private void ReloadPPSData()
+        {
+            dgvPS.DataSource = PSDB.GetPS("", "");
 
             foreach (string product in ProductDB.GetAllProducts())
             {
@@ -59,6 +65,7 @@ namespace Workshop4Group8
         {
             frmSuppliers newform = new frmSuppliers();
             DialogResult result = newform.ShowDialog();
+            ReloadPPSData();
         }
 
         /// <summary>
@@ -70,6 +77,7 @@ namespace Workshop4Group8
         {
             frmProduct newform = new frmProduct();
             DialogResult result = newform.ShowDialog();
+            ReloadPPSData();
         }
 
         /// <summary>
