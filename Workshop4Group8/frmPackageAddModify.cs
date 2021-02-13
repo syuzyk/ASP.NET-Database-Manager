@@ -68,6 +68,16 @@ namespace Workshop4Group8
                     pkgEndDateDateTimePicker.Format = DateTimePickerFormat.Custom;
                 }
             }
+            else
+            {
+                pkgStartDateDateTimePicker.CustomFormat = " ";
+                pkgStartDateDateTimePicker.Format = DateTimePickerFormat.Custom;
+                tmpStartDate = null;
+
+                pkgEndDateDateTimePicker.CustomFormat = " ";
+                pkgEndDateDateTimePicker.Format = DateTimePickerFormat.Custom;
+                tmpEndDate = null;
+            }
         }
 
         private void btnAddOk_Click(object sender, EventArgs e)
