@@ -81,8 +81,10 @@ namespace Workshop4Group8
                                                      Convert.ToInt32(packageIdTextBox.Text));// lambda expression
                     pack.PkgName = (pkgNameTextBox.Text).ToString();
                     pack.PkgDesc = (pkgDescRichTextBox.Text).ToString();
-                    pack.PkgBasePrice = Convert.ToDecimal(pkgBasePriceTextBox.Text);
-                    pack.PkgAgencyCommission = Convert.ToDecimal(pkgAgencyCommissionTextBox.Text);
+                    string priceWDS = pkgBasePriceTextBox.Text; //This string is price With Dollar Sign
+                    pack.PkgBasePrice = Convert.ToDecimal(priceWDS.Substring(1, priceWDS.Length-1));
+                    string commWDS = pkgAgencyCommissionTextBox.Text; //This string is commission With Dollar Sign.
+                    pack.PkgAgencyCommission = Convert.ToDecimal(commWDS.Substring(1, commWDS.Length - 1));
                     pack.PkgStartDate = tmpStartDate;
                     pack.PkgEndDate = tmpEndDate; // tmpDate set by date time picker (see two handlers below)
                 }
