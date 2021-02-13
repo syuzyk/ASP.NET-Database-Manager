@@ -94,7 +94,14 @@ namespace Workshop4Group8
                     string priceWDS = pkgBasePriceTextBox.Text; //This string is price With Dollar Sign
                     pack.PkgBasePrice = Convert.ToDecimal(priceWDS.Substring(1, priceWDS.Length-1));
                     string commWDS = pkgAgencyCommissionTextBox.Text; //This string is commission With Dollar Sign.
-                    pack.PkgAgencyCommission = Convert.ToDecimal(commWDS.Substring(1, commWDS.Length - 1));
+                    if(pkgAgencyCommissionTextBox.Text != "")
+                    {
+                        pack.PkgAgencyCommission = Convert.ToDecimal(commWDS.Substring(1, commWDS.Length - 1));
+                    }
+                    else
+                    {
+                        pack.PkgAgencyCommission = null;
+                    }
                     pack.PkgStartDate = tmpStartDate;
                     pack.PkgEndDate = tmpEndDate; // tmpDate set by date time picker (see two handlers below)
                 }

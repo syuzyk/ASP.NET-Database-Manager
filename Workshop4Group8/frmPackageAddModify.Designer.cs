@@ -66,7 +66,7 @@ namespace Workshop4Group8
             pkgDescLabel1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             pkgDescLabel1.Name = "pkgDescLabel1";
             pkgDescLabel1.Size = new System.Drawing.Size(100, 20);
-            pkgDescLabel1.TabIndex = 31;
+            pkgDescLabel1.TabIndex = 13;
             pkgDescLabel1.Text = "Description:";
             pkgDescLabel1.UseMnemonic = false;
             // 
@@ -77,7 +77,7 @@ namespace Workshop4Group8
             packageIdLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             packageIdLabel.Name = "packageIdLabel";
             packageIdLabel.Size = new System.Drawing.Size(31, 20);
-            packageIdLabel.TabIndex = 19;
+            packageIdLabel.TabIndex = 5;
             packageIdLabel.Text = "ID:";
             packageIdLabel.Visible = false;
             // 
@@ -88,7 +88,7 @@ namespace Workshop4Group8
             pkgAgencyCommissionLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             pkgAgencyCommissionLabel.Name = "pkgAgencyCommissionLabel";
             pkgAgencyCommissionLabel.Size = new System.Drawing.Size(107, 20);
-            pkgAgencyCommissionLabel.TabIndex = 21;
+            pkgAgencyCommissionLabel.TabIndex = 1;
             pkgAgencyCommissionLabel.Text = "Commission:";
             pkgAgencyCommissionLabel.UseMnemonic = false;
             // 
@@ -99,7 +99,7 @@ namespace Workshop4Group8
             pkgBasePriceLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             pkgBasePriceLabel.Name = "pkgBasePriceLabel";
             pkgBasePriceLabel.Size = new System.Drawing.Size(53, 20);
-            pkgBasePriceLabel.TabIndex = 23;
+            pkgBasePriceLabel.TabIndex = 0;
             pkgBasePriceLabel.Text = "Price:";
             pkgBasePriceLabel.UseMnemonic = false;
             // 
@@ -110,7 +110,7 @@ namespace Workshop4Group8
             pkgEndDateLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             pkgEndDateLabel.Name = "pkgEndDateLabel";
             pkgEndDateLabel.Size = new System.Drawing.Size(84, 20);
-            pkgEndDateLabel.TabIndex = 25;
+            pkgEndDateLabel.TabIndex = 15;
             pkgEndDateLabel.Text = "End Date:";
             pkgEndDateLabel.UseMnemonic = false;
             // 
@@ -121,7 +121,7 @@ namespace Workshop4Group8
             pkgNameLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             pkgNameLabel.Name = "pkgNameLabel";
             pkgNameLabel.Size = new System.Drawing.Size(58, 20);
-            pkgNameLabel.TabIndex = 27;
+            pkgNameLabel.TabIndex = 12;
             pkgNameLabel.Text = "Name:";
             pkgNameLabel.UseMnemonic = false;
             // 
@@ -132,7 +132,7 @@ namespace Workshop4Group8
             pkgStartDateLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             pkgStartDateLabel.Name = "pkgStartDateLabel";
             pkgStartDateLabel.Size = new System.Drawing.Size(91, 20);
-            pkgStartDateLabel.TabIndex = 29;
+            pkgStartDateLabel.TabIndex = 14;
             pkgStartDateLabel.Text = "Start Date:";
             pkgStartDateLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             pkgStartDateLabel.UseMnemonic = false;
@@ -143,7 +143,7 @@ namespace Workshop4Group8
             this.pkgDescRichTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.pkgDescRichTextBox.Name = "pkgDescRichTextBox";
             this.pkgDescRichTextBox.Size = new System.Drawing.Size(258, 65);
-            this.pkgDescRichTextBox.TabIndex = 32;
+            this.pkgDescRichTextBox.TabIndex = 2;
             this.pkgDescRichTextBox.Text = "";
             // 
             // pkgAgencyCommissionTextBox
@@ -153,7 +153,7 @@ namespace Workshop4Group8
             this.pkgAgencyCommissionTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.pkgAgencyCommissionTextBox.Name = "pkgAgencyCommissionTextBox";
             this.pkgAgencyCommissionTextBox.Size = new System.Drawing.Size(97, 26);
-            this.pkgAgencyCommissionTextBox.TabIndex = 22;
+            this.pkgAgencyCommissionTextBox.TabIndex = 6;
             // 
             // packageBindingSource1
             // 
@@ -166,7 +166,7 @@ namespace Workshop4Group8
             this.pkgBasePriceTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.pkgBasePriceTextBox.Name = "pkgBasePriceTextBox";
             this.pkgBasePriceTextBox.Size = new System.Drawing.Size(97, 26);
-            this.pkgBasePriceTextBox.TabIndex = 24;
+            this.pkgBasePriceTextBox.TabIndex = 5;
             // 
             // packageBindingSource
             // 
@@ -178,7 +178,7 @@ namespace Workshop4Group8
             this.pkgEndDateDateTimePicker.Margin = new System.Windows.Forms.Padding(5);
             this.pkgEndDateDateTimePicker.Name = "pkgEndDateDateTimePicker";
             this.pkgEndDateDateTimePicker.Size = new System.Drawing.Size(258, 26);
-            this.pkgEndDateDateTimePicker.TabIndex = 26;
+            this.pkgEndDateDateTimePicker.TabIndex = 4;
             this.pkgEndDateDateTimePicker.ValueChanged += new System.EventHandler(this.pkgEndDateDateTimePicker_ValueChanged);
             this.pkgEndDateDateTimePicker.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pkgEndDateDateTimePicker_KeyPress);
             // 
@@ -196,7 +196,7 @@ namespace Workshop4Group8
             this.pkgStartDateDateTimePicker.Margin = new System.Windows.Forms.Padding(5);
             this.pkgStartDateDateTimePicker.Name = "pkgStartDateDateTimePicker";
             this.pkgStartDateDateTimePicker.Size = new System.Drawing.Size(258, 26);
-            this.pkgStartDateDateTimePicker.TabIndex = 30;
+            this.pkgStartDateDateTimePicker.TabIndex = 3;
             this.pkgStartDateDateTimePicker.ValueChanged += new System.EventHandler(this.pkgStartDateDateTimePicker_ValueChanged);
             this.pkgStartDateDateTimePicker.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pkgStartDateDateTimePicker_KeyPress);
             // 
@@ -205,7 +205,7 @@ namespace Workshop4Group8
             this.btnAddOk.Location = new System.Drawing.Point(34, 335);
             this.btnAddOk.Name = "btnAddOk";
             this.btnAddOk.Size = new System.Drawing.Size(126, 45);
-            this.btnAddOk.TabIndex = 33;
+            this.btnAddOk.TabIndex = 7;
             this.btnAddOk.Text = "OK";
             this.btnAddOk.UseVisualStyleBackColor = true;
             this.btnAddOk.Click += new System.EventHandler(this.btnAddOk_Click);
@@ -215,7 +215,7 @@ namespace Workshop4Group8
             this.btnAddCancel.Location = new System.Drawing.Point(234, 335);
             this.btnAddCancel.Name = "btnAddCancel";
             this.btnAddCancel.Size = new System.Drawing.Size(126, 45);
-            this.btnAddCancel.TabIndex = 34;
+            this.btnAddCancel.TabIndex = 8;
             this.btnAddCancel.Text = "Cancel";
             this.btnAddCancel.UseVisualStyleBackColor = true;
             this.btnAddCancel.Click += new System.EventHandler(this.btnAddCancel_Click);
@@ -227,7 +227,7 @@ namespace Workshop4Group8
             this.packageIdTextBox.Name = "packageIdTextBox";
             this.packageIdTextBox.ReadOnly = true;
             this.packageIdTextBox.Size = new System.Drawing.Size(38, 26);
-            this.packageIdTextBox.TabIndex = 20;
+            this.packageIdTextBox.TabIndex = 11;
             this.packageIdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.packageIdTextBox.Visible = false;
             // 
