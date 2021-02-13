@@ -38,7 +38,6 @@ namespace Workshop4Group8
             System.Windows.Forms.Label pkgNameLabel;
             System.Windows.Forms.Label pkgStartDateLabel;
             this.pkgDescRichTextBox = new System.Windows.Forms.RichTextBox();
-            this.packageIdTextBox = new System.Windows.Forms.TextBox();
             this.pkgAgencyCommissionTextBox = new System.Windows.Forms.TextBox();
             this.packageBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pkgBasePriceTextBox = new System.Windows.Forms.TextBox();
@@ -48,6 +47,7 @@ namespace Workshop4Group8
             this.pkgStartDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.btnAddOk = new System.Windows.Forms.Button();
             this.btnAddCancel = new System.Windows.Forms.Button();
+            this.packageIdTextBox = new System.Windows.Forms.TextBox();
             pkgDescLabel1 = new System.Windows.Forms.Label();
             packageIdLabel = new System.Windows.Forms.Label();
             pkgAgencyCommissionLabel = new System.Windows.Forms.Label();
@@ -79,6 +79,7 @@ namespace Workshop4Group8
             packageIdLabel.Size = new System.Drawing.Size(31, 20);
             packageIdLabel.TabIndex = 19;
             packageIdLabel.Text = "ID:";
+            packageIdLabel.Visible = false;
             // 
             // pkgAgencyCommissionLabel
             // 
@@ -144,16 +145,6 @@ namespace Workshop4Group8
             this.pkgDescRichTextBox.Size = new System.Drawing.Size(258, 65);
             this.pkgDescRichTextBox.TabIndex = 32;
             this.pkgDescRichTextBox.Text = "";
-            // 
-            // packageIdTextBox
-            // 
-            this.packageIdTextBox.Location = new System.Drawing.Point(342, 12);
-            this.packageIdTextBox.Margin = new System.Windows.Forms.Padding(5);
-            this.packageIdTextBox.Name = "packageIdTextBox";
-            this.packageIdTextBox.ReadOnly = true;
-            this.packageIdTextBox.Size = new System.Drawing.Size(38, 26);
-            this.packageIdTextBox.TabIndex = 20;
-            this.packageIdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pkgAgencyCommissionTextBox
             // 
@@ -229,6 +220,17 @@ namespace Workshop4Group8
             this.btnAddCancel.UseVisualStyleBackColor = true;
             this.btnAddCancel.Click += new System.EventHandler(this.btnAddCancel_Click);
             // 
+            // packageIdTextBox
+            // 
+            this.packageIdTextBox.Location = new System.Drawing.Point(342, 12);
+            this.packageIdTextBox.Margin = new System.Windows.Forms.Padding(5);
+            this.packageIdTextBox.Name = "packageIdTextBox";
+            this.packageIdTextBox.ReadOnly = true;
+            this.packageIdTextBox.Size = new System.Drawing.Size(38, 26);
+            this.packageIdTextBox.TabIndex = 20;
+            this.packageIdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.packageIdTextBox.Visible = false;
+            // 
             // frmPackageAddModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -268,7 +270,6 @@ namespace Workshop4Group8
         #endregion
 
         private System.Windows.Forms.RichTextBox pkgDescRichTextBox;
-        private System.Windows.Forms.TextBox packageIdTextBox;
         private System.Windows.Forms.TextBox pkgAgencyCommissionTextBox;
         private System.Windows.Forms.TextBox pkgBasePriceTextBox;
         private System.Windows.Forms.DateTimePicker pkgEndDateDateTimePicker;
@@ -278,5 +279,6 @@ namespace Workshop4Group8
         private System.Windows.Forms.Button btnAddCancel;
         private System.Windows.Forms.BindingSource packageBindingSource;
         private System.Windows.Forms.BindingSource packageBindingSource1;
+        private System.Windows.Forms.TextBox packageIdTextBox;
     }
 }
