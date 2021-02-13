@@ -20,6 +20,7 @@ namespace Workshop4Group8
                     MessageBox.Show(textBox.Tag + " is a required field. Entry Error.");
                     textBox.Focus();
                     return false;
+                    //Testing a commit
                 }
             }
             return true;
