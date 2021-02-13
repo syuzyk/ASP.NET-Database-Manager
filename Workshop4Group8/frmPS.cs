@@ -146,9 +146,6 @@ namespace Workshop4Group8
                             else
                                 dgvPS.DataSource = PSDB.GetPS("", "");
                         }
-                            
-
-
                     }
                 }
             }
