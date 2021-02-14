@@ -45,11 +45,13 @@ namespace Workshop4Group8
         {
             dgvPS.DataSource = PSDB.GetPS("", "");
 
+            cmbProduct.Items.Clear();
             foreach (string product in ProductDB.GetAllProducts())
             {
                 cmbProduct.Items.Add(product);
             }
 
+            cmbSupplier.Items.Clear();
             foreach (string supplier in SupplierDB.GetAllSuppliers())
             {
                 cmbSupplier.Items.Add(supplier);
