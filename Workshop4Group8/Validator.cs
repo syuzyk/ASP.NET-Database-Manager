@@ -10,7 +10,7 @@ namespace Workshop4Group8
     class Validator
     {
         //Validates the data to make sure there is an entry
-        public static bool IsPresent(Control control) //Takes in any type of control as a arguement
+        public static bool IsPresent(Control control) //Takes in any type of control as a argument
         {
             if (control.GetType().ToString() == "System.Windows.Forms.TextBox") //If the type is a textbox
             {
@@ -26,20 +26,30 @@ namespace Workshop4Group8
             return true;
         }
 
-        //Validates the data to make sure the data is an Integer
-        public static bool IsInt32(TextBox textBox)
+        public static bool IsNonNegativeDecimal(TextBox tb, string name)
         {
-            try
+            bool isValid = true;
+            decimal value;
+            if (!Decimal.TryParse(tb.Text, out value))// not a decimal number
             {
-                Convert.ToInt32(textBox.Text);
-                return true;
+                isValid = false;
+                MessageBox.Show(name + " should be a number", "Input Error");
+                tb.SelectAll(); // select all text box content to ease replacing
+                tb.Focus();
             }
-            catch (FormatException)
+            else if (value < 0)// integer, but negative
             {
-                MessageBox.Show(textBox.Tag + " must be an integer. Entry Error.");
-                textBox.Focus();
-                return false;
+                isValid = false;
+                MessageBox.Show(name + " should be positive or zero", "Input Error");
+                tb.SelectAll(); // select all text box content to ease replacing
+                tb.Focus();
             }
+            return isValid;
+        }
+
+        public string IsDecimalNull(decimal? value)
+        {
+            return value == null || value == 0 ? "NA" : value.ToString();
         }
     }
 }

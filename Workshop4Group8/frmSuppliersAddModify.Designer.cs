@@ -64,6 +64,7 @@ namespace Workshop4Group8
             // 
             // supNameTextBox
             // 
+            this.supNameTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.supNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "SupName", true));
             this.supNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supNameTextBox.Location = new System.Drawing.Point(118, 64);
