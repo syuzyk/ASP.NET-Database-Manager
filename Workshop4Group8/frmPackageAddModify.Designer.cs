@@ -48,6 +48,8 @@ namespace Workshop4Group8
             this.btnAddOk = new System.Windows.Forms.Button();
             this.btnAddCancel = new System.Windows.Forms.Button();
             this.packageIdTextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             pkgDescLabel1 = new System.Windows.Forms.Label();
             packageIdLabel = new System.Windows.Forms.Label();
             pkgAgencyCommissionLabel = new System.Windows.Forms.Label();
@@ -149,7 +151,7 @@ namespace Workshop4Group8
             // pkgAgencyCommissionTextBox
             // 
             this.pkgAgencyCommissionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packageBindingSource1, "PkgAgencyCommission", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "N/A", "C2"));
-            this.pkgAgencyCommissionTextBox.Location = new System.Drawing.Point(122, 283);
+            this.pkgAgencyCommissionTextBox.Location = new System.Drawing.Point(136, 283);
             this.pkgAgencyCommissionTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.pkgAgencyCommissionTextBox.Name = "pkgAgencyCommissionTextBox";
             this.pkgAgencyCommissionTextBox.Size = new System.Drawing.Size(97, 26);
@@ -162,7 +164,7 @@ namespace Workshop4Group8
             // pkgBasePriceTextBox
             // 
             this.pkgBasePriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packageBindingSource, "PkgBasePrice", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.pkgBasePriceTextBox.Location = new System.Drawing.Point(122, 247);
+            this.pkgBasePriceTextBox.Location = new System.Drawing.Point(136, 247);
             this.pkgBasePriceTextBox.Margin = new System.Windows.Forms.Padding(5);
             this.pkgBasePriceTextBox.Name = "pkgBasePriceTextBox";
             this.pkgBasePriceTextBox.Size = new System.Drawing.Size(97, 26);
@@ -231,12 +233,38 @@ namespace Workshop4Group8
             this.packageIdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.packageIdTextBox.Visible = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packageBindingSource, "PkgBasePrice", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            this.textBox1.Location = new System.Drawing.Point(122, 247);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(15, 26);
+            this.textBox1.TabIndex = 16;
+            this.textBox1.Text = "$";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packageBindingSource, "PkgBasePrice", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            this.textBox2.Location = new System.Drawing.Point(122, 283);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(15, 26);
+            this.textBox2.TabIndex = 17;
+            this.textBox2.Text = "$";
+            // 
             // frmPackageAddModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(182)))), ((int)(((byte)(177)))));
             this.ClientSize = new System.Drawing.Size(394, 392);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnAddCancel);
             this.Controls.Add(this.btnAddOk);
             this.Controls.Add(pkgDescLabel1);
@@ -280,5 +308,7 @@ namespace Workshop4Group8
         private System.Windows.Forms.BindingSource packageBindingSource;
         private System.Windows.Forms.BindingSource packageBindingSource1;
         private System.Windows.Forms.TextBox packageIdTextBox;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
