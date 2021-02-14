@@ -25,5 +25,21 @@ namespace Workshop4Group8
             }
             return true;
         }
+
+        //Validates the data to make sure the data is an Integer
+        public static bool IsInt32(TextBox textBox)
+        {
+            try
+            {
+                Convert.ToInt32(textBox.Text);
+                return true;
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show(textBox.Tag + " must be an integer. Entry Error.");
+                textBox.Focus();
+                return false;
+            }
+        }
     }
 }

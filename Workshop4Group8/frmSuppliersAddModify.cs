@@ -70,8 +70,6 @@ namespace Workshop4Group8
             }
             else
             {
-                //String query = "SELECT Top(1) SupplierId FROM Suppliers ORDER BY SupplierId DESC";
-                //supplierIdTextBox.Text = query;
                 supplierIdTextBox.Enabled = true;
                 supplierIdTextBox.Focus();
             }
