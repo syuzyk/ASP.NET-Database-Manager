@@ -47,17 +47,9 @@ namespace Workshop4Group8
             return isValid;
         }
 
-        //public static bool IsValidDate (TextBox tb, string name)
-        //{
-        //    if (pack.PkgEndDate != null && pack.PkgStartDate != null)
-        //    {
-        //        if (pack.PkgEndDate < pack.PkgStartDate)
-        //        {
-        //            MessageBox.Show("Package cannot end before it started", "Data Error");
-        //            return; // do not submit changes if bad data
-        //        }
-        //    }
-        //    else
-        //}
+        public string IsDecimalNull(decimal? value)
+        {
+            return value == null || value == 0 ? "NA" : value.ToString();
+        }
     }
 }

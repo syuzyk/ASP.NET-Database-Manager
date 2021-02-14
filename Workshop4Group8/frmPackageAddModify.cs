@@ -127,8 +127,9 @@ namespace Workshop4Group8
                     {
                         PkgName = (pkgNameTextBox.Text).ToString(),
                         PkgDesc = (pkgDescRichTextBox.Text).ToString(),
-                        PkgBasePrice = Convert.ToDecimal(pkgBasePriceTextBox.Text),
-                        PkgAgencyCommission = Convert.ToDecimal(pkgAgencyCommissionTextBox.Text),
+                        //PkgBasePrice = Convert.ToDecimal(pkgBasePriceTextBox.Text),
+                        PkgBasePrice = String.IsNullOrEmpty(pkgBasePriceTextBox.Text) ? 0 : decimal.Parse(pkgBasePriceTextBox.Text),
+                        PkgAgencyCommission = String.IsNullOrEmpty(pkgAgencyCommissionTextBox.Text) ? 0 : decimal.Parse(pkgAgencyCommissionTextBox.Text),
                         PkgStartDate = tmpStartDate,
                         PkgEndDate = tmpEndDate // tmpDate set by date time picker (see two handlers below)
                     };// object initializer syntax
@@ -155,6 +156,11 @@ namespace Workshop4Group8
                     MessageBox.Show("Description cannot be empty", "Data Error");
                     return; // do not submit changes if bad data
                 }
+                if (pack.PkgBasePrice == 0)
+                {
+                    MessageBox.Show("Base Price cannot be empty", "Data Error");
+                    return;
+                }
                 // validate that agency commission is not greater than base price
                 if (pack.PkgAgencyCommission != null)
                 {
@@ -162,6 +168,10 @@ namespace Workshop4Group8
                     {
                         MessageBox.Show("Commission cannot be greater than package price", "Data Error");
                         return; // do not submit changes if bad data
+                    }
+                    else if (pack.PkgAgencyCommission == 0)
+                    {
+                        pkgAgencyCommissionTextBox.Text = "0";
                     }
                 }
                 dbContext.SubmitChanges();
