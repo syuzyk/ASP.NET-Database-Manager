@@ -30,37 +30,15 @@ namespace Workshop4Group8
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label supNameLabel;
-            System.Windows.Forms.Label supplierIdLabel;
             this.supNameTextBox = new System.Windows.Forms.TextBox();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierIdTextBox = new System.Windows.Forms.TextBox();
             this.btnSaveSuppliers = new System.Windows.Forms.Button();
             this.btnCancelSuppliers = new System.Windows.Forms.Button();
-            supNameLabel = new System.Windows.Forms.Label();
-            supplierIdLabel = new System.Windows.Forms.Label();
+            this.lblSuppID = new System.Windows.Forms.Label();
+            this.supNameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // supNameLabel
-            // 
-            supNameLabel.AutoSize = true;
-            supNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            supNameLabel.Location = new System.Drawing.Point(12, 67);
-            supNameLabel.Name = "supNameLabel";
-            supNameLabel.Size = new System.Drawing.Size(101, 16);
-            supNameLabel.TabIndex = 1;
-            supNameLabel.Text = "Supplier Name:";
-            // 
-            // supplierIdLabel
-            // 
-            supplierIdLabel.AutoSize = true;
-            supplierIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            supplierIdLabel.Location = new System.Drawing.Point(12, 27);
-            supplierIdLabel.Name = "supplierIdLabel";
-            supplierIdLabel.Size = new System.Drawing.Size(75, 16);
-            supplierIdLabel.TabIndex = 3;
-            supplierIdLabel.Text = "Supplier Id:";
             // 
             // supNameTextBox
             // 
@@ -83,6 +61,7 @@ namespace Workshop4Group8
             this.supplierIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supplierIdTextBox.Location = new System.Drawing.Point(118, 24);
             this.supplierIdTextBox.Name = "supplierIdTextBox";
+            this.supplierIdTextBox.ReadOnly = true;
             this.supplierIdTextBox.Size = new System.Drawing.Size(266, 22);
             this.supplierIdTextBox.TabIndex = 0;
             this.supplierIdTextBox.Tag = "Supplier Id";
@@ -109,17 +88,37 @@ namespace Workshop4Group8
             this.btnCancelSuppliers.UseVisualStyleBackColor = true;
             this.btnCancelSuppliers.Click += new System.EventHandler(this.btnCancelSuppliers_Click);
             // 
+            // lblSuppID
+            // 
+            this.lblSuppID.AutoSize = true;
+            this.lblSuppID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuppID.Location = new System.Drawing.Point(12, 27);
+            this.lblSuppID.Name = "lblSuppID";
+            this.lblSuppID.Size = new System.Drawing.Size(80, 16);
+            this.lblSuppID.TabIndex = 4;
+            this.lblSuppID.Text = "Supplier ID: ";
+            // 
+            // supNameLabel
+            // 
+            this.supNameLabel.AutoSize = true;
+            this.supNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.supNameLabel.Location = new System.Drawing.Point(12, 67);
+            this.supNameLabel.Name = "supNameLabel";
+            this.supNameLabel.Size = new System.Drawing.Size(101, 16);
+            this.supNameLabel.TabIndex = 5;
+            this.supNameLabel.Text = "Supplier Name:";
+            // 
             // frmSuppliersAddModify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(182)))), ((int)(((byte)(177)))));
             this.ClientSize = new System.Drawing.Size(403, 160);
+            this.Controls.Add(this.supNameLabel);
+            this.Controls.Add(this.lblSuppID);
             this.Controls.Add(this.btnCancelSuppliers);
             this.Controls.Add(this.btnSaveSuppliers);
-            this.Controls.Add(supNameLabel);
             this.Controls.Add(this.supNameTextBox);
-            this.Controls.Add(supplierIdLabel);
             this.Controls.Add(this.supplierIdTextBox);
             this.Name = "frmSuppliersAddModify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -138,5 +137,7 @@ namespace Workshop4Group8
         private System.Windows.Forms.TextBox supplierIdTextBox;
         private System.Windows.Forms.Button btnSaveSuppliers;
         private System.Windows.Forms.Button btnCancelSuppliers;
+        private System.Windows.Forms.Label lblSuppID;
+        private System.Windows.Forms.Label supNameLabel;
     }
 }

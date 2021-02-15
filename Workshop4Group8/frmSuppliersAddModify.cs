@@ -30,11 +30,10 @@ namespace Workshop4Group8
             
             if(!isModify) // If add supplier
             {
-                if (Validator.IsPresent(supplierIdTextBox) == true && Validator.IsPresent(supNameTextBox) == true)
+                if (Validator.IsPresent(supNameTextBox) == true)
                 {
                     Supplier newSupp = new Supplier
                     {
-                        SupplierId = Convert.ToInt32(supplierIdTextBox.Text), //Replace with auto generated version and read only textbox
                         SupName = supNameTextBox.Text
                     };
                     using (SuppliersDataContext dbContext = new SuppliersDataContext())
@@ -62,15 +61,23 @@ namespace Workshop4Group8
 
         private void frmSuppliersAddModify_Load(object sender, EventArgs e)
         {
+            
             if(isModify)
             {
                 DisplayCurrentSupplier();
                 supplierIdTextBox.Enabled = false;
+                supplierIdTextBox.Visible = true;
                 supNameTextBox.Focus();  
             }
             else
             {
-                supplierIdTextBox.Enabled = true;
+                supplierIdTextBox.Visible = false;
+                lblSuppID.Visible = false;
+                supNameTextBox.Location = new Point(118,24);
+                supNameLabel.Location = new Point(12, 27);
+                btnSaveSuppliers.Location = new Point(189, 64);
+                btnCancelSuppliers.Location = new Point(302, 64);
+                this.Size = new Size(419, 150);
                 supplierIdTextBox.Focus();
             }
         }
