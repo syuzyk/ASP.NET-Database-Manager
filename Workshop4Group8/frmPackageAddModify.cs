@@ -34,11 +34,11 @@ namespace Workshop4Group8
                 pkgNameTextBox.Text = currentPackage.PkgName;
                 packageIdTextBox.Text = currentPackage.PackageId.ToString();
                 pkgDescRichTextBox.Text = currentPackage.PkgDesc.ToString();
-                pkgBasePriceTextBox.Text = currentPackage.PkgBasePrice.ToString("c");
+                pkgBasePriceTextBox.Text = currentPackage.PkgBasePrice.ToString("n");
                 if (currentPackage.PkgAgencyCommission != null)
                 {
                     decimal x = (decimal)currentPackage.PkgAgencyCommission;
-                    pkgAgencyCommissionTextBox.Text = x.ToString("c");
+                    pkgAgencyCommissionTextBox.Text = x.ToString("n");
                 }
                 else
                 {
@@ -91,16 +91,32 @@ namespace Workshop4Group8
                                                      Convert.ToInt32(packageIdTextBox.Text));// lambda expression
                     pack.PkgName = (pkgNameTextBox.Text).ToString();
                     pack.PkgDesc = (pkgDescRichTextBox.Text).ToString();
-                    string priceWDS = pkgBasePriceTextBox.Text; //This string is price With Dollar Sign
-                    pack.PkgBasePrice = Convert.ToDecimal(priceWDS.Substring(1, priceWDS.Length-1));
-                    string commWDS = pkgAgencyCommissionTextBox.Text; //This string is commission With Dollar Sign.
-                    if(pkgAgencyCommissionTextBox.Text != "")
+                    //string priceWDS = pkgBasePriceTextBox.Text; //This string is price With Dollar Sign
+                    //pack.PkgBasePrice = Convert.ToDecimal(priceWDS.Substring(1, priceWDS.Length - 1));
+                    //string commWDS = pkgAgencyCommissionTextBox.Text; //This string is commission With Dollar Sign.
+                    if (pkgAgencyCommissionTextBox.Text != "")
                     {
-                        pack.PkgAgencyCommission = Convert.ToDecimal(commWDS.Substring(1, commWDS.Length - 1));
+                        if (pkgAgencyCommissionTextBox.Text != "0")
+                        {
+                            pack.PkgAgencyCommission = Convert.ToDecimal(pkgAgencyCommissionTextBox.Text);
+                        }
+                        else
+                        {
+                            pack.PkgAgencyCommission = 0;
+                        }
                     }
                     else
                     {
                         pack.PkgAgencyCommission = null;
+                    }
+                    if (pkgBasePriceTextBox.Text != "")
+                    {
+                        pack.PkgBasePrice = Convert.ToDecimal(pkgBasePriceTextBox.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Base Price cannot be empty", "Data Error");
+                        return; // do not submit changes if bad data
                     }
                     pack.PkgStartDate = tmpStartDate;
                     pack.PkgEndDate = tmpEndDate; // tmpDate set by date time picker (see two handlers below)
@@ -111,8 +127,9 @@ namespace Workshop4Group8
                     {
                         PkgName = (pkgNameTextBox.Text).ToString(),
                         PkgDesc = (pkgDescRichTextBox.Text).ToString(),
-                        PkgBasePrice = Convert.ToDecimal(pkgBasePriceTextBox.Text),
-                        PkgAgencyCommission = Convert.ToDecimal(pkgAgencyCommissionTextBox.Text),
+                        //PkgBasePrice = Convert.ToDecimal(pkgBasePriceTextBox.Text),
+                        PkgBasePrice = String.IsNullOrEmpty(pkgBasePriceTextBox.Text) ? 0 : decimal.Parse(pkgBasePriceTextBox.Text),
+                        PkgAgencyCommission = String.IsNullOrEmpty(pkgAgencyCommissionTextBox.Text) ? 0 : decimal.Parse(pkgAgencyCommissionTextBox.Text),
                         PkgStartDate = tmpStartDate,
                         PkgEndDate = tmpEndDate // tmpDate set by date time picker (see two handlers below)
                     };// object initializer syntax
@@ -133,11 +150,16 @@ namespace Workshop4Group8
                     MessageBox.Show("Name cannot be empty", "Data Error");
                     return; // do not submit changes if bad data
                 }
-                // validate that description is not null
+                //validate that description is not null
                 if (pack.PkgDesc is "")
                 {
                     MessageBox.Show("Description cannot be empty", "Data Error");
                     return; // do not submit changes if bad data
+                }
+                if (pack.PkgBasePrice == 0)
+                {
+                    MessageBox.Show("Base Price cannot be empty", "Data Error");
+                    return;
                 }
                 // validate that agency commission is not greater than base price
                 if (pack.PkgAgencyCommission != null)
@@ -146,6 +168,10 @@ namespace Workshop4Group8
                     {
                         MessageBox.Show("Commission cannot be greater than package price", "Data Error");
                         return; // do not submit changes if bad data
+                    }
+                    else if (pack.PkgAgencyCommission == 0)
+                    {
+                        pkgAgencyCommissionTextBox.Text = "0";
                     }
                 }
                 dbContext.SubmitChanges();
