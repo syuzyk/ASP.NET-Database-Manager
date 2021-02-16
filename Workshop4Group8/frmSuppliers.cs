@@ -23,6 +23,7 @@ namespace Workshop4Group8
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
             supplierDataGridView.DataSource = db.Suppliers;
+            supplierDataGridView.Sort(dataGridViewTextBoxColumn1, 0);
         }
 
         private void btnAddSuppliers_Click(object sender, EventArgs e)
@@ -34,6 +35,7 @@ namespace Workshop4Group8
             {
                 db = new SuppliersDataContext();
                 supplierDataGridView.DataSource = db.Suppliers;
+                supplierDataGridView.Sort(dataGridViewTextBoxColumn1, 0);
             }
         }
 
@@ -56,6 +58,7 @@ namespace Workshop4Group8
             {
                 db = new SuppliersDataContext();
                 supplierDataGridView.DataSource = db.Suppliers;
+                supplierDataGridView.Sort(dataGridViewTextBoxColumn1, 0);
             }
         }
 
