@@ -134,8 +134,9 @@ namespace Workshop4Group8
                 //delete it from those packages. Confirm if user wishes to proceed.
                 else
                 {
-                    frmPSDelete secondForm = new frmPSDelete();
-                    secondForm.mainForm = this;
+                    frmPSDeleteUpdate secondForm = new frmPSDeleteUpdate();
+                    secondForm.mainFormPS = this;
+                    secondForm.isDeleteAndNotUpdate = true;
                     DialogResult result = secondForm.ShowDialog();
 
                     if (result == DialogResult.OK)

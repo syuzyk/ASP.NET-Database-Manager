@@ -143,7 +143,7 @@ namespace TravelExpertsData
                 using (SqlCommand cmd = new SqlCommand(deleteStatement, connection))
                 {
                     connection.Open();
-                    if (cmd.ExecuteNonQuery() == 1)
+                    if (cmd.ExecuteNonQuery() > 0)
                         successfullyDeleted = true;
                     else
                         successfullyDeleted = false;
@@ -215,7 +215,7 @@ namespace TravelExpertsData
                 {
                     connection.Open();
 
-                    if (cmd.ExecuteNonQuery() == 1)
+                    if (cmd.ExecuteNonQuery() > 0)
                         successfullyUpdated = true;
                     else
                         successfullyUpdated = false;

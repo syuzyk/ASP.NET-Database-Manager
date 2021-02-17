@@ -39,6 +39,14 @@ namespace Workshop4Group8
         //supplier gets deleted. This variable retains it.
         string mostRecentlySelectedSupplier;
 
+        //If we are updating a product/supplier combo, we may need to know
+        //the original product/supplier selections and the new one we
+        //are trying to update to.
+        public string originalProduct;
+        public string originalSupplier;
+        public string newlyPickedProduct;
+        public string newlyPickedSupplier;
+
         /// <summary>
         /// Cancel button will close the form dialog.
         /// </summary>
@@ -89,6 +97,10 @@ namespace Workshop4Group8
             {
                 isAddAndNotModify = false;
                 btnSubmit.Text = "Update";
+                originalProduct = mainForm.currentlyDGVSelectedProductName;
+                newlyPickedProduct = mainForm.currentlyDGVSelectedProductName;
+                originalSupplier = mainForm.currentlyDGVSelectedSupplierName;
+                newlyPickedSupplier = mainForm.currentlyDGVSelectedSupplierName;
 
                 cmbProduct.SelectedItem = mainForm.currentlyDGVSelectedProductName;
 
@@ -132,6 +144,8 @@ namespace Workshop4Group8
             }
             else
             {
+                newlyPickedProduct = cmbProduct.SelectedItem.ToString();
+
                 cmbSupplier.Enabled = true;
                 cmbSupplier.Items.Clear();
                 foreach (string supplier in SupplierDB.GetUnlinkedSuppliers(cmbProduct.SelectedItem.ToString()))
@@ -157,11 +171,11 @@ namespace Workshop4Group8
             {
                 if (cmbSupplier.SelectedItem != null && cmbSupplier.SelectedItem.ToString() != "")
                 {
+                    newlyPickedSupplier = cmbSupplier.SelectedItem.ToString(); 
                     mostRecentlySelectedSupplier = cmbSupplier.SelectedItem.ToString();
                     cmbSupplier.Items.Clear();
                     cmbSupplier.Items.Add(mostRecentlySelectedSupplier);
                 }
-
                 else
                 {
                     mostRecentlySelectedSupplier = "";
@@ -236,18 +250,52 @@ namespace Workshop4Group8
                 DialogResult = DialogResult.OK;
             }
 
-            //Otherwise, user is modifying a record, so customize message box text accordingly.
+            //Otherwise, user is modifying a record.
             else
             {
-                if (PSDB.UpdatePSThenConfirmSuccess(mainForm.currentlyDGVSelectedProductName,
-                    mainForm.currentlyDGVSelectedSupplierName, cmbProduct.SelectedItem.ToString(), cmbSupplier.SelectedItem.ToString()) == true)
-                    MessageBox.Show(mainForm.currentlyDGVSelectedProductName + " provided by " + mainForm.currentlyDGVSelectedSupplierName +
-                        "\n\nhas been successfully updated to \n\n" +
-                        cmbProduct.SelectedItem.ToString() + " provided by " + cmbSupplier.SelectedItem.ToString() + ".", "Success!");
-                else
-                    MessageBox.Show("Database error, please contact your administrator");
+                //Check how many records in Packages_Products_Suppliers also contain this combination
+                //of product and supplier.
+                //If none, simply ask if user wishes to delete.
+                if (PPSDB.GetPPSWithPS(originalProduct, originalSupplier).Count == 0)
+                {
+                    if (PSDB.UpdatePSThenConfirmSuccess(mainForm.currentlyDGVSelectedProductName,
+                      mainForm.currentlyDGVSelectedSupplierName, cmbProduct.SelectedItem.ToString(), cmbSupplier.SelectedItem.ToString()) == true)
+                        MessageBox.Show(mainForm.currentlyDGVSelectedProductName + " provided by " + mainForm.currentlyDGVSelectedSupplierName +
+                            "\n\nhas been successfully updated to \n\n" +
+                            cmbProduct.SelectedItem.ToString() + " provided by " + cmbSupplier.SelectedItem.ToString() + ".", "Success!");
+                    else
+                        MessageBox.Show("Database error, please contact your administrator");
 
-                DialogResult = DialogResult.OK;
+                    DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    frmPSDeleteUpdate secondForm = new frmPSDeleteUpdate();
+                    secondForm.mainFormPSAM = this;
+                    secondForm.isDeleteAndNotUpdate = false;
+                    DialogResult result = secondForm.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        if (PSDB.addToPSThenConfirmSuccess(cmbProduct.SelectedItem.ToString(), cmbSupplier.SelectedItem.ToString()) != true)
+                            MessageBox.Show("Database error, please contact your administrator");
+                        else
+                        {
+                            if (PPSDB.UpdatePPSWithPSThenConfirmSuccess(originalProduct, originalSupplier, newlyPickedProduct, newlyPickedSupplier) != true)
+                                MessageBox.Show("Someone has deleted or changed that product(s) in the package(s).", "Concurrency error");
+                            else
+                            {
+                                if (PSDB.DeletePSThenConfirm(mainForm.currentlyDGVSelectedProductName, mainForm.currentlyDGVSelectedSupplierName) !=true)
+                                    MessageBox.Show("Database error, please contact your administrator"); 
+                                else
+                                    MessageBox.Show(mainForm.currentlyDGVSelectedProductName + " provided by " + mainForm.currentlyDGVSelectedSupplierName +
+                                        "\n\nhas been successfully updated to \n\n" +
+                                        cmbProduct.SelectedItem.ToString() + " provided by " + cmbSupplier.SelectedItem.ToString() + ".", "Success!");
+                            }
+                        }
+                        DialogResult = DialogResult.OK;
+                    }
+                }     
             }
         }
     }

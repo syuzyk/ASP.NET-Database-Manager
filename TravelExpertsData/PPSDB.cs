@@ -119,7 +119,7 @@ namespace TravelExpertsData
                 using (SqlCommand cmd = new SqlCommand(deleteStatement, connection))
                 {
                     connection.Open();
-                    if (cmd.ExecuteNonQuery() == 1)
+                    if (cmd.ExecuteNonQuery() > 0)
                         successfullyDeleted = true;
                     else
                         successfullyDeleted = false;
@@ -256,7 +256,42 @@ namespace TravelExpertsData
                 {
                     connection.Open();
 
-                    if (cmd.ExecuteNonQuery() == 1)
+                    if (cmd.ExecuteNonQuery() > 0)
+                        successfullyUpdated = true;
+                    else
+                        successfullyUpdated = false;
+                }
+            }
+
+            return successfullyUpdated;
+        }
+
+        /// <summary>
+        /// Updates several records in Packages_Products_Suppliers.
+        /// </summary>
+        /// <param name="oldProdName">The original Product Name of the records we are updating.</param>
+        /// <param name="oldSupName">The original Supplier Name of the records we are updating.</param>
+        /// <param name="newProdName">The new Product Name  of the records we are updating.</param>
+        /// <param name="newSupName">The new Supplier Name of the records we are updating.</param>
+        /// <returns>True if successfully updated, false if not.</returns>
+        public static bool UpdatePPSWithPSThenConfirmSuccess(string oldProdName, string oldSupName, string newProdName, string newSupName)
+        {
+            bool successfullyUpdated;
+
+            using (SqlConnection connection = TravelExpertsDB.GetConnection())
+            {
+                string updateStatement = "UPDATE Packages_Products_Suppliers " +
+                                         "SET " +
+                                             "ProductId = (SELECT ProductId FROM Products WHERE ProdName = '" + newProdName + "'), " +
+                                             "SupplierId = (SELECT SupplierId FROM Suppliers WHERE SupName = '" + newSupName + "') " +
+                                         "WHERE ProductId = (SELECT ProductId FROM Products WHERE ProdName = '" + oldProdName + "') " +
+                                         "AND SupplierId = (SELECT SupplierId FROM Suppliers WHERE SupName = '" + oldSupName + "')";
+
+                using (SqlCommand cmd = new SqlCommand(updateStatement, connection))
+                {
+                    connection.Open();
+
+                    if (cmd.ExecuteNonQuery() > 0)
                         successfullyUpdated = true;
                     else
                         successfullyUpdated = false;

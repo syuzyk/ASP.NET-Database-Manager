@@ -251,7 +251,6 @@ namespace Workshop4Group8
                         MessageBox.Show("Database error, please contact your administrator"); 
                         proceed = false;
                     }
-                        
                 }
                 else
                 {
