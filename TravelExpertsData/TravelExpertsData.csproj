@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Password.cs" />
+    <Compile Include="PasswordDB.cs" />
     <Compile Include="PPS.cs" />
     <Compile Include="PS.cs" />
     <Compile Include="PSDB.cs" />

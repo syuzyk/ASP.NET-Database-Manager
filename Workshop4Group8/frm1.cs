@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TravelExpertsData;
 
 namespace Workshop4Group8
 {
@@ -42,6 +43,19 @@ namespace Workshop4Group8
             orgFrm = Size;
             orgPackge = new Rectangle(Packages.Location.X, Packages.Location.Y, Packages.Width, Packages.Height);
             orgProduct = new Rectangle(product.Location.X, product.Location.Y, product.Width, product.Height);
+            
+            frmGuardian guardian = new frmGuardian();
+            DialogResult result = guardian.ShowDialog();
+
+            DateTime today = DateTime.Today;
+            DateTime passwordLastChangedDate = PasswordDB.GetLastUpdateDate();
+            if ((today - passwordLastChangedDate).Days >=90)
+            {
+                frmNewPassword newForm = new frmNewPassword();
+                newForm.ninetyDayUpdate = true;
+                DialogResult npresult = newForm.ShowDialog();
+            }
+
         }
         public void resize()
         {
@@ -68,6 +82,13 @@ namespace Workshop4Group8
         private void frm1_Resize(object sender, EventArgs e)
         {
          resize();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNewPassword newForm = new frmNewPassword();
+            newForm.ninetyDayUpdate = false;
+            DialogResult npresult = newForm.ShowDialog();
         }
     }
 }

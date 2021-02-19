@@ -50,6 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmGuardian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGuardian.Designer.cs">
+      <DependentUpon>frmGuardian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewPassword.Designer.cs">
+      <DependentUpon>frmNewPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +184,12 @@
     </None>
     <EmbeddedResource Include="frm1.resx">
       <DependentUpon>frm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGuardian.resx">
+      <DependentUpon>frmGuardian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewPassword.resx">
+      <DependentUpon>frmNewPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPackageAddModify.resx">
       <DependentUpon>frmPackageAddModify.cs</DependentUpon>
