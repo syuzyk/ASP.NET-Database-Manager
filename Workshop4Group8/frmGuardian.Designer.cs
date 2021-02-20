@@ -43,7 +43,7 @@ namespace Workshop4Group8
             this.label1.Location = new System.Drawing.Point(19, 68);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 20);
+            this.label1.Size = new System.Drawing.Size(71, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Password:";
             // 
@@ -53,7 +53,7 @@ namespace Workshop4Group8
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(159, 26);
+            this.txtPassword.Size = new System.Drawing.Size(159, 22);
             this.txtPassword.TabIndex = 1;
             // 
             // button1
@@ -81,10 +81,10 @@ namespace Workshop4Group8
             // lblHint
             // 
             this.lblHint.AutoSize = true;
-            this.lblHint.Location = new System.Drawing.Point(108, 262);
+            this.lblHint.Location = new System.Drawing.Point(110, 96);
             this.lblHint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHint.Name = "lblHint";
-            this.lblHint.Size = new System.Drawing.Size(0, 20);
+            this.lblHint.Size = new System.Drawing.Size(0, 16);
             this.lblHint.TabIndex = 3;
             // 
             // lblIncorrectPassword
@@ -93,17 +93,17 @@ namespace Workshop4Group8
             this.lblIncorrectPassword.Location = new System.Drawing.Point(108, 9);
             this.lblIncorrectPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIncorrectPassword.Name = "lblIncorrectPassword";
-            this.lblIncorrectPassword.Size = new System.Drawing.Size(159, 40);
+            this.lblIncorrectPassword.Size = new System.Drawing.Size(125, 32);
             this.lblIncorrectPassword.TabIndex = 3;
             this.lblIncorrectPassword.Text = "Password incorrect;\r\nplease try again";
             // 
             // frmGuardian
             // 
             this.AcceptButton = this.button1;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
-            this.ClientSize = new System.Drawing.Size(306, 209);
+            this.ClientSize = new System.Drawing.Size(308, 217);
             this.Controls.Add(this.lblIncorrectPassword);
             this.Controls.Add(this.lblHint);
             this.Controls.Add(this.button2);

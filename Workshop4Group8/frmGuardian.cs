@@ -51,7 +51,7 @@ namespace Workshop4Group8
         {
             if (string.IsNullOrEmpty(lblHint.Text) == true)
             {
-                lblHint.Text = PasswordDB.GetHint();
+                lblHint.Text = "Hint: " + PasswordDB.GetHint();
                 button2.Text = "Hide hint";
             }
             else
