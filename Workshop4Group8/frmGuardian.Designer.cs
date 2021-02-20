@@ -40,25 +40,28 @@ namespace Workshop4Group8
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 44);
+            this.label1.Location = new System.Drawing.Point(19, 68);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Password:";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(72, 41);
+            this.txtPassword.Location = new System.Drawing.Point(108, 62);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(159, 26);
             this.txtPassword.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(72, 86);
+            this.button1.Location = new System.Drawing.Point(13, 137);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(122, 54);
             this.button1.TabIndex = 2;
             this.button1.Text = "Authenticate";
             this.button1.UseVisualStyleBackColor = true;
@@ -66,9 +69,10 @@ namespace Workshop4Group8
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(72, 129);
+            this.button2.Location = new System.Drawing.Point(171, 137);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(122, 54);
             this.button2.TabIndex = 2;
             this.button2.Text = "Show Hint";
             this.button2.UseVisualStyleBackColor = true;
@@ -77,31 +81,37 @@ namespace Workshop4Group8
             // lblHint
             // 
             this.lblHint.AutoSize = true;
-            this.lblHint.Location = new System.Drawing.Point(72, 171);
+            this.lblHint.Location = new System.Drawing.Point(108, 262);
+            this.lblHint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHint.Name = "lblHint";
-            this.lblHint.Size = new System.Drawing.Size(0, 13);
+            this.lblHint.Size = new System.Drawing.Size(0, 20);
             this.lblHint.TabIndex = 3;
             // 
             // lblIncorrectPassword
             // 
             this.lblIncorrectPassword.AutoSize = true;
-            this.lblIncorrectPassword.Location = new System.Drawing.Point(69, 16);
+            this.lblIncorrectPassword.Location = new System.Drawing.Point(108, 9);
+            this.lblIncorrectPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIncorrectPassword.Name = "lblIncorrectPassword";
-            this.lblIncorrectPassword.Size = new System.Drawing.Size(177, 13);
+            this.lblIncorrectPassword.Size = new System.Drawing.Size(159, 40);
             this.lblIncorrectPassword.TabIndex = 3;
-            this.lblIncorrectPassword.Text = "Password incorrect; please try again";
+            this.lblIncorrectPassword.Text = "Password incorrect;\r\nplease try again";
             // 
             // frmGuardian
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.button1;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(269, 203);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.ClientSize = new System.Drawing.Size(306, 209);
             this.Controls.Add(this.lblIncorrectPassword);
             this.Controls.Add(this.lblHint);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmGuardian";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authenticate";

@@ -44,53 +44,59 @@ namespace Workshop4Group8
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 55);
+            this.label1.Location = new System.Drawing.Point(78, 85);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.Size = new System.Drawing.Size(158, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter old password:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 91);
+            this.label2.Location = new System.Drawing.Point(69, 140);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 13);
+            this.label2.Size = new System.Drawing.Size(166, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Enter new password:";
             // 
             // txtOldPass
             // 
-            this.txtOldPass.Location = new System.Drawing.Point(161, 52);
+            this.txtOldPass.Location = new System.Drawing.Point(242, 80);
+            this.txtOldPass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtOldPass.Name = "txtOldPass";
             this.txtOldPass.PasswordChar = '*';
-            this.txtOldPass.Size = new System.Drawing.Size(130, 20);
+            this.txtOldPass.Size = new System.Drawing.Size(193, 26);
             this.txtOldPass.TabIndex = 0;
             this.txtOldPass.TextChanged += new System.EventHandler(this.txtOldPass_TextChanged);
             // 
             // txtNewPass1
             // 
-            this.txtNewPass1.Location = new System.Drawing.Point(161, 88);
+            this.txtNewPass1.Location = new System.Drawing.Point(242, 135);
+            this.txtNewPass1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNewPass1.Name = "txtNewPass1";
             this.txtNewPass1.PasswordChar = '*';
-            this.txtNewPass1.Size = new System.Drawing.Size(130, 20);
+            this.txtNewPass1.Size = new System.Drawing.Size(193, 26);
             this.txtNewPass1.TabIndex = 1;
             this.txtNewPass1.TextChanged += new System.EventHandler(this.txtNewPass1_TextChanged);
             // 
             // txtNewPass2
             // 
-            this.txtNewPass2.Location = new System.Drawing.Point(161, 125);
+            this.txtNewPass2.Location = new System.Drawing.Point(242, 192);
+            this.txtNewPass2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNewPass2.Name = "txtNewPass2";
             this.txtNewPass2.PasswordChar = '*';
-            this.txtNewPass2.Size = new System.Drawing.Size(130, 20);
+            this.txtNewPass2.Size = new System.Drawing.Size(193, 26);
             this.txtNewPass2.TabIndex = 2;
             this.txtNewPass2.TextChanged += new System.EventHandler(this.txtNewPass2_TextChanged);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(161, 205);
+            this.btnSubmit.Location = new System.Drawing.Point(161, 301);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(130, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(181, 65);
             this.btnSubmit.TabIndex = 4;
             this.btnSubmit.Text = "Change password";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -98,9 +104,10 @@ namespace Workshop4Group8
             // 
             // lblninetyDay
             // 
-            this.lblninetyDay.Location = new System.Drawing.Point(21, 8);
+            this.lblninetyDay.Location = new System.Drawing.Point(32, 12);
+            this.lblninetyDay.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblninetyDay.Name = "lblninetyDay";
-            this.lblninetyDay.Size = new System.Drawing.Size(270, 38);
+            this.lblninetyDay.Size = new System.Drawing.Size(405, 59);
             this.lblninetyDay.TabIndex = 3;
             this.lblninetyDay.Text = "You have not changed your password for over 90 days. Please change your password." +
     "";
@@ -108,33 +115,37 @@ namespace Workshop4Group8
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 165);
+            this.label3.Location = new System.Drawing.Point(68, 254);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 13);
+            this.label3.Size = new System.Drawing.Size(175, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "Enter a hint (optional):";
             // 
             // txtHint
             // 
-            this.txtHint.Location = new System.Drawing.Point(161, 163);
+            this.txtHint.Location = new System.Drawing.Point(242, 251);
+            this.txtHint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtHint.Name = "txtHint";
-            this.txtHint.Size = new System.Drawing.Size(130, 20);
+            this.txtHint.Size = new System.Drawing.Size(193, 26);
             this.txtHint.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 128);
+            this.label4.Location = new System.Drawing.Point(27, 198);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 13);
+            this.label4.Size = new System.Drawing.Size(211, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Enter new password again:";
             // 
             // frmNewPassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 253);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(232)))), ((int)(((byte)(229)))));
+            this.ClientSize = new System.Drawing.Size(486, 389);
             this.Controls.Add(this.txtHint);
             this.Controls.Add(this.lblninetyDay);
             this.Controls.Add(this.btnSubmit);
@@ -145,6 +156,8 @@ namespace Workshop4Group8
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmNewPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Change Password";
