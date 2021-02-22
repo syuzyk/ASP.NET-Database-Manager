@@ -43,7 +43,7 @@ namespace Workshop4Group8
 
             if (isAdd)
             {
-                if (prodNameTextBox.Text != "")
+                if (Validator.IsPresent(prodNameTextBox) == true)
                 {
                     Product newProduct = new Product // create product using provided data
                     {
@@ -57,38 +57,38 @@ namespace Workshop4Group8
                             db.Products.InsertOnSubmit(newProduct);
                             db.SubmitChanges(); // submit to the database
                         }
-                        catch(Exception ex)
+                        catch (Exception ex)
                         {
                             MessageBox.Show(prodNameTextBox.Text + " is already there");
                         }
                     }
                     DialogResult = DialogResult.OK;
                 }
-                else // validation  failed
-                {
-                    DialogResult = DialogResult.Cancel;
-                }
+
             }
             else
             {
-                using (productsDataContext dbContext = new productsDataContext())
+                if (Validator.IsPresent(prodNameTextBox) == true)
                 {
-                    // get the product with id from the current text box
-                    Product prod = dbContext.Products.Single(p => p.ProductId == currentProduct.ProductId);
-
-                    if (prod != null)
+                    using (productsDataContext dbContext = new productsDataContext())
                     {
-                        // make changes by copying values from text boxes
-                        prod.ProdName = prodNameTextBox.Text;
-                        try
+                        // get the product with id from the current text box
+                        Product prod = dbContext.Products.Single(p => p.ProductId == currentProduct.ProductId);
+
+                        if (prod != null)
                         {
-                            // submit changes 
-                            dbContext.SubmitChanges();
-                            DialogResult = DialogResult.OK;
-                        }
-                        catch(Exception ex)
-                        {
-                            MessageBox.Show(ex.ToString());
+                            // make changes by copying values from text boxes
+                            prod.ProdName = prodNameTextBox.Text;
+                            try
+                            {
+                                // submit changes 
+                                dbContext.SubmitChanges();
+                                DialogResult = DialogResult.OK;
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.ToString());
+                            }
                         }
                     }
                 }
