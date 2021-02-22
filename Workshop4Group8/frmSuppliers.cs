@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Linq;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Workshop4Group8
@@ -20,12 +14,14 @@ namespace Workshop4Group8
             InitializeComponent();
         }
 
+        //Connects the datagrid to the suppliers table in the database ~ TS
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
             supplierDataGridView.DataSource = db.Suppliers;
             supplierDataGridView.Sort(dataGridViewTextBoxColumn1, 0);
         }
 
+        //On click of add button, opens new form and connects back to the database ~ TS
         private void btnAddSuppliers_Click(object sender, EventArgs e)
         {
             frmSuppliersAddModify secondSupplierForm = new frmSuppliersAddModify();
@@ -39,12 +35,15 @@ namespace Workshop4Group8
             }
         }
 
+        //On click of modify button, opens a new form and grabs the information from the selected value in the datagrid view ~ TS
         private void btnModifySuppliers_Click(object sender, EventArgs e)
         {
             frmSuppliersAddModify secondSupplierForm = new frmSuppliersAddModify();
             int rowNum = supplierDataGridView.CurrentCell.RowIndex;
             int suppId = Convert.ToInt32(supplierDataGridView["dataGridViewTextBoxColumn1", rowNum].Value);
             Supplier currentSupplier;
+
+            //Grabs the supplier based on the selected supplierID ~ TS
             using(SuppliersDataContext dbContext = new SuppliersDataContext())
             {
                 currentSupplier = (from s in dbContext.Suppliers
@@ -62,6 +61,7 @@ namespace Workshop4Group8
             }
         }
 
+        //On click of cancel button, closes the form ~ TS
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;

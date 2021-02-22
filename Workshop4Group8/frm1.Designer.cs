@@ -1,5 +1,4 @@
-﻿
-namespace Workshop4Group8
+﻿namespace Workshop4Group8
 {
     partial class frm1
     {
