@@ -1,26 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Workshop4Group8
 {
     class Validator
     {
-        //Validates the data to make sure there is an entry
-        public static bool IsPresent(Control control) //Takes in any type of control as a argument
+        //Validates the data to make sure there is an entry ~ TS
+        public static bool IsPresent(Control control) //Takes in any type of control as a argument ~ TS
         {
-            if (control.GetType().ToString() == "System.Windows.Forms.TextBox") //If the type is a textbox
+            if (control.GetType().ToString() == "System.Windows.Forms.TextBox") //If the type is a textbox ~ TS
             {
                 TextBox textBox = (TextBox)control;
-                if (textBox.Text == "") //If the field is empty
+                if (textBox.Text == "") //If the field is empty ~ TS
                 {
                     MessageBox.Show(textBox.Tag + " is a required field. Entry Error.");
                     textBox.Focus();
                     return false;
-                    //Testing a commit
                 }
             }
             return true;
@@ -52,7 +47,7 @@ namespace Workshop4Group8
             return value == null || value == 0 ? "NA" : value.ToString();
         }
 
-        //Validates the data to make sure the data is an Integer
+        //Validates the data to make sure the data is an Integer ~ TS
         public static bool IsInt32(TextBox textBox)
         {
             try
