@@ -5,6 +5,7 @@ using TravelExpertsData;
 
 namespace Workshop4Group8
 {
+    //All buttons, gridviews, textboxes, labels, and user controls were (painstakingly) styled by Stephen
     
     public partial class frm1 : Form
     {

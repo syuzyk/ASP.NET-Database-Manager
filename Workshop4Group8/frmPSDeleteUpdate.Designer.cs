@@ -40,6 +40,7 @@ namespace Workshop4Group8
             // dgvPPS
             // 
             this.dgvPPS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPPS.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(182)))), ((int)(((byte)(177)))));
             this.dgvPPS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPPS.Location = new System.Drawing.Point(32, 107);
             this.dgvPPS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -55,7 +56,7 @@ namespace Workshop4Group8
             this.lblWarning.Location = new System.Drawing.Point(39, 38);
             this.lblWarning.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(45, 16);
+            this.lblWarning.Size = new System.Drawing.Size(53, 20);
             this.lblWarning.TabIndex = 1;
             this.lblWarning.Text = "label1";
             // 
@@ -71,10 +72,10 @@ namespace Workshop4Group8
             // btnOK
             // 
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.Location = new System.Drawing.Point(32, 353);
+            this.btnOK.Location = new System.Drawing.Point(32, 344);
             this.btnOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(322, 45);
+            this.btnOK.Size = new System.Drawing.Size(322, 54);
             this.btnOK.TabIndex = 2;
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -82,10 +83,10 @@ namespace Workshop4Group8
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(414, 352);
+            this.btnCancel.Location = new System.Drawing.Point(414, 344);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 47);
+            this.btnCancel.Size = new System.Drawing.Size(100, 55);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -93,7 +94,7 @@ namespace Workshop4Group8
             // 
             // frmPSDeleteUpdate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(182)))), ((int)(((byte)(177)))));
             this.ClientSize = new System.Drawing.Size(551, 419);

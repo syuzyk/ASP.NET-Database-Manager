@@ -6,6 +6,7 @@ using TravelExpertsData;
 
 namespace Workshop4Group8
 {
+    //Packages code was written by Stephen, Products/Packages/Suppliers code was written by Ricky
     public partial class frmPackages : Form
     {
         //On this form, users select packages and products in DGV's.
