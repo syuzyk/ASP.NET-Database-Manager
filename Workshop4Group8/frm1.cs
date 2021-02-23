@@ -9,7 +9,7 @@ namespace Workshop4Group8
     
     public partial class frm1 : Form
     {
-        //to set the main location and zise of every component
+        //to set the main location and size of every component - ds
         public Size orgFrm;
         public Rectangle orgPackge;
         public Rectangle orgProduct;
@@ -57,7 +57,7 @@ namespace Workshop4Group8
             changezise(orgPackge, Packages);
             changezise(orgProduct, product);
         }
-        //this is for changing the size and location
+        //this is for changing the size and location -ds
         public void changezise(Rectangle org,Control cntrl)
         {
             float xratio = (float)(Size.Width)/(float)(orgFrm.Width);
@@ -73,7 +73,7 @@ namespace Workshop4Group8
             cntrl.Size = new Size(newwidth, newheight);
         }
         
-        //event resize when the main screen is resized every control in it resizes with it
+        //event resize when the main screen is resized every control in it resizes with it-ds
         private void frm1_Resize(object sender, EventArgs e)
         {
          resize();
